@@ -69,9 +69,7 @@ const Home = () => {
             { name: 'Jane Smith', feedback: 'Professional and reliable team, highly recommended!' },
           ].map((testimonial, index) => (
             <Grid item xs={12} md={5} key={index}>
-              <Typography variant="body1" sx={{ backgroundColor: '#222', padding: '20px', borderRadius: '10px', color: '#fff' }}>
-                "{testimonial.feedback}"
-              </Typography>
+              <Typography variant="body1" sx={{ backgroundColor: '#222', padding: '20px', borderRadius: '10px', color: '#fff' }}>&quot;{testimonial.feedback}&quot;</Typography>
               <Typography variant="subtitle1" sx={{ color: '#ddd', marginTop: '10px' }}>- {testimonial.name}</Typography>
             </Grid>
           ))}

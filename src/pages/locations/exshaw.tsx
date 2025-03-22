@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Container, Typography, Grid, Button, Divider, Paper } from "@mui/material";
-import Image from "next/image";
+//import Image from "next/image";
 import { motion } from "framer-motion";
 
 const fadeInUp = {
@@ -101,7 +101,7 @@ const ExshawSecurity = () => {
                 Tailored Protection for Exshaw
               </Typography>
               <Typography>
-                Whether it's a small business, industrial operation, or community facility, our team will develop a security strategy specific to your needs, geography, and risk profile.
+                Whether it&apos;s a small business, industrial operation, or community facility, our team will develop a security strategy specific to your needs, geography, and risk profile.
               </Typography>
             </motion.div>
           </Paper>

@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Container, Typography, Grid, Button, Divider, Paper } from "@mui/material";
-import Image from "next/image";
+//import Image from "next/image";
 import { motion } from "framer-motion";
 
 const fadeInUp = {
@@ -74,7 +74,7 @@ const BanffSecurity = () => {
                 Local Expertise in a Tourist Town
               </Typography>
               <Typography>
-                As one of Canada's most visited destinations, Banff presents unique security needs. Our trained professionals
+                As one of Canada&apos;s most visited destinations, Banff presents unique security needs. Our trained professionals
                 know the area, work closely with local businesses, and respond swiftly to challenges on high-traffic days.
               </Typography>
             </motion.div>

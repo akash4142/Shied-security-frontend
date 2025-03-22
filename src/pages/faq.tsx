@@ -7,7 +7,6 @@ import {
   AccordionSummary,
   AccordionDetails,
   Grid,
-  Paper
 } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { motion } from "framer-motion";

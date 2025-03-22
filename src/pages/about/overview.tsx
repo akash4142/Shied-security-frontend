@@ -1,12 +1,8 @@
 import React from "react";
 import { Box, Container, Typography, Grid, Paper, Button, Divider } from "@mui/material";
 import Image from "next/image";
-import { motion } from "framer-motion";
 
-const fadeInUp = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
-};
+
 
 const CompanyOverview = () => {
   return (

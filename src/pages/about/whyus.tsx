@@ -1,12 +1,8 @@
 import React from "react";
 import { Box, Container, Typography, Grid, Paper, Button, Divider } from "@mui/material";
 import Image from "next/image";
-import { motion } from "framer-motion";
 
-const fadeInUp = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
-};
+
 
 const WhyUs = () => {
   return (
@@ -43,7 +39,7 @@ const WhyUs = () => {
           <Typography>
             Shield Secure was created to fill a critical gap in the Canadian security market. Many clients told us they found existing companies either too small to handle broad service offerings or too large to provide personal attention. We bridge that gap by offering comprehensive solutions with the responsiveness of a local business.
             <br /><br />
-            Whether you're a small retail shop or a large construction site, our flexible solutions are built around your unique needs.
+            Whether you&apos;re a small retail shop or a large construction site, our flexible solutions are built around your unique needs.
           </Typography>
         </Paper>
 
@@ -125,10 +121,10 @@ const WhyUs = () => {
         <Box sx={{ mt: 10, textAlign: "center" }}>
           <Divider sx={{ mb: 4 }} />
           <Typography variant="h5" fontWeight="bold" gutterBottom>
-            Let's Discuss Your Security Options
+            Let&apos;s Discuss Your Security Options
           </Typography>
           <Typography>
-            Ready to experience security done right? Reach out to our team today and let's customize a solution for you.
+            Ready to experience security done right? Reach out to our team today and let&apos;s customize a solution for you.
           </Typography>
           <Button variant="contained" color="error" sx={{ mt: 3, px: 4, py: 1.5, fontSize: "16px" }}>
             Contact Us

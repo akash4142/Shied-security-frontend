@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Container, Typography, Grid, Button, Divider, Paper } from "@mui/material";
-import Image from "next/image";
+//import Image from "next/image";
 import { motion } from "framer-motion";
 
 const fadeInUp = {

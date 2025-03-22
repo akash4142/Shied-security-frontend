@@ -1,6 +1,5 @@
 import React from "react";
 import { Box, Container, Typography, Grid, Button, Divider, Paper } from "@mui/material";
-import Image from "next/image";
 import { motion } from "framer-motion";
 
 const fadeInUp = {
@@ -61,7 +60,7 @@ const CorporateSecurity = () => {
                 Trusted Corporate Security Solutions
               </Typography>
               <Typography>
-                At Shield Security, we understand that protecting your corporate office is more than just preventing threats — it's about maintaining a professional, secure environment where staff and visitors feel safe. We offer premium corporate security that aligns with your company’s culture and brand.
+                At Shield Security, we understand that protecting your corporate office is more than just preventing threats — it&apos;s about maintaining a professional, secure environment where staff and visitors feel safe. We offer premium corporate security that aligns with your company’s culture and brand.
               </Typography>
             </motion.div>
           </Paper>

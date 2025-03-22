@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { Container, Grid, Typography, Card, CardContent } from '@mui/material';
-import Image from 'next/image';
+import { Container, Grid, Typography, Card } from '@mui/material';
+//import Image from 'next/image';
 import {api} from '@/utils/api';
 
 interface Testimonial{
@@ -40,7 +40,7 @@ const Testimonials = () => {
             <Grid item xs={12} md={4} key={index}>
               <Card sx={{ backgroundColor: '#222', color: '#fff', textAlign: 'center', padding: '20px' }}>
                 <Typography variant="h6" sx={{ fontWeight: 'bold' }}>{testimonial.name}</Typography>
-                <Typography variant="body2" sx={{ marginTop: '10px' }}>"{testimonial.review}"</Typography>
+                <Typography variant="body2" sx={{ marginTop: '10px' }}>&quot;{testimonial.review}&quot;</Typography>
               </Card>
             </Grid>
           ))}

@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Container, Typography, Grid, Button, Divider, Paper } from "@mui/material";
-import Image from "next/image";
+//import Image from "next/image";
 import { motion } from "framer-motion";
 
 const fadeInUp = {
@@ -161,7 +161,7 @@ const CanmoreSecurity = () => {
             <Divider sx={{ mb: 4 }} />
             <motion.div variants={fadeInUp}>
               <Typography variant="h5" fontWeight="bold" gutterBottom>
-                Let's Discuss Your Canmore Security Needs
+                Let&apos;s Discuss Your Canmore Security Needs
               </Typography>
               <Typography>
                 Reach out to Shield Security for dependable, local protection in Canmore and the Bow Valley.
