@@ -1,6 +1,18 @@
 import React from "react";
-import { Box, Container, Typography, Grid, Button, Divider, Paper } from "@mui/material";
+import {
+  Box,
+  Typography,
+  Grid,
+  Button,
+} from "@mui/material";
 import { motion } from "framer-motion";
+import RequestQuote from "@/components/RequestQuote";
+import ServicesShowcase from "@/components/serviceShowcase";
+import TestimonialsSection from "@/components/TestimonialsSection";
+import StoreMallDirectoryIcon from "@mui/icons-material/StoreMallDirectory";
+import VisibilityIcon from "@mui/icons-material/Visibility";
+import EmojiPeopleIcon from "@mui/icons-material/EmojiPeople";
+import SecurityIcon from "@mui/icons-material/Security";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
@@ -15,159 +27,158 @@ const stagger = {
   },
 };
 
-const sectionStyle = {
-  backgroundColor: "#f7f9fc",
-  borderRadius: 4,
-  padding: "40px 30px",
-  boxShadow: "0 4px 20px rgba(0,0,0,0.05)",
-  marginBottom: "60px",
-};
-
 const RetailSecurity = () => {
   return (
-    <>
-      {/* Hero Section */}
+    <Box sx={{ overflowX: "hidden" }}>
+      {/* ✅ Hero Section */}
       <Box
         sx={{
+          position: "relative",
+          height: "70vh",
           backgroundImage: "url(/images/1.jpg)",
           backgroundSize: "cover",
           backgroundPosition: "center",
-          height: "60vh",
           display: "flex",
-          alignItems: "center",
+          alignItems: "flex-end",
           justifyContent: "center",
-          textAlign: "center",
+          paddingBottom: "60px",
         }}
       >
-        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1 }}>
-          <Box sx={{ backgroundColor: "rgba(0, 0, 0, 0.6)", p: 4, borderRadius: 2 }}>
-            <Typography variant="h2" sx={{ color: "white", fontWeight: "bold" }}>
+        <Box
+          sx={{
+            backgroundColor: "rgba(0, 0, 0, 0.6)",
+            padding: "30px 50px",
+            borderRadius: "12px",
+            textAlign: "center",
+            backdropFilter: "blur(4px)",
+          }}
+        >
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+          >
+            <Typography variant="h2" sx={{ color: "#fff", fontWeight: "bold", fontFamily: "'Poppins', sans-serif" }}>
               Retail Security
             </Typography>
-            <Typography variant="h6" sx={{ color: "white", mt: 2 }}>
-              Loss Prevention and Safety for Staff & Shoppers
-            </Typography>
-          </Box>
+          </motion.div>
+        </Box>
+      </Box>
+
+      {/* ✅ Intro Section */}
+      <Box sx={{ background: "#111318", color: "#fff", px: { xs: 3, md: 10 }, py: 8, textAlign: "center" }}>
+        <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+          <Typography variant="h5" fontWeight="300" sx={{ mb: 2 }}>
+            Trusted Loss Prevention & Shopper Safety Solutions
+          </Typography>
+          <Typography variant="h6" sx={{ mb: 4, maxWidth: 700, mx: "auto", color: "#ccc", fontWeight: 300 }}>
+            Shield Security provides trained, uniformed professionals to prevent theft, maintain peace, and support your retail team’s daily operations.
+          </Typography>
+          <Button variant="contained" color="error" size="large">
+            Request a Quote
+          </Button>
         </motion.div>
       </Box>
 
-      <Container sx={{ py: 8 }}>
+      {/* ✅ Feature Highlights */}
+      <Box sx={{ background: "#1c1f25", color: "#fff", px: { xs: 3, md: 10 }, py: 10 }}>
         <motion.div variants={stagger} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-          {/* Overview */}
-          <Paper sx={sectionStyle}>
-            <motion.div variants={fadeInUp}>
-              <Typography variant="h4" fontWeight="bold" gutterBottom>
-                Prevent Theft. Protect Staff. Reassure Customers.
-              </Typography>
-              <Typography>
-                Shield Security’s retail security services are tailored to protect your merchandise, staff, and customers. Our uniformed professionals deter theft, respond quickly to incidents, and ensure a welcoming environment that builds shopper confidence.
-              </Typography>
-            </motion.div>
-          </Paper>
-
-          {/* Key Features */}
-          <Paper sx={sectionStyle}>
-            <Grid container spacing={2}>
-              {["Loss Prevention Patrols", "Customer Service Integration", "Emergency Response", "Shoplifting Deterrence"].map((item, idx) => (
-                <Grid key={idx} item xs={12} sm={6} md={3}>
-                  <motion.div variants={fadeInUp}>
-                    <Typography align="center">• {item}</Typography>
-                  </motion.div>
-                </Grid>
-              ))}
-            </Grid>
-          </Paper>
-
-          {/* Why It Matters */}
-          <Paper sx={sectionStyle}>
-            <motion.div variants={fadeInUp}>
-              <Typography variant="h5" fontWeight="bold" gutterBottom>
-                More Than Just Theft Prevention
-              </Typography>
-              <Typography>
-                Retail environments demand a balance of vigilance and hospitality. Our guards are trained to be approachable while maintaining high alertness, ensuring store policies are enforced with professionalism.
-              </Typography>
-            </motion.div>
-          </Paper>
-
-          {/* Responsibilities */}
-          <Paper sx={sectionStyle}>
-            <motion.div variants={fadeInUp}>
-              <Typography variant="h5" fontWeight="bold" gutterBottom>
-                Core Retail Security Duties
-              </Typography>
-            </motion.div>
-            <Grid container spacing={2}>
-              {["Theft Deterrence & Apprehension", "Surveillance Monitoring", "Conflict De-Escalation", "Emergency Evacuations", "Shopper Safety Support", "Crowd & Queue Management", "Policy Enforcement", "Incident Reporting", "Store Opening & Closing Security"].map((task, idx) => (
-                <Grid key={idx} item xs={12} sm={6} md={4}>
-                  <motion.div variants={fadeInUp}>
-                    <Typography>• {task}</Typography>
-                  </motion.div>
-                </Grid>
-              ))}
-            </Grid>
-          </Paper>
-
-          {/* Technology */}
-          <Paper sx={sectionStyle}>
-            <motion.div variants={fadeInUp}>
-              <Typography variant="h5" fontWeight="bold" gutterBottom>
-                Technology-Backed Security
-              </Typography>
-              <Typography>
-                Through systems like TrackTik, clients gain access to real-time insights, incident documentation, and compliance checks to ensure full visibility into security operations.
-              </Typography>
-            </motion.div>
-          </Paper>
-
-          {/* Custom Solutions */}
-          <Paper sx={sectionStyle}>
-            <motion.div variants={fadeInUp}>
-              <Typography variant="h5" fontWeight="bold" gutterBottom>
-                Tailored to Every Retail Format
-              </Typography>
-              <Typography>
-                Whether you operate a boutique, national chain, shopping mall, or department store — we adapt our approach to your retail floor plan, brand culture, and customer volume.
-              </Typography>
-            </motion.div>
-          </Paper>
-
-          {/* Services Offered */}
-          <Paper sx={sectionStyle}>
-            <motion.div variants={fadeInUp}>
-              <Typography variant="h5" fontWeight="bold" gutterBottom>
-                Retail Security Services Offered
-              </Typography>
-            </motion.div>
-            <Grid container spacing={2}>
-              {["Uniformed Store Security", "Mall Security Patrols", "Retail Concierge Guards", "Loss Prevention Officers", "Retail Event Security"].map((service, idx) => (
-                <Grid key={idx} item xs={12} sm={6} md={4}>
-                  <motion.div variants={fadeInUp}>
-                    <Typography>• {service}</Typography>
-                  </motion.div>
-                </Grid>
-              ))}
-            </Grid>
-          </Paper>
-
-          {/* CTA Section */}
-          <Paper sx={{ ...sectionStyle, textAlign: "center" }}>
-            <Divider sx={{ mb: 4 }} />
-            <motion.div variants={fadeInUp}>
-              <Typography variant="h5" fontWeight="bold" gutterBottom>
-                Secure Your Retail Space Today
-              </Typography>
-              <Typography>
-                Let Shield Security help you reduce shrinkage, elevate customer experience, and safeguard your retail business.
-              </Typography>
-              <Button variant="contained" color="error" sx={{ mt: 3, px: 4, py: 1.5, fontSize: "16px" }}>
-                Get a Free Quote
-              </Button>
-            </motion.div>
-          </Paper>
+          <Grid container spacing={4}>
+            {[{
+              icon: <StoreMallDirectoryIcon sx={{ fontSize: 70, color: '#e53935' }} />,
+              title: "Visible Store Presence",
+              description: "Uniformed officers create a strong visual deterrent and reassure your customers."
+            }, {
+              icon: <VisibilityIcon sx={{ fontSize: 70, color: '#e53935' }} />,
+              title: "Proactive Loss Prevention",
+              description: "Deter shoplifters, monitor behaviors, and prevent inventory shrinkage."
+            }, {
+              icon: <EmojiPeopleIcon sx={{ fontSize: 70, color: '#e53935' }} />,
+              title: "Customer Assistance",
+              description: "Enhance the customer journey while keeping a watchful eye on safety."
+            }, {
+              icon: <SecurityIcon sx={{ fontSize: 70, color: '#e53935' }} />,
+              title: "Emergency Preparedness",
+              description: "Ready to handle theft incidents, emergencies, or medical calls professionally."
+            }].map((item, idx) => (
+              <Grid item xs={12} sm={6} md={3} key={idx} textAlign="center">
+                <motion.div variants={fadeInUp}>
+                  <Box sx={{ mb: 2 }}>{item.icon}</Box>
+                  <Typography variant="h6" fontWeight="bold" sx={{ mb: 1 }}>{item.title}</Typography>
+                  <Typography variant="body1" color="#ccc">{item.description}</Typography>
+                </motion.div>
+              </Grid>
+            ))}
+          </Grid>
         </motion.div>
-      </Container>
-    </>
+      </Box>
+
+      {/* ✅ Customer Service Section */}
+      <Box sx={{ background: "#111318", color: "#fff", px: { xs: 3, md: 10 }, py: 12 }}>
+        <Grid container spacing={6} alignItems="center">
+          <Grid item xs={12} md={6} order={{ xs: 2, md: 1 }}>
+            <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+              <Typography variant="h4" fontWeight="bold" gutterBottom>
+                Beyond Security: Your Brand Ambassadors
+              </Typography>
+              <Typography variant="h6" sx={{ color: "#ccc", mb: 3, fontWeight: 300 }}>
+                Our guards do more than deter threats — they reflect the tone of your brand, creating a sense of safety and professionalism with every customer interaction.
+              </Typography>
+              <Typography variant="body1" sx={{ color: "#aaa", fontWeight: 300, mb: 4 }}>
+                From greeting guests to de-escalating conflicts, they play an integral role in both customer service and retail loss prevention — all while maintaining situational awareness.
+              </Typography>
+              <Typography variant="body1" sx={{ color: "#aaa", fontWeight: 300 }}>
+                With Shield Security, every presence is purposeful, polished, and prepared to enhance your store&apos;s integrity and experience.
+              </Typography>
+            </motion.div>
+          </Grid>
+          <Grid item xs={12} md={6} order={{ xs: 1, md: 2 }}>
+            <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+              <Box
+                component="img"
+                src="/images/2.jpg"
+                alt="Customer Service"
+                sx={{ width: "100%", borderRadius: 4, boxShadow: 4 }}
+              />
+            </motion.div>
+          </Grid>
+        </Grid>
+      </Box>
+
+      {/* ✅ Trusted By Section */}
+            <Box sx={{ background: "#1a1d22", py: 8, px: { xs: 3, md: 12 }, textAlign: "center" }}>
+              <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+                <Typography variant="h5" color="white" fontWeight="bold" gutterBottom>
+                  Trusted By Leading Retailers
+                </Typography>
+                <Grid container spacing={4} justifyContent="center" sx={{ mt: 3 }}>
+                  {["/logos/canadian-tire.png", "/logos/canadian-tire.png", "/logos/canadian-tire.png", "/logos/canadian-tire.png"].map(
+                    (logo, idx) => (
+                      <Grid item key={idx} xs={6} sm={3} md={2}>
+                        <Box
+                          component="img"
+                          src={logo}
+                          alt={`Client ${idx + 1}`}
+                          sx={{ width: "100%" }}
+                        />
+                      </Grid>
+                    )
+                  )}
+                </Grid>
+              </motion.div>
+            </Box>
+
+      {/* ✅ Services Showcase */}
+      <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+        <ServicesShowcase currentService="Retail Security" />
+      </motion.div>
+
+      {/* ✅ Testimonials + CTA */}
+      <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+        <TestimonialsSection />
+        <RequestQuote />
+      </motion.div>
+    </Box>
   );
 };
 

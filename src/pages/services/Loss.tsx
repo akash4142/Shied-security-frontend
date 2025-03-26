@@ -1,27 +1,23 @@
+// LossPrevention.jsx
 import React from "react";
-import { Box, Container, Typography, Grid, Button, Divider, Paper } from "@mui/material";
-import Image from "next/image";
+import { Box, Typography, Grid } from "@mui/material";
 import { motion } from "framer-motion";
+import {
+  FaUserSecret,
+  FaSearchDollar,
+  FaUserShield,
+  FaFileAlt,
+  FaEye,
+  FaClipboardCheck,
+} from "react-icons/fa";
+import TestimonialsSection from "@/components/TestimonialsSection";
+import RequestQuote from "@/components/RequestQuote";
+import ServicesShowcase from "@/components/serviceShowcase";
+import WhyLossSecurityImportant from "@/components/whyImportant/LossImportant";
 
 const fadeInUp = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
-};
-
-const stagger = {
-  visible: {
-    transition: {
-      staggerChildren: 0.2,
-    },
-  },
-};
-
-const sectionStyle = {
-  backgroundColor: "#f7f9fc",
-  borderRadius: 4,
-  padding: "40px 30px",
-  boxShadow: "0 4px 20px rgba(0,0,0,0.05)",
-  marginBottom: "60px",
+  hidden: { opacity: 0, y: 40 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
 };
 
 const LossPrevention = () => {
@@ -30,136 +26,129 @@ const LossPrevention = () => {
       {/* Hero Section */}
       <Box
         sx={{
+          height: "100vh",
           backgroundImage: "url(/images/1.jpg)",
           backgroundSize: "cover",
+          backgroundAttachment: "fixed",
           backgroundPosition: "center",
-          height: "60vh",
           display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          textAlign: "center",
+          alignItems: "flex-end",
+          justifyContent: "flex-end",
+          p: { xs: 3, md: 10 },
         }}
       >
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1 }}>
-          <Box sx={{ backgroundColor: "rgba(0, 0, 0, 0.6)", p: 4, borderRadius: 2 }}>
+          <Box
+            sx={{
+              backgroundColor: "rgba(0, 0, 0, 0.7)",
+              px: 4,
+              py: 4,
+              borderRadius: 2,
+              maxWidth: "500px",
+              textAlign: "center",
+            }}
+          >
             <Typography variant="h2" sx={{ color: "white", fontWeight: "bold" }}>
               Loss Prevention
             </Typography>
-            <Typography variant="h6" sx={{ color: "white", mt: 2 }}>
+            <Typography variant="h6" sx={{ color: "#ccc", mt: 1 }}>
               Reducing Shrink, Protecting Profits
             </Typography>
           </Box>
         </motion.div>
       </Box>
 
-      <Container sx={{ py: 8 }}>
-        <motion.div variants={stagger} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-          <Paper sx={sectionStyle}>
-            <motion.div variants={fadeInUp}>
-              <Typography variant="h4" fontWeight="bold" gutterBottom>
-                Proven Loss Prevention Strategies
-              </Typography>
-              <Typography variant="body1" sx={{ mb: 4 }}>
-                Shield Security’s loss prevention services are designed to stop theft and reduce shrink across retail and
-                commercial environments. Our trained officers work discreetly or in uniform, identifying suspicious
-                behavior, deterring internal and external theft, and creating a secure atmosphere.
-              </Typography>
-            </motion.div>
-            <motion.div variants={fadeInUp}>
-              <Box sx={{ display: "flex", flexWrap: "wrap", gap: 4, justifyContent: "center", mb: 6 }}>
-                {["/images/logo1.png", "/images/logo2.png", "/images/logo3.png", "/images/logo4.png", "/images/logo5.png", "/images/logo6.png"].map((logo, idx) => (
-                  <motion.div key={idx} whileHover={{ scale: 1.1 }}>
-                    <Image src={logo} alt="Client Logo" width={100} height={60} />
-                  </motion.div>
-                ))}
-              </Box>
-            </motion.div>
-          </Paper>
+      {/* Intro Section */}
+      <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+        <Box sx={{ background: "#0f1114", py: 10, px: { xs: 3, md: 12 }, textAlign: "center" }}>
+          <Typography variant="h4" color="white" fontWeight="bold" gutterBottom>
+            Strategic Security to Safeguard Revenue
+          </Typography>
+          <Typography sx={{ color: "#aaa", maxWidth: "900px", mx: "auto" }}>
+            Our loss prevention specialists are trained to mitigate internal and external threats. From discreet surveillance to
+            proactive employee monitoring, we help retailers and businesses reduce shrink and improve profitability through
+            strategic protection.
+          </Typography>
+        </Box>
+      </motion.div>
 
-          <Paper sx={sectionStyle}>
-            <Grid container spacing={6}>
-              <Grid item xs={12} md={6}>
-                <motion.div variants={fadeInUp}>
-                  <Image src="/images/2.jpg" alt="Loss Prevention" width={600} height={400} style={{ width: "100%", borderRadius: 10 }} />
+      {/* Trusted By Section */}
+      <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+        <Box sx={{ background: "#1a1d22", py: 8, px: { xs: 3, md: 12 }, textAlign: "center" }}>
+          <Typography variant="h5" color="white" fontWeight="bold" gutterBottom>
+            Trusted By Leading Retailers
+          </Typography>
+          <Grid container spacing={4} justifyContent="center" sx={{ mt: 3 }}>
+            {["/logos/canadian-tire.png", "/logos/canadian-tire.png", "/logos/canadian-tire.png", "/logos/canadian-tire.png"].map(
+              (logo, idx) => (
+                <Grid item key={idx} xs={6} sm={3} md={2}>
+                  <Box
+                    component="img"
+                    src={logo}
+                    alt={`Client ${idx + 1}`}
+                    sx={{ width: "100%", filter: "grayscale(1) brightness(0.8)" }}
+                  />
+                </Grid>
+              )
+            )}
+          </Grid>
+        </Box>
+      </motion.div>
+
+<WhyLossSecurityImportant/>
+
+      {/* Loss Prevention Duties */}
+      <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+        <Box sx={{ background: "#0f1114", py: 10, px: { xs: 3, md: 12 } }}>
+          <Typography variant="h4" color="white" fontWeight="bold" gutterBottom>
+            Core Loss Prevention Strategies
+          </Typography>
+          <Typography sx={{ color: "#aaa", mb: 5, maxWidth: "900px" }}>
+            Our loss prevention team combines behavioral insight, surveillance tactics, and audit support to stop theft and ensure retail integrity:
+          </Typography>
+
+          <Grid container spacing={4}>
+            {[
+              { icon: <FaUserSecret />, label: "Undercover Store Agents" },
+              { icon: <FaSearchDollar />, label: "Shoplifting & Theft Deterrence" },
+              { icon: <FaUserShield />, label: "Internal Theft Prevention" },
+              { icon: <FaFileAlt />, label: "Incident Reporting & Documentation" },
+              { icon: <FaClipboardCheck />, label: "Audit & Compliance Support" },
+              { icon: <FaEye />, label: "Surveillance System Monitoring" },
+            ].map((item, idx) => (
+              <Grid key={idx} item xs={12} sm={6} md={4}>
+                <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+                  <Box
+                    sx={{
+                      background: "linear-gradient(135deg, #1c1f25, #262a31)",
+                      borderRadius: 4,
+                      p: 4,
+                      textAlign: "center",
+                      color: "white",
+                      boxShadow: "0 6px 30px rgba(0,0,0,0.3)",
+                      height: "100%",
+                    }}
+                  >
+                    <Box sx={{ fontSize: 40, mb: 2 }}>{item.icon}</Box>
+                    <Typography variant="h6">{item.label}</Typography>
+                  </Box>
                 </motion.div>
               </Grid>
-              <Grid item xs={12} md={6}>
-                <motion.div variants={fadeInUp}>
-                  <Typography variant="h5" fontWeight="bold" gutterBottom>
-                    Why Loss Prevention Is Crucial
-                  </Typography>
-                  <Typography>
-                    Retail theft, employee fraud, and inventory shrinkage cost businesses billions every year. Our loss
-                    prevention experts identify vulnerabilities, conduct investigations, and implement strategies that
-                    protect your bottom line.
-                  </Typography>
-                </motion.div>
-              </Grid>
-            </Grid>
-          </Paper>
+            ))}
+          </Grid>
+        </Box>
+      </motion.div>
 
-          <Paper sx={sectionStyle}>
-            <motion.div variants={fadeInUp}>
-              <Typography variant="h5" fontWeight="bold" gutterBottom>
-                Our Services Include
-              </Typography>
-            </motion.div>
-            <Grid container spacing={2}>
-              {["Undercover Security Agents", "Shoplifting Deterrence", "Theft Apprehension", "Employee Theft Prevention", "Audit & Compliance Checks", "Surveillance Support", "Customer Service Integration", "Inventory Protection Programs", "Incident Documentation & Reports"].map((item, idx) => (
-                <Grid key={idx} item xs={12} sm={6} md={4}>
-                  <motion.div variants={fadeInUp}>
-                    <Typography>• {item}</Typography>
-                  </motion.div>
-                </Grid>
-              ))}
-            </Grid>
-          </Paper>
+      {/* Other Services */}
+      <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+        <ServicesShowcase currentService="Loss Prevention" />
+      </motion.div>
 
-          <Paper sx={sectionStyle}>
-            <motion.div variants={fadeInUp}>
-              <Typography variant="h5" fontWeight="bold" gutterBottom>
-                Environments We Serve
-              </Typography>
-            </motion.div>
-            <Grid container spacing={2}>
-              {["Retail Chains", "Supermarkets", "Pharmacies", "Warehouse Clubs", "Luxury Retail", "Shopping Malls", "Standalone Stores"].map((item, idx) => (
-                <Grid key={idx} item xs={12} sm={6} md={4}>
-                  <motion.div variants={fadeInUp}>
-                    <Typography>• {item}</Typography>
-                  </motion.div>
-                </Grid>
-              ))}
-            </Grid>
-          </Paper>
-
-          <Paper sx={sectionStyle}>
-            <motion.div variants={fadeInUp}>
-              <Typography variant="h4" fontWeight="bold" gutterBottom>
-                Reduce Risk, Boost Profitability
-              </Typography>
-              <Typography>
-                With a customized loss prevention plan from Shield Security, you can stop shrink before it starts. Our proactive
-                approach delivers peace of mind and improved revenue control.
-              </Typography>
-            </motion.div>
-          </Paper>
-
-          <Paper sx={{ ...sectionStyle, textAlign: "center" }}>
-            <Divider sx={{ mb: 4 }} />
-            <motion.div variants={fadeInUp}>
-              <Typography variant="h5" fontWeight="bold" gutterBottom>
-                Let’s Protect Your Business Assets
-              </Typography>
-              <Typography>
-                Get in touch with our team to develop a tailored loss prevention strategy for your business.
-              </Typography>
-              <Button variant="contained" color="error" sx={{ mt: 3, px: 4, py: 1.5, fontSize: "16px" }}>
-                Get a Free Quote
-              </Button>
-            </motion.div>
-          </Paper>
-        </motion.div>
-      </Container>
+      {/* Testimonials + CTA */}
+      <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+        <TestimonialsSection />
+        <RequestQuote />
+      </motion.div>
     </>
   );
 };

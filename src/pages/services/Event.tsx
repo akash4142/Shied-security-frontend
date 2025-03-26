@@ -1,27 +1,23 @@
+// EventSecurity.jsx
 import React from "react";
-import { Box, Container, Typography, Grid, Button, Divider, Paper } from "@mui/material";
-import Image from "next/image";
+import { Box, Typography, Grid } from "@mui/material";
 import { motion } from "framer-motion";
+import {
+  FaShieldAlt,
+  FaUsers,
+  FaCarCrash,
+  FaCamera,
+  FaUserSecret,
+  FaHandsHelping,
+} from "react-icons/fa";
+import TestimonialsSection from "@/components/TestimonialsSection";
+import RequestQuote from "@/components/RequestQuote";
+import WhyEventSecurityImportant from "@/components/whyImportant/EventImportant";
+import ServicesShowcase from "@/components/serviceShowcase";
 
 const fadeInUp = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
-};
-
-const stagger = {
-  visible: {
-    transition: {
-      staggerChildren: 0.2,
-    },
-  },
-};
-
-const sectionStyle = {
-  backgroundColor: "#f7f9fc",
-  borderRadius: 4,
-  padding: "40px 30px",
-  boxShadow: "0 4px 20px rgba(0,0,0,0.05)",
-  marginBottom: "60px",
+  hidden: { opacity: 0, y: 40 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
 };
 
 const EventSecurity = () => {
@@ -30,135 +26,131 @@ const EventSecurity = () => {
       {/* Hero Section */}
       <Box
         sx={{
+          height: "100vh",
           backgroundImage: "url(/images/1.jpg)",
           backgroundSize: "cover",
+          backgroundAttachment: "fixed",
           backgroundPosition: "center",
-          height: "60vh",
           display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          textAlign: "center",
+          alignItems: "flex-end",
+          justifyContent: "flex-end",
+          p: { xs: 3, md: 10 },
         }}
       >
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1 }}>
-          <Box sx={{ backgroundColor: "rgba(0, 0, 0, 0.6)", p: 4, borderRadius: 2 }}>
+          <Box
+            sx={{
+              backgroundColor: "rgba(0, 0, 0, 0.7)",
+              px: 4,
+              py: 4,
+              borderRadius: 2,
+              maxWidth: "500px",
+              textAlign: "right",
+            }}
+          >
             <Typography variant="h2" sx={{ color: "white", fontWeight: "bold" }}>
               Event Security
             </Typography>
-            <Typography variant="h6" sx={{ color: "white", mt: 2 }}>
+            <Typography variant="h6" sx={{ color: "#ccc", mt: 1 }}>
               Professional Protection for Unforgettable Events
             </Typography>
           </Box>
         </motion.div>
       </Box>
 
-      <Container sx={{ py: 8 }}>
-        <motion.div variants={stagger} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-          <Paper sx={sectionStyle}>
-            <motion.div variants={fadeInUp}>
-              <Typography variant="h4" fontWeight="bold" gutterBottom>
-                Comprehensive Event Security Services
-              </Typography>
-              <Typography variant="body1" sx={{ mb: 4 }}>
-                At Shield Security, we specialize in providing professional event security for events of all sizes — from
-                concerts and corporate functions to community festivals and VIP gatherings. Our licensed and highly trained
-                guards ensure a secure, seamless experience for guests, staff, and performers.
-              </Typography>
-            </motion.div>
-            <motion.div variants={fadeInUp}>
-              <Box sx={{ display: "flex", flexWrap: "wrap", gap: 4, justifyContent: "center", mb: 6 }}>
-                {["/images/logo1.png", "/images/logo2.png", "/images/logo3.png", "/images/logo4.png", "/images/logo5.png", "/images/logo6.png"].map((logo, idx) => (
-                  <motion.div key={idx} whileHover={{ scale: 1.1 }}>
-                    <Image src={logo} alt="Client Logo" width={100} height={60} />
-                  </motion.div>
-                ))}
-              </Box>
-            </motion.div>
-          </Paper>
+      {/* Intro Text Section */}
+      <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+        <Box sx={{ background: "#0f1114", py: 10, px: { xs: 3, md: 12 }, textAlign: "center" }}>
+          <Typography variant="h4" color="white" fontWeight="bold" gutterBottom>
+            Expert Security for Every Occasion
+          </Typography>
+          <Typography sx={{ color: "#aaa", maxWidth: "900px", mx: "auto" }}>
+            Our event security services are tailored to ensure peace of mind, smooth operations, and the safety of every guest.
+            Whether your event hosts 50 or 50,000 attendees, our trained professionals are prepared to manage it efficiently.
+          </Typography>
+        </Box>
+      </motion.div>
 
-          <Paper sx={sectionStyle}>
-            <Grid container spacing={6}>
-              <Grid item xs={12} md={6}>
-                <motion.div variants={fadeInUp}>
-                  <Image src="/images/2.jpg" alt="Event Security" width={600} height={400} style={{ width: "100%", borderRadius: 10 }} />
+      {/* Trusted By Section */}
+      <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+        <Box sx={{ background: "#1a1d22", py: 8, px: { xs: 3, md: 12 }, textAlign: "center" }}>
+          <Typography variant="h5" color="white" fontWeight="bold" gutterBottom>
+            Trusted by Leading Brands
+          </Typography>
+          <Grid container spacing={4} justifyContent="center" sx={{ mt: 3 }}>
+            {["/logos/canadian-tire.png", "/logos/canadian-tire.png", "/logos/canadian-tire.png", "/logos/canadian-tire.png"].map(
+              (logo, idx) => (
+                <Grid item key={idx} xs={6} sm={3} md={2}>
+                  <Box
+                    component="img"
+                    src={logo}
+                    alt={`Client ${idx + 1}`}
+                    sx={{ width: "100%", filter: "grayscale(1) brightness(0.8)" }}
+                  />
+                </Grid>
+              )
+            )}
+          </Grid>
+        </Box>
+      </motion.div>
+
+      {/* Why Event Security is Important Section */}
+      <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+        <WhyEventSecurityImportant />
+      </motion.div>
+
+      {/* Duties of Event Security */}
+      <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+        <Box sx={{ background: "#0f1114", py: 10, px: { xs: 3, md: 12 } }}>
+          <Typography variant="h4" color="white" fontWeight="bold" gutterBottom>
+            Duties of Our Event Security Team
+          </Typography>
+          <Typography sx={{ color: "#aaa", mb: 5, maxWidth: "900px" }}>
+            Our team handles a wide range of duties to keep your event safe and running smoothly:
+          </Typography>
+
+          <Grid container spacing={4}>
+            {[
+              { icon: <FaShieldAlt />, label: "Access Control & Checkpoints" },
+              { icon: <FaUsers />, label: "Crowd Monitoring" },
+              { icon: <FaHandsHelping />, label: "Conflict Resolution" },
+              { icon: <FaUserSecret />, label: "VIP Escort Services" },
+              { icon: <FaCamera />, label: "Surveillance & Monitoring" },
+              { icon: <FaCarCrash />, label: "Traffic & Parking Management" },
+            ].map((item, idx) => (
+              <Grid key={idx} item xs={12} sm={6} md={4}>
+                <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+                  <Box
+                    sx={{
+                      background: "linear-gradient(135deg, #1c1f25, #262a31)",
+                      borderRadius: 4,
+                      p: 4,
+                      textAlign: "center",
+                      color: "white",
+                      boxShadow: "0 6px 30px rgba(0,0,0,0.3)",
+                      height: "100%",
+                    }}
+                  >
+                    <Box sx={{ fontSize: 40, mb: 2 }}>{item.icon}</Box>
+                    <Typography variant="h6">{item.label}</Typography>
+                  </Box>
                 </motion.div>
               </Grid>
-              <Grid item xs={12} md={6}>
-                <motion.div variants={fadeInUp}>
-                  <Typography variant="h5" fontWeight="bold" gutterBottom>
-                    Why Event Security is Essential
-                  </Typography>
-                  <Typography>
-                    Well-coordinated security is critical for crowd management, emergency preparedness, and protecting VIPs
-                    and valuable assets. Our presence helps prevent disruptions and provides peace of mind to attendees.
-                  </Typography>
-                </motion.div>
-              </Grid>
-            </Grid>
-          </Paper>
+            ))}
+          </Grid>
+        </Box>
+      </motion.div>
 
-          <Paper sx={sectionStyle}>
-            <motion.div variants={fadeInUp}>
-              <Typography variant="h5" fontWeight="bold" gutterBottom>
-                What We Provide
-              </Typography>
-            </motion.div>
-            <Grid container spacing={2}>
-              {["Access Control & Checkpoints", "Crowd Monitoring", "Emergency Response", "VIP Escort Services", "Bag Checks & Scanning", "Conflict Resolution", "Surveillance & Monitoring", "Traffic & Parking Management", "On-site Communication Teams"].map((item, idx) => (
-                <Grid key={idx} item xs={12} sm={6} md={4}>
-                  <motion.div variants={fadeInUp}>
-                    <Typography>• {item}</Typography>
-                  </motion.div>
-                </Grid>
-              ))}
-            </Grid>
-          </Paper>
+      {/* Other Services */}
+      <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+        <ServicesShowcase currentService="Event Security" />
+      </motion.div>
 
-          <Paper sx={sectionStyle}>
-            <motion.div variants={fadeInUp}>
-              <Typography variant="h5" fontWeight="bold" gutterBottom>
-                Events We Cover
-              </Typography>
-            </motion.div>
-            <Grid container spacing={2}>
-              {["Concerts & Festivals", "Corporate Events", "Weddings", "Film & TV Productions", "Trade Shows", "Sporting Events", "Private Parties"].map((item, idx) => (
-                <Grid key={idx} item xs={12} sm={6} md={4}>
-                  <motion.div variants={fadeInUp}>
-                    <Typography>• {item}</Typography>
-                  </motion.div>
-                </Grid>
-              ))}
-            </Grid>
-          </Paper>
-
-          <Paper sx={sectionStyle}>
-            <motion.div variants={fadeInUp}>
-              <Typography variant="h4" fontWeight="bold" gutterBottom>
-                Our Team, Your Peace of Mind
-              </Typography>
-              <Typography>
-                From pre-event planning to post-event wrap-up, our security professionals coordinate closely with your team,
-                ensuring protocols are followed and your event runs safely and smoothly.
-              </Typography>
-            </motion.div>
-          </Paper>
-
-          <Paper sx={{ ...sectionStyle, textAlign: "center" }}>
-            <Divider sx={{ mb: 4 }} />
-            <motion.div variants={fadeInUp}>
-              <Typography variant="h5" fontWeight="bold" gutterBottom>
-                Let’s Secure Your Next Event
-              </Typography>
-              <Typography>
-                Contact Shield Security today to build a customized event security plan tailored to your needs.
-              </Typography>
-              <Button variant="contained" color="error" sx={{ mt: 3, px: 4, py: 1.5, fontSize: "16px" }}>
-                Get a Free Quote
-              </Button>
-            </motion.div>
-          </Paper>
-        </motion.div>
-      </Container>
+      {/* Testimonials + CTA */}
+      <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+        <TestimonialsSection />
+        <RequestQuote />
+      </motion.div>
     </>
   );
 };

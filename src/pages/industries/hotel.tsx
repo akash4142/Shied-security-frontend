@@ -1,6 +1,18 @@
 import React from "react";
-import { Box, Container, Typography, Grid, Button, Divider, Paper } from "@mui/material";
+import {
+  Box,
+  Typography,
+  Grid,
+  Button,
+} from "@mui/material";
 import { motion } from "framer-motion";
+import RequestQuote from "@/components/RequestQuote";
+import TestimonialsSection from "@/components/TestimonialsSection";
+import ServicesShowcase from "@/components/serviceShowcase";
+import HotelIcon from "@mui/icons-material/Hotel";
+import KeyIcon from "@mui/icons-material/VpnKey";
+import DirectionsWalkIcon from "@mui/icons-material/DirectionsWalk";
+import EmojiPeopleIcon from "@mui/icons-material/EmojiPeople";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
@@ -15,197 +27,159 @@ const stagger = {
   },
 };
 
-const sectionStyle = {
-  backgroundColor: "#f7f9fc",
-  borderRadius: 4,
-  padding: "40px 30px",
-  boxShadow: "0 4px 20px rgba(0,0,0,0.05)",
-  marginBottom: "60px",
-};
-
 const HotelSecurity = () => {
   return (
-    <>
-      {/* Hero Section */}
+    <Box sx={{ overflowX: "hidden" }}>
+      {/* ✅ Hero Section */}
       <Box
         sx={{
+          position: "relative",
+          height: "70vh",
           backgroundImage: "url(/images/1.jpg)",
           backgroundSize: "cover",
           backgroundPosition: "center",
-          height: "60vh",
           display: "flex",
-          alignItems: "center",
+          alignItems: "flex-end",
           justifyContent: "center",
-          textAlign: "center",
+          paddingBottom: "60px",
         }}
       >
-        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1 }}>
-          <Box sx={{ backgroundColor: "rgba(0, 0, 0, 0.6)", p: 4, borderRadius: 2 }}>
-            <Typography variant="h2" sx={{ color: "white", fontWeight: "bold" }}>
+        <Box
+          sx={{
+            backgroundColor: "rgba(0, 0, 0, 0.6)",
+            padding: "30px 50px",
+            borderRadius: "12px",
+            textAlign: "center",
+            backdropFilter: "blur(4px)",
+          }}
+        >
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+          >
+            <Typography variant="h2" sx={{ color: "#fff", fontWeight: "bold", fontFamily: "'Poppins', sans-serif" }}>
               Hotel Security
             </Typography>
-            <Typography variant="h6" sx={{ color: "white", mt: 2 }}>
-              Upgrade to Shield Security’s Trusted Hotel Protection
-            </Typography>
-          </Box>
+          </motion.div>
+        </Box>
+      </Box>
+
+      {/* ✅ Intro Section */}
+      <Box sx={{ background: "#111318", color: "#fff", px: { xs: 3, md: 10 }, py: 8, textAlign: "center" }}>
+        <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+          <Typography variant="h5" fontWeight="300" sx={{ mb: 2 }}>
+            Guest-Centered Safety & Hospitality-Driven Security
+          </Typography>
+          <Typography variant="h6" sx={{ mb: 4, maxWidth: 700, mx: "auto", color: "#ccc", fontWeight: 300 }}>
+            Shield Security provides discreet and dependable hotel protection — from front desk presence to emergency response, we keep your guests safe while representing your brand with professionalism.
+          </Typography>
+          <Button variant="contained" color="error" size="large">
+            Request a Quote
+          </Button>
         </motion.div>
       </Box>
 
-      <Container sx={{ py: 8 }}>
+      {/* ✅ Feature Highlights */}
+      <Box sx={{ background: "#1c1f25", color: "#fff", px: { xs: 3, md: 10 }, py: 10 }}>
         <motion.div variants={stagger} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-          {/* Overview */}
-          <Paper sx={sectionStyle}>
-            <motion.div variants={fadeInUp}>
-              <Typography variant="h4" fontWeight="bold" gutterBottom>
-                Canada&apos;s Premier Hotel Security Partner
-              </Typography>
-              <Typography>
-                Shield Security offers comprehensive, guest-focused protection for hotels, motels, and resorts across
-                Canada. Our highly trained personnel ensure peace of mind for guests and staff alike. From luxury hotels to
-                boutique inns, we tailor our services to match the atmosphere and brand of your property.
-              </Typography>
-            </motion.div>
-          </Paper>
-
-          {/* Icons Summary */}
-          <Paper sx={sectionStyle}>
-            <Grid container spacing={2}>
-              {["Keyholding and Guest Enquiries", "Access Control & Perimeter Monitoring", "24/7 Foot Patrols", "Hospitality-Oriented Service"].map((item, idx) => (
-                <Grid key={idx} item xs={12} sm={6} md={3}>
-                  <motion.div variants={fadeInUp}>
-                    <Typography align="center">• {item}</Typography>
-                  </motion.div>
-                </Grid>
-              ))}
-            </Grid>
-          </Paper>
-
-          {/* Customer Service Approach */}
-          <Paper sx={sectionStyle}>
-            <motion.div variants={fadeInUp}>
-              <Typography variant="h5" fontWeight="bold" gutterBottom>
-                Service That Represents Your Brand
-              </Typography>
-              <Typography>
-                Our guards are trained not only in safety and emergency response but also in warm hospitality and guest
-                interaction. We aim to make our security staff an extension of your team — dependable, professional, and
-                always guest-ready.
-              </Typography>
-            </motion.div>
-          </Paper>
-
-          {/* Duties */}
-          <Paper sx={sectionStyle}>
-            <motion.div variants={fadeInUp}>
-              <Typography variant="h5" fontWeight="bold" gutterBottom>
-                Hotel Security Guard Responsibilities
-              </Typography>
-            </motion.div>
-            <Grid container spacing={2}>
-              {["Front Desk Presence", "Access Control", "Rule Enforcement", "CCTV Surveillance", "Alarm Response", "Evacuation Assistance", "Guest Support", "Incident Documentation", "Foot & Mobile Patrols", "Keyholding Duties"].map((task, idx) => (
-                <Grid key={idx} item xs={12} sm={6} md={4}>
-                  <motion.div variants={fadeInUp}>
-                    <Typography>• {task}</Typography>
-                  </motion.div>
-                </Grid>
-              ))}
-            </Grid>
-          </Paper>
-
-          {/* TrackTik */}
-          <Paper sx={sectionStyle}>
-            <motion.div variants={fadeInUp}>
-              <Typography variant="h5" fontWeight="bold" gutterBottom>
-                Real-Time Security Oversight
-              </Typography>
-              <Typography>
-                Using GPS-powered TrackTik technology, you receive instant reports and real-time visibility on guard activity,
-                incident logs, and more.
-              </Typography>
-            </motion.div>
-          </Paper>
-
-          {/* Custom Solutions */}
-          <Paper sx={sectionStyle}>
-            <motion.div variants={fadeInUp}>
-              <Typography variant="h5" fontWeight="bold" gutterBottom>
-                Flexible & Personalized Hotel Security
-              </Typography>
-              <Typography>
-                No two hotels are alike — that’s why Shield Security develops customized plans built on your layout,
-                policies, and clientele. Whether it’s for temporary coverage or a long-term partnership, our team ensures
-                complete alignment with your brand.
-              </Typography>
-            </motion.div>
-          </Paper>
-
-          {/* Services Offered */}
-          <Paper sx={sectionStyle}>
-            <motion.div variants={fadeInUp}>
-              <Typography variant="h5" fontWeight="bold" gutterBottom>
-                Our Hotel Security Offerings
-              </Typography>
-            </motion.div>
-            <Grid container spacing={2}>
-              {["Hotel Concierge Security", "Hotel Mobile Patrol", "On-Site Uniformed Security"].map((service, idx) => (
-                <Grid key={idx} item xs={12} sm={6} md={4}>
-                  <motion.div variants={fadeInUp}>
-                    <Typography>• {service}</Typography>
-                  </motion.div>
-                </Grid>
-              ))}
-            </Grid>
-          </Paper>
-
-          {/* Deployment Areas */}
-          <Paper sx={sectionStyle}>
-            <motion.div variants={fadeInUp}>
-              <Typography variant="h5" fontWeight="bold" gutterBottom>
-                Where We Deploy Hotel Guards
-              </Typography>
-            </motion.div>
-            <Grid container spacing={2}>
-              {["Large Hotels", "Motels", "Resorts", "Conference Centres", "Bed & Breakfasts", "Inns", "Hostels", "Casino Hotels"].map((location, idx) => (
-                <Grid key={idx} item xs={12} sm={6} md={4}>
-                  <motion.div variants={fadeInUp}>
-                    <Typography>• {location}</Typography>
-                  </motion.div>
-                </Grid>
-              ))}
-            </Grid>
-          </Paper>
-
-          {/* Training Section */}
-          <Paper sx={sectionStyle}>
-            <motion.div variants={fadeInUp}>
-              <Typography variant="h5" fontWeight="bold" gutterBottom>
-                Shield Academy Training Modules
-              </Typography>
-              <Typography>
-                Our in-house and partner-led training includes Mental Health Awareness, Conflict Resolution, Cultural
-                Awareness, and Emergency Management — all designed to deliver industry-leading hospitality protection.
-              </Typography>
-            </motion.div>
-          </Paper>
-
-          {/* CTA Section */}
-          <Paper sx={{ ...sectionStyle, textAlign: "center" }}>
-            <Divider sx={{ mb: 4 }} />
-            <motion.div variants={fadeInUp}>
-              <Typography variant="h5" fontWeight="bold" gutterBottom>
-                Let’s Secure Your Hotel
-              </Typography>
-              <Typography>
-                Contact Shield Security to learn how we can protect your guests, staff, and brand reputation.
-              </Typography>
-              <Button variant="contained" color="error" sx={{ mt: 3, px: 4, py: 1.5, fontSize: "16px" }}>
-                Get a Free Quote
-              </Button>
-            </motion.div>
-          </Paper>
+          <Grid container spacing={4}>
+            {[{
+              icon: <HotelIcon sx={{ fontSize: 70, color: '#e53935' }} />,
+              title: "Concierge Presence",
+              description: "Trained to greet guests and maintain visibility in hotel lobbies and reception areas."
+            }, {
+              icon: <KeyIcon sx={{ fontSize: 70, color: '#e53935' }} />,
+              title: "Access Management",
+              description: "Monitor entries, exits, elevators and restricted areas with professional oversight."
+            }, {
+              icon: <DirectionsWalkIcon sx={{ fontSize: 70, color: '#e53935' }} />,
+              title: "Patrol & Emergency Support",
+              description: "24/7 internal and external patrols, with immediate response to incidents or alarms."
+            }, {
+              icon: <EmojiPeopleIcon sx={{ fontSize: 70, color: '#e53935' }} />,
+              title: "Hospitality-Focused Approach",
+              description: "Our guards are guest-ready — always courteous, respectful, and responsive."
+            }].map((item, idx) => (
+              <Grid item xs={12} sm={6} md={3} key={idx} textAlign="center">
+                <motion.div variants={fadeInUp}>
+                  <Box sx={{ mb: 2 }}>{item.icon}</Box>
+                  <Typography variant="h6" fontWeight="bold" sx={{ mb: 1 }}>{item.title}</Typography>
+                  <Typography variant="body1" color="#ccc">{item.description}</Typography>
+                </motion.div>
+              </Grid>
+            ))}
+          </Grid>
         </motion.div>
-      </Container>
-    </>
+      </Box>
+
+      {/* ✅ Customer Service Image Section */}
+      <Box sx={{ background: "#111318", color: "#fff", px: { xs: 3, md: 10 }, py: 12 }}>
+        <Grid container spacing={6} alignItems="center">
+          <Grid item xs={12} md={6} order={{ xs: 2, md: 1 }}>
+            <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+              <Typography variant="h4" fontWeight="bold" gutterBottom>
+                A Guest Experience Built on Safety & Warmth
+              </Typography>
+              <Typography variant="h6" sx={{ color: "#ccc", mb: 3, fontWeight: 300 }}>
+                We don’t just secure your hotel — we enhance your brand reputation. Our staff are trained in hospitality etiquette and calm, professional conflict resolution.
+              </Typography>
+              <Typography variant="body1" sx={{ color: "#aaa", fontWeight: 300, mb: 4 }}>
+                Whether assisting late-night guests, managing disturbances, or helping during events, our guards bring professionalism and positivity to every interaction.
+              </Typography>
+              <Typography variant="body1" sx={{ color: "#aaa", fontWeight: 300 }}>
+                Your guests notice quality — and Shield Security makes sure it shows.
+              </Typography>
+            </motion.div>
+          </Grid>
+          <Grid item xs={12} md={6} order={{ xs: 1, md: 2 }}>
+            <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+              <Box
+                component="img"
+                src="/images/3.jpg"
+                alt="Hotel Guard"
+                sx={{ width: "100%", borderRadius: 4, boxShadow: 4 }}
+              />
+            </motion.div>
+          </Grid>
+        </Grid>
+      </Box>
+
+            
+{/* ✅ Trusted By Section */}
+            <Box sx={{ background: "#1a1d22", py: 8, px: { xs: 3, md: 12 }, textAlign: "center" }}>
+              <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+                <Typography variant="h5" color="white" fontWeight="bold" gutterBottom>
+                  Trusted By Leading Retailers
+                </Typography>
+                <Grid container spacing={4} justifyContent="center" sx={{ mt: 3 }}>
+                  {["/logos/canadian-tire.png", "/logos/canadian-tire.png", "/logos/canadian-tire.png", "/logos/canadian-tire.png"].map(
+                    (logo, idx) => (
+                      <Grid item key={idx} xs={6} sm={3} md={2}>
+                        <Box
+                          component="img"
+                          src={logo}
+                          alt={`Client ${idx + 1}`}
+                          sx={{ width: "100%" }}
+                        />
+                      </Grid>
+                    )
+                  )}
+                </Grid>
+              </motion.div>
+            </Box>
+
+      {/* ✅ Services Showcase */}
+      <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+        <ServicesShowcase currentService="Hotel Security" />
+      </motion.div>
+
+      {/* ✅ Testimonials + CTA */}
+      <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+        <TestimonialsSection />
+        <RequestQuote />
+      </motion.div>
+    </Box>
   );
 };
 
