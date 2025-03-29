@@ -1,11 +1,14 @@
 import React from "react";
-import { Box, Container, Typography, Grid, Button, Divider, Paper } from "@mui/material";
-//import Image from "next/image";
+import { Box, Typography } from "@mui/material";
 import { motion } from "framer-motion";
+import RequestQuote from "@/components/RequestQuote";
+import ClientLogoCarousel from "@/components/ClientLogoCarousel";
+import TestimonialsSection from "@/components/TestimonialsSection";
+import ServicesShowcase from "@/components/serviceShowcase";
 
 const fadeInUp = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+  hidden: { opacity: 0, y: 40 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
 };
 
 const stagger = {
@@ -16,163 +19,138 @@ const stagger = {
   },
 };
 
-const sectionStyle = {
-  backgroundColor: "#f7f9fc",
-  borderRadius: 4,
-  padding: "40px 30px",
-  boxShadow: "0 4px 20px rgba(0,0,0,0.05)",
-  marginBottom: "60px",
-};
-
 const CanmoreSecurity = () => {
   return (
     <>
       {/* Hero Section */}
       <Box
         sx={{
+          position: "relative",
+          height: "80vh",
           backgroundImage: "url(/images/1.jpg)",
           backgroundSize: "cover",
           backgroundPosition: "center",
-          height: "60vh",
           display: "flex",
-          alignItems: "center",
+          alignItems: "flex-end",
           justifyContent: "center",
+          paddingBottom: "60px",
+        }}
+      >
+        <Box
+          sx={{
+            backgroundColor: "rgba(0, 0, 0, 0.6)",
+            padding: "30px 50px",
+            borderRadius: "12px",
+            textAlign: "center",
+            backdropFilter: "blur(4px)",
+            maxWidth: { xs: "90%", md: "70%" },
+          }}
+        >
+          <motion.div initial="hidden" animate="visible" variants={fadeInUp}>
+            <Typography variant="h2" sx={{ color: "#fff", fontWeight: "bold", mb: 2 }}>
+              Canmore Security Services
+            </Typography>
+            <Typography variant="h6" sx={{ color: "#ccc" }}>
+              Trusted by the Bow Valley Community
+            </Typography>
+          </motion.div>
+        </Box>
+      </Box>
+
+      {/* Intro Section */}
+      <Box
+        sx={{
+          backgroundColor: "#111",
+          color: "#fff",
+          px: { xs: 3, md: 10 },
+          py: { xs: 6, md: 10 },
           textAlign: "center",
         }}
       >
-        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1 }}>
-          <Box sx={{ backgroundColor: "rgba(0, 0, 0, 0.6)", p: 4, borderRadius: 2 }}>
-            <Typography variant="h2" sx={{ color: "white", fontWeight: "bold" }}>
-              Canmore
-            </Typography>
-            <Typography variant="h6" sx={{ color: "white", mt: 2 }}>
-              Trusted by the Bow Valley Community
-            </Typography>
-          </Box>
+        <motion.div initial="hidden" whileInView="visible" variants={fadeInUp} viewport={{ once: true }}>
+          <Typography variant="h4" sx={{ fontWeight: "bold", mb: 3 }}>
+            Shielding Canmore with Trusted Local Security
+          </Typography>
+          <Typography
+            variant="body1"
+            sx={{
+              color: "#ccc",
+              maxWidth: "900px",
+              mx: "auto",
+              lineHeight: 1.8,
+              fontSize: { xs: "1rem", md: "1.1rem" },
+            }}
+          >
+            We proudly serve Canmore and the Bow Valley with dependable, community-focused security solutions. From tourism hotspots to local businesses and residential sites, Shield Security brings professionalism and peace of mind to every corner of this mountain town.
+          </Typography>
         </motion.div>
       </Box>
 
-      <Container sx={{ py: 8 }}>
-        <motion.div variants={stagger} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-          {/* Section 1: City Info */}
-          <Paper sx={sectionStyle}>
-            <motion.div variants={fadeInUp}>
-              <Typography variant="h4" fontWeight="bold" gutterBottom>
-                Canmore Security Company
-              </Typography>
-              <Typography>
-                Shield Security proudly protects local businesses, resorts, and residential areas across Canmore and the
-                Bow Valley. With deep local knowledge and responsive teams, we deliver trusted security tailored to your
-                mountain community needs.
-              </Typography>
-            </motion.div>
-          </Paper>
-
-          {/* Section 2: Local Culture */}
-          <Paper sx={sectionStyle}>
-            <motion.div variants={fadeInUp}>
-              <Typography variant="h5" fontWeight="bold" gutterBottom>
-                Local Security for a Unique Community
-              </Typography>
-              <Typography>
-                Canmore is known for its breathtaking views, tourism, and tranquil lifestyle. We bring that same calm and
-                confidence to our security services, delivered by professionals who live and work in the region.
-              </Typography>
-            </motion.div>
-          </Paper>
-
-          {/* Section 3: Services */}
-          <Paper sx={sectionStyle}>
-            <motion.div variants={fadeInUp}>
-              <Typography variant="h4" fontWeight="bold" gutterBottom>
-                Canmore Security Services We Offer
-              </Typography>
-              <Grid container spacing={2}>
-                {["Concierge Security", "Event Security", "Mobile Patrol", "Uniformed Security", "Loss Prevention", "Tactical Security", "Construction Site Security", "Hotel & Resort Security", "Executive Protection", "Residential Patrols", "CCTV Monitoring"].map((service, idx) => (
-                  <Grid key={idx} item xs={12} sm={6} md={4}>
-                    <Typography>• Canmore {service}</Typography>
-                  </Grid>
-                ))}
-              </Grid>
-            </motion.div>
-          </Paper>
-
-          {/* Section 4: Custom Plans */}
-          <Paper sx={sectionStyle}>
-            <motion.div variants={fadeInUp}>
-              <Typography variant="h5" fontWeight="bold" gutterBottom>
-                Custom-Tailored Security Services
-              </Typography>
-              <Typography>
-                Every client and every location is unique. That’s why our Canmore security plans are personalized to
-                reflect your goals, risk level, and budget — all delivered by guards who care about your safety.
-              </Typography>
-            </motion.div>
-          </Paper>
-
-          {/* Section 5: Social Impact */}
-          <Paper sx={sectionStyle}>
-            <motion.div variants={fadeInUp}>
-              <Typography variant="h5" fontWeight="bold" gutterBottom>
-                Local Impact & Giving Back
-              </Typography>
-              <Typography>
-                Shield Security supports Bow Valley causes and local initiatives that uplift our neighbors. Through
-                volunteerism and financial support, we give back to the communities that trust us.
-              </Typography>
-            </motion.div>
-          </Paper>
-
-          {/* Section 6: Training */}
-          <Paper sx={sectionStyle}>
-            <motion.div variants={fadeInUp}>
-              <Typography variant="h5" fontWeight="bold" gutterBottom>
-                Industry-Leading Guard Training
-              </Typography>
-              <Typography>
-                From first aid to crisis de-escalation and Indigenous awareness, our Canmore guards are certified through
-                Shield Academy for professional, respectful service.
-              </Typography>
-              <Grid container spacing={2} sx={{ mt: 2 }}>
-                {["Emergency Response", "Customer Service Excellence", "Crisis Management", "First Aid & WHMIS", "Conflict Resolution", "CCTV & Access Control", "Indigenous Awareness Training", "Report Writing"].map((module, idx) => (
-                  <Grid key={idx} item xs={12} sm={6} md={4}>
-                    <Typography>• {module}</Typography>
-                  </Grid>
-                ))}
-              </Grid>
-            </motion.div>
-          </Paper>
-
-          {/* Section 7: Technology */}
-          <Paper sx={sectionStyle}>
-            <motion.div variants={fadeInUp}>
-              <Typography variant="h5" fontWeight="bold" gutterBottom>
-                Real-Time GPS Reporting
-              </Typography>
-              <Typography>
-                With TrackTik, our clients in Canmore receive transparent, live updates about patrol progress, incidents,
-                and site conditions — accessible through mobile dashboards.
-              </Typography>
-            </motion.div>
-          </Paper>
-
-          {/* CTA Section */}
-          <Paper sx={{ ...sectionStyle, textAlign: "center" }}>
-            <Divider sx={{ mb: 4 }} />
-            <motion.div variants={fadeInUp}>
-              <Typography variant="h5" fontWeight="bold" gutterBottom>
-                Let&apos;s Discuss Your Canmore Security Needs
-              </Typography>
-              <Typography>
-                Reach out to Shield Security for dependable, local protection in Canmore and the Bow Valley.
-              </Typography>
-              <Button variant="contained" color="error" sx={{ mt: 3, px: 4, py: 1.5, fontSize: "16px" }}>
-                Get a Free Quote
-              </Button>
-            </motion.div>
-          </Paper>
+      {/* Content Sections */}
+      <motion.div variants={stagger} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+        {/* Logos */}
+        <motion.div variants={fadeInUp}>
+          <ClientLogoCarousel />
         </motion.div>
-      </Container>
+
+        {/* Why We're the Best in Canmore */}
+        <motion.div variants={fadeInUp}>
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: { xs: "column", md: "row" },
+              alignItems: "stretch",
+              backgroundColor: "#111",
+              color: "#fff",
+              borderRadius: "20px",
+              overflow: "hidden",
+              boxShadow: "0 8px 30px rgba(0,0,0,0.2)",
+              mx: { xs: 2, md: 6 },
+              mb: 10,
+              height: { md: "400px", xs: "auto" },
+            }}
+          >
+            <Box
+              component="img"
+              src="/images/3.jpg"
+              alt="Why We're Best in Canmore"
+              sx={{
+                width: { xs: "100%", md: "50%" },
+                height: { xs: "250px", md: "100%" },
+                objectFit: "cover",
+              }}
+            />
+            <Box
+              sx={{
+                p: { xs: 4, md: 6 },
+                width: { xs: "100%", md: "50%" },
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+              }}
+            >
+              <Typography variant="h4" sx={{ fontWeight: "bold", mb: 2 }}>
+                Why We’re the Best in Canmore
+              </Typography>
+              <Typography variant="body1" sx={{ color: "#ccc", lineHeight: 1.8 }}>
+                Our Canmore-based team understands the town&apos;s unique rhythms, from festival seasons to serene winter months. With top-tier training, local familiarity, and real-time reporting tools, Shield Security delivers reliable protection that fits seamlessly into the mountain lifestyle.
+              </Typography>
+            </Box>
+          </Box>
+        </motion.div>
+
+        {/* Testimonials and Services */}
+        <motion.div variants={fadeInUp}>
+          <TestimonialsSection />
+          <ServicesShowcase currentService="Mobile Patrol" />
+        </motion.div>
+
+
+        {/* Request Form */}
+        <motion.div variants={fadeInUp}>
+          <RequestQuote />
+        </motion.div>
+      </motion.div>
     </>
   );
 };

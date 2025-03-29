@@ -65,7 +65,7 @@ const LocationsPage = () => {
       <section
         style={{
           position: "relative",
-          height: "50vh",
+          height: "70vh",
           backgroundImage: "url(/images/1.jpg)",
           backgroundSize: "cover",
           display: "flex",

@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import { Container, Grid, Typography, Card, CardContent, Button, TextField } from '@mui/material';
-import {api} from '@/utils/api'
+import React from 'react';
+import { Container, Grid, Typography, Card, CardContent, Button } from '@mui/material';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const jobListings = [
   { title: 'Security Guard', location: 'Toronto, ON', type: 'Full-Time', img: '/images/1.jpg' },
@@ -10,40 +10,6 @@ const jobListings = [
 ];
 
 const Careers = () => {
-    const [formData, setFormData] = useState<{ name: string; email: string; resume: File | null }>({
-        name: "",
-        email: "",
-        resume: null, // ✅ Explicitly allow null
-      });
- 
-  // ✅ Fix: Add correct type for event
- const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.files && e.target.files.length > 0) {
-      setFormData({ ...formData, resume: e.target.files[0] });
-    }
-  };
-
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    try {
-      const response = await api.post("/jobs", {
-        name: formData.name,
-        email: formData.email,
-        resumeUrl: "https://your-upload-url.com/resume.pdf", // Replace with actual file upload logic
-      });
-  
-      alert(response.data.message);
-    } catch (error) {
-      console.error("Application Error:", error);
-      alert("Failed to submit application. Please try again.");
-    }
-  };
-  
-
   return (
     <>
       {/* Hero Section */}
@@ -65,7 +31,9 @@ const Careers = () => {
                 <CardContent>
                   <Typography variant="h5" sx={{ fontWeight: 'bold' }}>{job.title}</Typography>
                   <Typography variant="body2" sx={{ margin: '10px 0' }}>{job.location} | {job.type}</Typography>
-                  <Button variant="contained" sx={{ backgroundColor: '#ff0000', color: '#fff' }}>Apply Now</Button>
+                  <Link href={`/apply?job=${encodeURIComponent(job.title)}`} passHref>
+                    <Button variant="contained" sx={{ backgroundColor: '#ff0000', color: '#fff' }}>Apply Now</Button>
+                  </Link>
                 </CardContent>
               </Card>
             </Grid>
@@ -88,17 +56,6 @@ const Careers = () => {
             </Grid>
           ))}
         </Grid>
-      </Container>
-
-      {/* Application Form */}
-      <Container sx={{ padding: '50px 0', textAlign: 'center' }}>
-        <Typography variant="h3" sx={{ fontWeight: 'bold', color: '#fff', marginBottom: '20px' }}>Apply Now</Typography>
-        <form onSubmit={handleSubmit} style={{ maxWidth: '600px', margin: 'auto', backgroundColor: '#222', padding: '30px', borderRadius: '10px' }}>
-          <TextField fullWidth label="Full Name" name="name" onChange={handleInputChange} sx={{ marginBottom: '20px', backgroundColor: '#fff' }} />
-          <TextField fullWidth label="Email Address" name="email" type="email" onChange={handleInputChange} sx={{ marginBottom: '20px', backgroundColor: '#fff' }} />
-          <input type="file" accept=".pdf,.docx" onChange={handleFileChange} style={{ marginBottom: '20px', color: '#fff' }} />
-          <Button type="submit" variant="contained" sx={{ backgroundColor: '#ff0000', fontSize: '18px', padding: '10px 20px' }}>Submit Application</Button>
-        </form>
       </Container>
     </>
   );

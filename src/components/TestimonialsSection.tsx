@@ -1,6 +1,7 @@
 import Slider from 'react-slick';
 import { Box, Typography } from '@mui/material';
 
+
 const testimonials = [
   { name: 'John D.', feedback: 'Professional and proactive team. Great experience working with them.' },
   { name: 'Sarah L.', feedback: 'Shield Security gave us peace of mind during a critical event. Highly recommended!' },

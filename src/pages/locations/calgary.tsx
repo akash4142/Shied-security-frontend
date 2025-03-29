@@ -1,11 +1,14 @@
 import React from "react";
-import { Box, Container, Typography, Grid, Button, Divider, Paper } from "@mui/material";
-//import Image from "next/image";
+import { Box, Typography, Divider } from "@mui/material";
 import { motion } from "framer-motion";
+import RequestQuote from "@/components/RequestQuote";
+import ClientLogoCarousel from "@/components/ClientLogoCarousel";
+import TestimonialsSection from "@/components/TestimonialsSection";
+import ServicesShowcase from "@/components/serviceShowcase";
 
 const fadeInUp = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+  hidden: { opacity: 0, y: 40 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
 };
 
 const stagger = {
@@ -16,164 +19,143 @@ const stagger = {
   },
 };
 
-const sectionStyle = {
-  backgroundColor: "#f7f9fc",
-  borderRadius: 4,
-  padding: "40px 30px",
-  boxShadow: "0 4px 20px rgba(0,0,0,0.05)",
-  marginBottom: "60px",
-};
-
 const CalgarySecurity = () => {
   return (
     <>
       {/* Hero Section */}
       <Box
         sx={{
+          position: "relative",
+          height: "80vh",
           backgroundImage: "url(/images/1.jpg)",
           backgroundSize: "cover",
           backgroundPosition: "center",
-          height: "60vh",
           display: "flex",
-          alignItems: "center",
+          alignItems: "flex-end",
           justifyContent: "center",
+          paddingBottom: "60px",
+        }}
+      >
+        <Box
+          sx={{
+            backgroundColor: "rgba(0, 0, 0, 0.6)",
+            padding: "30px 50px",
+            borderRadius: "12px",
+            textAlign: "center",
+            backdropFilter: "blur(4px)",
+            maxWidth: { xs: "90%", md: "70%" },
+          }}
+        >
+          <motion.div initial="hidden" animate="visible" variants={fadeInUp}>
+            <Typography variant="h2" sx={{ color: "#fff", fontWeight: "bold", mb: 2 }}>
+              Calgary Security Services
+            </Typography>
+            <Typography variant="h6" sx={{ color: "#ccc" }}>
+              Trusted by Leading Brands in Alberta
+            </Typography>
+          </motion.div>
+        </Box>
+      </Box>
+
+      {/* Intro Section */}
+      <Box
+        sx={{
+          backgroundColor: "#111",
+          color: "#fff",
+          px: { xs: 3, md: 10 },
+          py: { xs: 6, md: 10 },
           textAlign: "center",
         }}
       >
-        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1 }}>
-          <Box sx={{ backgroundColor: "rgba(0, 0, 0, 0.6)", p: 4, borderRadius: 2 }}>
-            <Typography variant="h2" sx={{ color: "white", fontWeight: "bold" }}>
-              Calgary
-            </Typography>
-            <Typography variant="h6" sx={{ color: "white", mt: 2 }}>
-              Trusted by Leading Brands in Alberta
-            </Typography>
-          </Box>
+        <motion.div initial="hidden" whileInView="visible" variants={fadeInUp} viewport={{ once: true }}>
+          <Typography variant="h4" sx={{ fontWeight: "bold", mb: 3 }}>
+            Professional Security Coverage in Calgary and Beyond
+          </Typography>
+          <Typography
+            variant="body1"
+            sx={{
+              color: "#ccc",
+              maxWidth: "900px",
+              mx: "auto",
+              lineHeight: 1.8,
+              fontSize: { xs: "1rem", md: "1.1rem" },
+            }}
+          >
+            Serving all areas of Calgary and southern Alberta — from Red Deer to Fort McMurray — Shield Security delivers
+            unmatched professionalism, real-time tech solutions, and personnel trained to handle every environment and scenario.
+          </Typography>
         </motion.div>
       </Box>
 
-      <Container sx={{ py: 8 }}>
-        <motion.div variants={stagger} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-          {/* Section 1: City Info */}
-          <Paper sx={sectionStyle}>
-            <motion.div variants={fadeInUp}>
-              <Typography variant="h4" fontWeight="bold" gutterBottom>
-                Calgary Security Company
-              </Typography>
-              <Typography>
-                Shield Security proudly serves clients throughout Calgary and southern Alberta, including Red Deer,
-                Lethbridge, Airdrie, Fort McMurray, Medicine Hat and Grande Prairie. Our Calgary-based guards bring local
-                knowledge and tailored protection to every site — maximizing your security while staying within budget.
-              </Typography>
-            </motion.div>
-          </Paper>
-
-          {/* Section 2: Local Culture */}
-          <Paper sx={sectionStyle}>
-            <motion.div variants={fadeInUp}>
-              <Typography variant="h5" fontWeight="bold" gutterBottom>
-                The Solution for Your Calgary Security Needs
-              </Typography>
-              <Typography>
-                Calgary, lovingly called Cowtown, is known for its vibrant culture and diversity. With over 120 languages
-                spoken, our team reflects the community we protect. We proudly work with local partners like IGA, Onni Group,
-                and MEC.
-              </Typography>
-            </motion.div>
-          </Paper>
-
-          {/* Section 3: Services */}
-          <Paper sx={sectionStyle}>
-            <motion.div variants={fadeInUp}>
-              <Typography variant="h4" fontWeight="bold" gutterBottom>
-                Calgary Security Services We Offer
-              </Typography>
-              <Grid container spacing={2}>
-                {["Concierge Security", "Elite Suit and Tie Security", "Event Security", "Executive Protection", "Loss Prevention", "Mobile Patrol", "Patrol Security", "Front Desk Security", "Uniformed Security", "Shopping Mall Security", "Government Security"].map((service, idx) => (
-                  <Grid key={idx} item xs={12} sm={6} md={4}>
-                    <Typography>• Calgary {service}</Typography>
-                  </Grid>
-                ))}
-              </Grid>
-            </motion.div>
-          </Paper>
-
-          {/* Section 4: Custom Plans */}
-          <Paper sx={sectionStyle}>
-            <motion.div variants={fadeInUp}>
-              <Typography variant="h5" fontWeight="bold" gutterBottom>
-                Customized Calgary Security Guard Services
-              </Typography>
-              <Typography>
-                We provide the personal touch of a local business with the reach of a national leader. Whether you require
-                mobile patrols, loss prevention, or static guards, we’ll meet with you to develop a personalized security
-                plan that suits your needs and budget.
-              </Typography>
-            </motion.div>
-          </Paper>
-
-          {/* Section 5: Social Impact */}
-          <Paper sx={sectionStyle}>
-            <motion.div variants={fadeInUp}>
-              <Typography variant="h5" fontWeight="bold" gutterBottom>
-                Social Impact
-              </Typography>
-              <Typography>
-                Shield Security uplifts marginalized communities across Canada by supporting nonprofits like the Breakfast
-                Club of Canada, ALS Canada, and Covenant House. We believe in building safer, stronger communities for all.
-              </Typography>
-            </motion.div>
-          </Paper>
-
-          {/* Section 6: Training */}
-          <Paper sx={sectionStyle}>
-            <motion.div variants={fadeInUp}>
-              <Typography variant="h5" fontWeight="bold" gutterBottom>
-                Best-in-Class Training
-              </Typography>
-              <Typography>
-                Our Shield Academy equips guards with modern skills through in-house and expert-led programs.
-              </Typography>
-              <Grid container spacing={2} sx={{ mt: 2 }}>
-                {["Customer Service Training", "Incident Reporting", "Crisis Management", "Emergency Response", "Mental Health & Indigenous Awareness", "WHMIS", "Weapons Awareness", "Trespass Training"].map((module, idx) => (
-                  <Grid key={idx} item xs={12} sm={6} md={4}>
-                    <Typography>• {module}</Typography>
-                  </Grid>
-                ))}
-              </Grid>
-            </motion.div>
-          </Paper>
-
-          {/* Section 7: Technology */}
-          <Paper sx={sectionStyle}>
-            <motion.div variants={fadeInUp}>
-              <Typography variant="h5" fontWeight="bold" gutterBottom>
-                Real-Time Reporting with GPS Tracking
-              </Typography>
-              <Typography>
-                With TrackTik technology, you’ll always know what’s happening. From live guard location to real-time photos
-                and incident updates — our reporting tools offer total transparency.
-              </Typography>
-            </motion.div>
-          </Paper>
-
-          {/* CTA Section */}
-          <Paper sx={{ ...sectionStyle, textAlign: "center" }}>
-            <Divider sx={{ mb: 4 }} />
-            <motion.div variants={fadeInUp}>
-              <Typography variant="h5" fontWeight="bold" gutterBottom>
-                Let’s Discuss Your Security Options
-              </Typography>
-              <Typography>
-                Have questions or want a quote for Calgary security services? Our team is here to help.
-              </Typography>
-              <Button variant="contained" color="error" sx={{ mt: 3, px: 4, py: 1.5, fontSize: "16px" }}>
-                Get a Free Quote
-              </Button>
-            </motion.div>
-          </Paper>
+      {/* Content Sections */}
+      <motion.div variants={stagger} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+        {/* Logos */}
+        <motion.div variants={fadeInUp}>
+          <ClientLogoCarousel />
         </motion.div>
-      </Container>
+
+        {/* Why We're the Best in Calgary */}
+        <motion.div variants={fadeInUp}>
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: { xs: "column", md: "row" },
+              alignItems: "stretch",
+              backgroundColor: "#111",
+              color: "#fff",
+              borderRadius: "20px",
+              overflow: "hidden",
+              boxShadow: "0 8px 30px rgba(0,0,0,0.2)",
+              mx: { xs: 2, md: 6 },
+              mb: 10,
+              height: { md: "400px", xs: "auto" },
+            }}
+          >
+            {/* Image */}
+            <Box
+              component="img"
+              src="/images/3.jpg"
+              alt="Why We're Best in Calgary"
+              sx={{
+                width: { xs: "100%", md: "50%" },
+                height: { xs: "250px", md: "100%" },
+                objectFit: "cover",
+              }}
+            />
+
+            {/* Text */}
+            <Box
+              sx={{
+                p: { xs: 4, md: 6 },
+                width: { xs: "100%", md: "50%" },
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+              }}
+            >
+              <Typography variant="h4" sx={{ fontWeight: "bold", mb: 2 }}>
+                Why We’re the Best in Calgary
+              </Typography>
+              <Typography variant="body1" sx={{ color: "#ccc", lineHeight: 1.8 }}>
+                From the Calgary Stampede to government buildings downtown, our guards are trusted to protect diverse, high-traffic spaces.
+                Our custom strategies, elite training, and real-time reporting make Shield Security the first choice for safety in Calgary.
+              </Typography>
+            </Box>
+          </Box>
+        </motion.div>
+
+        {/* Testimonials and Services */}
+        <motion.div variants={fadeInUp}>
+          <TestimonialsSection />
+          <ServicesShowcase currentService="Mobile Patrol" />
+        </motion.div>
+
+        {/* Request Form */}
+        <motion.div variants={fadeInUp}>
+        <Divider sx={{ mb: 4, backgroundColor: "#333" }} />
+          <RequestQuote />
+        </motion.div>
+      </motion.div>
     </>
   );
 };
