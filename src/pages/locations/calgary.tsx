@@ -2,7 +2,7 @@ import React from "react";
 import { Box, Typography, Grid } from "@mui/material";
 import { motion } from "framer-motion";
 import RequestQuote from "@/components/RequestQuote";
-import ClientLogoCarousel from "@/components/ClientLogoCarousel";
+//import ClientLogoCarousel from "@/components/ClientLogoCarousel";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import ServicesShowcase from "@/components/serviceShowcase";
 

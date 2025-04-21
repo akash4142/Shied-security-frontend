@@ -96,7 +96,7 @@ const TacticalSecurity = () => {
             Precision. Protection. Peace of Mind.
           </Typography>
           <Typography sx={{ color: "#444", maxWidth: "900px", mx: "auto", fontSize: "1.1rem" }}>
-            Our tactical security teams are built for the most sensitive, high-risk situations. Whether it's executive protection, crisis response,
+            Our tactical security teams are built for the most sensitive, high-risk situations. Whether it&apos;s executive protection, crisis response,
             or critical infrastructure coverage, our specialists are trained to handle threats with confidence and speed.
           </Typography>
         </Box>
