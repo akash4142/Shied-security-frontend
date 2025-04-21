@@ -1,8 +1,8 @@
 import React from "react";
 import {
-  Container,
-  Grid,
+  Box,
   Typography,
+  Grid,
   Card,
   CardActionArea,
   CardMedia,
@@ -11,7 +11,6 @@ import { styled } from "@mui/system";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
-// ✅ Industry Data
 const industriesData = [
   { name: "Hotel Security", img: "/images/canmore.jpg", link: "/industries/hotel" },
   { name: "Healthcare Security", img: "/images/calgary.jpg", link: "/industries/health" },
@@ -20,130 +19,161 @@ const industriesData = [
   { name: "Warehouse Security", img: "/images/canmore.jpg", link: "/industries/warehouse" },
 ];
 
-// ✅ Styled Components
+// Styled Components
 const StyledCard = styled(motion(Card))({
   position: "relative",
   overflow: "hidden",
-  borderRadius: "20px",
+  borderRadius: "0px",
   height: "500px",
   width: "100%",
-  background: "rgba(28,31,37,0.7)",
-  backdropFilter: "blur(6px)",
-  transition: "all 0.4s ease-in-out",
-  boxShadow: "0 8px 30px rgba(0,0,0,0.5)",
-  "&:hover .overlay": {
-    opacity: 0,
+  boxShadow: "0 4px 16px rgba(0,0,0,0.15)",
+  cursor: "pointer",
+  transition: "transform 0.4s ease",
+  "&:hover": {
+    transform: "scale(1.02)",
   },
-  "&:hover .image": {
-    filter: "brightness(100%) scale(1.05)",
-    transform: "scale(1.05)",
+  "&:hover .overlay": {
+    backdropFilter: "blur(2px)",
+    backgroundColor: "rgba(0, 0, 0, 0.3)",
   },
 });
 
-const Overlay = styled("div")({
+const CardOverlay = styled("div")({
   position: "absolute",
-  top: 0,
-  left: 0,
+  bottom: 0,
   width: "100%",
   height: "100%",
-  background: "linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3))",
+  backgroundColor: "rgba(0, 0, 0, 0.4)",
+  backdropFilter: "blur(1.5px)",
   display: "flex",
-  alignItems: "center",
+  alignItems: "flex-end",
   justifyContent: "center",
-  transition: "opacity 0.4s ease-in-out",
-  opacity: 1,
+  paddingBottom: "30px",
+  transition: "all 0.3s ease-in-out",
   zIndex: 2,
 });
 
 const IndustryText = styled(Typography)({
-  position: "absolute",
-  bottom: "30px",
-  left: "50%",
-  transform: "translateX(-50%)",
-  fontWeight: 700,
   color: "#fff",
-  textTransform: "uppercase",
-  fontSize: "1.25rem",
-  letterSpacing: "1px",
-  padding: "12px 24px",
-  borderRadius: "12px",
-  zIndex: 3,
+  fontSize: "1.4rem",
+  fontWeight: 700,
   fontFamily: "'Poppins', sans-serif",
-  textAlign:"center",
+  textTransform: "uppercase",
+  letterSpacing: "1px",
+  backgroundColor: "rgba(0, 0, 0, 0.5)",
+  padding: "10px 20px",
+  borderRadius: "30px",
+});
+
+const SectionTitle = styled(Typography)({
+  fontSize: "2.8rem",
+  fontWeight: 700,
+  letterSpacing: "1px",
+  textAlign: "center",
+  color: "#111",
+  fontFamily: "'Poppins', sans-serif",
+  marginBottom: "30px",
+});
+
+const SubHeading = styled(Typography)({
+  fontSize: "1.2rem",
+  fontWeight: 400,
+  maxWidth: "900px",
+  margin: "40px auto",
+  textAlign: "center",
+  color: "#333",
+  lineHeight: 1.7,
+  fontFamily: "'Poppins', sans-serif",
 });
 
 const IndustriesPage = () => {
   return (
-    <>
+    <Box sx={{ backgroundColor: "#ffffff" }}>
       {/* ✅ Hero Section */}
-      <section
-        style={{
+      <Box
+        sx={{
           position: "relative",
-          height: "80vh",
+          height: "85vh",
           backgroundImage: "url(/images/1.jpg)",
           backgroundSize: "cover",
           backgroundPosition: "center",
+          backgroundAttachment: "fixed",
           display: "flex",
-          alignItems: "flex-end",
+          alignItems: "center",
           justifyContent: "center",
           textAlign: "center",
-          paddingBottom:"40px",
+          px: 2,
+          zIndex: 1,
         }}
       >
-        <div
-          style={{
-            backgroundColor: "rgba(0,0,0,0.6)",
-            padding: "30px 50px",
-            borderRadius: "12px",
-            backdropFilter: "blur(4px)",
+        <Box
+          sx={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            background: "linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.6))",
+            zIndex: 2,
           }}
+        />
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9, y: 30 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          style={{ zIndex: 3 }}
         >
           <Typography
             variant="h2"
             sx={{
               color: "#fff",
-              fontWeight: "bold",
-              fontSize: { xs: "2rem", md: "3.5rem" },
-              fontFamily: "'Poppins', sans-serif",
-              letterSpacing: 1,
+              fontWeight: 800,
+              fontSize: { xs: "2rem", md: "4rem" },
+              letterSpacing: "2px",
+              textTransform: "uppercase",
+              textShadow: "4px 4px 12px rgba(0,0,0,0.8)",
+              mb: 2,
+              fontFamily: "'Bebas Neue', 'Poppins', sans-serif",
             }}
           >
             Industries We Serve
           </Typography>
           <Typography
-            variant="body1"
+            variant="h6"
             sx={{
-              mt: 2,
-              color: "#ddd",
-              fontSize: "1.1rem",
-              fontWeight: 300,
+              color: "#eee",
               maxWidth: "700px",
               mx: "auto",
+              fontWeight: 300,
+              fontSize: { xs: "1rem", md: "1.2rem" },
+              textShadow: "1px 1px 6px rgba(0,0,0,0.6)",
               fontFamily: "'Poppins', sans-serif",
             }}
           >
-            Comprehensive protection solutions tailored to meet the unique security needs of every industry.
+            Tailored security for every industry—from hotels to healthcare, retail to warehouse.
           </Typography>
-        </div>
-      </section>
+        </motion.div>
+      </Box>
 
-      {/* ✅ Industries Grid */}
-      <Container maxWidth="xl" sx={{ py: 12 }}>
-        <Grid container spacing={5} justifyContent="center">
+      {/* ✅ Section Title */}
+      <Box sx={{ py: 10, px: { xs: 2, sm: 4, md: 8 }, textAlign: "center" }}>
+        <SectionTitle>Explore Our Industry Expertise</SectionTitle>
+        <SubHeading>
+          Our security professionals are experienced in multiple industries and understand
+          the specialized needs of each. Click on any category to learn more.
+        </SubHeading>
+      </Box>
+
+      {/* ✅ Industry Grid */}
+      <Box sx={{ px: { xs: 2, sm: 4, md: 6 }, pb: 12 }}>
+        <Grid container spacing={4}>
           {industriesData.map((industry, index) => (
-            <Grid
-              item
-              xs={12}
-              sm={6}
-              md={4}
-              key={index}
-              sx={{ display: "flex", justifyContent: "center" }}
-            >
+            <Grid item xs={12} sm={6} md={4} key={index}>
               <Link href={industry.link} passHref>
                 <StyledCard
                   whileInView={{ opacity: 1, y: 0 }}
                   initial={{ opacity: 0, y: 40 }}
-                  transition={{ duration: 0.6, delay: index * 0.15 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
                 >
                   <CardActionArea sx={{ height: "100%", position: "relative" }}>
                     <CardMedia
@@ -155,20 +185,21 @@ const IndustriesPage = () => {
                         height: "100%",
                         width: "100%",
                         objectFit: "cover",
-                        filter: "brightness(80%)",
                         transition: "all 0.4s ease-in-out",
+                        filter: "brightness(80%)",
                       }}
                     />
-                    <Overlay className="overlay" />
-                    <IndustryText>{industry.name}</IndustryText>
+                    <CardOverlay className="overlay">
+                      <IndustryText>{industry.name}</IndustryText>
+                    </CardOverlay>
                   </CardActionArea>
                 </StyledCard>
               </Link>
             </Grid>
           ))}
         </Grid>
-      </Container>
-    </>
+      </Box>
+    </Box>
   );
 };
 

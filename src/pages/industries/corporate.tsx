@@ -1,181 +1,211 @@
 import React from "react";
-import {
-  Box,
-  Typography,
-  Grid,
-  Button,
-} from "@mui/material";
+import { Box, Typography, Grid } from "@mui/material";
 import { motion } from "framer-motion";
 import RequestQuote from "@/components/RequestQuote";
 import ServicesShowcase from "@/components/serviceShowcase";
 import TestimonialsSection from "@/components/TestimonialsSection";
-import BusinessCenterIcon from "@mui/icons-material/BusinessCenter";
-import VerifiedUserIcon from "@mui/icons-material/VerifiedUser";
-import BadgeIcon from "@mui/icons-material/Badge";
-import SupervisorAccountIcon from "@mui/icons-material/SupervisorAccount";
 
 const fadeInUp = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
-};
-
-const stagger = {
-  visible: {
-    transition: {
-      staggerChildren: 0.2,
-    },
-  },
+  hidden: { opacity: 0, y: 40 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
 };
 
 const CorporateSecurity = () => {
   return (
-    <Box sx={{ overflowX: "hidden" }}>
+    <>
       {/* ✅ Hero Section */}
       <Box
         sx={{
           position: "relative",
-          height: "70vh",
+          height: "85vh",
           backgroundImage: "url(/images/1.jpg)",
           backgroundSize: "cover",
           backgroundPosition: "center",
+          backgroundAttachment: "fixed",
           display: "flex",
-          alignItems: "flex-end",
+          alignItems: "center",
           justifyContent: "center",
-          paddingBottom: "60px",
+          textAlign: "center",
+          px: 2,
+          zIndex: 1,
         }}
       >
         <Box
           sx={{
-            backgroundColor: "rgba(0, 0, 0, 0.6)",
-            padding: "30px 50px",
-            borderRadius: "12px",
-            textAlign: "center",
-            backdropFilter: "blur(4px)",
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            background: "linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.6))",
+            zIndex: 2,
           }}
+        />
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9, y: 30 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          style={{ zIndex: 3 }}
         >
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
+          <Typography
+            variant="h2"
+            sx={{
+              color: "#fff",
+              fontWeight: 800,
+              fontSize: { xs: "2rem", md: "4rem" },
+              letterSpacing: "2px",
+              textTransform: "uppercase",
+              textShadow: "4px 4px 12px rgba(0,0,0,0.8)",
+              mb: 2,
+              fontFamily: "'Bebas Neue', 'Poppins', sans-serif",
+            }}
           >
-            <Typography variant="h2" sx={{ color: "#fff", fontWeight: "bold" }}>
-              Corporate Security
-            </Typography>
-          </motion.div>
-        </Box>
+            Corporate Security
+          </Typography>
+          <Typography
+            variant="h6"
+            sx={{
+              color: "#eee",
+              maxWidth: "700px",
+              mx: "auto",
+              fontWeight: 300,
+              fontSize: { xs: "1rem", md: "1.2rem" },
+              textShadow: "1px 1px 6px rgba(0,0,0,0.6)",
+              fontFamily: "'Poppins', sans-serif",
+            }}
+          >
+            Executive-Level Security & Concierge Presence for Office Environments
+          </Typography>
+        </motion.div>
       </Box>
 
       {/* ✅ Intro Section */}
-      <Box sx={{ background: "#111318", color: "#fff", px: { xs: 3, md: 10 }, py: 8, textAlign: "center" }}>
-        <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-          <Typography variant="h5" fontWeight="300" sx={{ mb: 2 }}>
-            Executive-Level Protection for Office Environments
+      <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+        <Box sx={{ background: "#fff", py: 10, px: { xs: 3, md: 12 }, textAlign: "center" }}>
+          <Typography variant="h4" fontWeight={700} mb={2} fontFamily="'Poppins', sans-serif" color="#111">
+            A Professional Presence You Can Rely On
           </Typography>
-          <Typography variant="h6" sx={{ mb: 4, maxWidth: 700, mx: "auto", color: "#ccc", fontWeight: 300 }}>
-            We help you maintain a secure and professional workplace with concierge-style security, access control, and incident response.
+          <Typography sx={{ color: "#444", maxWidth: "900px", mx: "auto", fontSize: "1.1rem" }}>
+            From greeting guests in your lobby to safeguarding executive spaces, our corporate guards are trained in discretion, access control, and public relations. Shield Security is a partner in maintaining order, privacy, and brand image.
           </Typography>
-          <Button variant="contained" color="error" size="large">
-            Request a Quote
-          </Button>
-        </motion.div>
-      </Box>
+        </Box>
+      </motion.div>
 
-      {/* ✅ Feature Grid */}
-      <Box sx={{ background: "#1c1f25", color: "#fff", px: { xs: 3, md: 10 }, py: 10 }}>
-        <motion.div variants={stagger} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-          <Grid container spacing={4}>
-            {[{
-              icon: <BusinessCenterIcon sx={{ fontSize: 70, color: '#e53935' }} />,
-              title: "Lobby & Front Desk Security",
-              description: "A professional presence to welcome guests and manage daily visitor interactions."
-            }, {
-              icon: <VerifiedUserIcon sx={{ fontSize: 70, color: '#e53935' }} />,
-              title: "Access Control",
-              description: "Track employee access, manage badges, and monitor facility entry points."
-            }, {
-              icon: <BadgeIcon sx={{ fontSize: 70, color: '#e53935' }} />,
-              title: "Executive Protection",
-              description: "Discreet protection for high-profile employees, VIPs, and board meetings."
-            }, {
-              icon: <SupervisorAccountIcon sx={{ fontSize: 70, color: '#e53935' }} />,
-              title: "Workplace Safety",
-              description: "Trained in de-escalation and emergency protocols for corporate settings."
-            }].map((item, idx) => (
-              <Grid item xs={12} sm={6} md={3} key={idx} textAlign="center">
-                <motion.div variants={fadeInUp}>
-                  <Box sx={{ mb: 2 }}>{item.icon}</Box>
-                  <Typography variant="h6" fontWeight="bold" sx={{ mb: 1 }}>{item.title}</Typography>
-                  <Typography variant="body1" color="#ccc">{item.description}</Typography>
-                </motion.div>
-              </Grid>
-            ))}
-          </Grid>
-        </motion.div>
-      </Box>
-
-      {/* ✅ Customer Service Section */}
-      <Box sx={{ background: "#111318", color: "#fff", px: { xs: 3, md: 10 }, py: 12 }}>
-        <Grid container spacing={6} alignItems="center">
-          <Grid item xs={12} md={6} order={{ xs: 2, md: 1 }}>
-            <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-              <Typography variant="h4" fontWeight="bold" gutterBottom>
-                Corporate Security That Elevates Your Image
-              </Typography>
-              <Typography variant="h6" sx={{ color: "#ccc", mb: 3, fontWeight: 300 }}>
-                Our corporate guards do more than protect — they serve as a trusted extension of your front office.
-              </Typography>
-              <Typography variant="body1" sx={{ color: "#aaa", fontWeight: 300, mb: 4 }}>
-                We ensure that our personnel reflect your brand values with polished uniforms, professional conduct, and a helpful demeanor. Whether greeting clients or managing high-security access, they uphold your company’s reputation.
-              </Typography>
-            </motion.div>
-          </Grid>
-          <Grid item xs={12} md={6} order={{ xs: 1, md: 2 }}>
-            <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-              <Box
-                component="img"
-                src="/images/3.jpg"
-                alt="Corporate Security"
-                sx={{ width: "100%", borderRadius: 4, boxShadow: 4 }}
-              />
-            </motion.div>
-          </Grid>
-        </Grid>
-      </Box>
-
-      {/* ✅ Trusted By Section */}
-      <Box sx={{ background: "#1a1d22", py: 8, px: { xs: 3, md: 12 }, textAlign: "center" }}>
-        <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-          <Typography variant="h5" color="white" fontWeight="bold" gutterBottom>
-            Trusted By Leading Retailers
+      {/* ✅ Trusted Brands */}
+      <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+        <Box sx={{ background: "#f7f7f7", py: 8, px: { xs: 3, md: 12 }, textAlign: "center" }}>
+          <Typography variant="h5" fontWeight={600} fontFamily="'Poppins', sans-serif" color="#111" mb={4}>
+            Trusted by Leading Businesses
           </Typography>
-          <Grid container spacing={4} justifyContent="center" sx={{ mt: 3 }}>
-            {["/logos/canadian-tire.png", "/logos/canadian-tire.png", "/logos/canadian-tire.png", "/logos/canadian-tire.png"].map(
+          <Grid container spacing={4} justifyContent="center">
+            {["/logos/canadian-tire.png", "/logos/canadian-tire.png", "/logos/canadian-tire.png"].map(
               (logo, idx) => (
                 <Grid item key={idx} xs={6} sm={3} md={2}>
                   <Box
                     component="img"
                     src={logo}
                     alt={`Client ${idx + 1}`}
-                    sx={{ width: "100%" }}
+                    sx={{ width: "100%", opacity: 0.8 }}
                   />
                 </Grid>
               )
             )}
           </Grid>
-        </motion.div>
-      </Box>
-
-      {/* ✅ Services Showcase */}
-      <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-        <ServicesShowcase currentService="Corporate" />
+        </Box>
       </motion.div>
 
-      {/* ✅ Testimonials + CTA */}
+      {/* ✅ Why We’re the Best in Corporate Security */}
+      <Grid
+        container
+        spacing={0}
+        alignItems="stretch"
+        sx={{
+          width: "100%",
+          m: 0,
+          background: "linear-gradient(90deg, #0f1114, #1c1f25)",
+          color: "#f1f1f1",
+          boxShadow: "0 10px 40px rgba(0, 0, 0, 0.3)",
+        }}
+      >
+        {/* Image */}
+        <Grid
+          item
+          xs={12}
+          md={6}
+          sx={{ position: "relative", height: { xs: "400px", md: "600px" } }}
+        >
+          <Box
+            component="img"
+            src="/images/3.jpg"
+            alt="Corporate Security Guard"
+            sx={{
+              position: "absolute",
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+            }}
+          />
+        </Grid>
+
+        {/* Text */}
+        <Grid
+          item
+          xs={12}
+          md={6}
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            px: { xs: 3, md: 6 },
+            py: { xs: 6, md: 8 },
+            backgroundColor: "#3a506b",
+          }}
+        >
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <Typography
+              variant="h4"
+              sx={{
+                fontWeight: "bold",
+                mb: 3,
+                fontSize: { xs: "2rem", md: "2.5rem" },
+                color: "#fff",
+                fontFamily: "'Poppins', sans-serif",
+              }}
+            >
+              Why We’re the Best in Corporate Security
+            </Typography>
+
+            <Typography
+              sx={{
+                fontSize: "1.1rem",
+                lineHeight: 1.8,
+                mb: 4,
+                color: "#cfcfcf",
+                fontFamily: "'Poppins', sans-serif",
+              }}
+            >
+              Our highly-trained officers bring a polished image, executive protection experience, and fast emergency response to your workplace. Whether you need discreet boardroom security or visible lobby presence, we ensure a professional, secure environment.
+            </Typography>
+          </motion.div>
+        </Grid>
+      </Grid>
+
+      {/* ✅ Testimonials + Services */}
       <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
         <TestimonialsSection />
+        <ServicesShowcase currentService="Corporate Security" />
+      </motion.div>
+
+      {/* ✅ CTA */}
+      <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
         <RequestQuote />
       </motion.div>
-    </Box>
+    </>
   );
 };
 

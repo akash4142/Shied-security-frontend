@@ -23,16 +23,19 @@ const Home = () => {
       <Box
         sx={{
           position: 'relative',
-          height: '100vh',
-          backgroundImage: 'url(/images/3.jpg)',
-          //backdropFilter: "blur(10px)",
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'left',
-          px: 4,
-          paddingTop:"100px"
+    height: '100vh',
+    width: '100%',
+    backgroundImage: 'url(/images/HomePage.jpg)',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center center',
+    backgroundRepeat: 'no-repeat',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'flex-start',
+    px: { xs: 2, md: 8 },
+    pt: { xs: '40px', md: '100px' }, // Adjust for any fixed Navbar height
+    zIndex: 1,
+    overflow: 'hidden',
         }}
       >
         <motion.div
@@ -64,21 +67,24 @@ const Home = () => {
       </Box>
 
       {/* Mission Section */}
-      <Container sx={{ py: 10, textAlign: 'center' }}>
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
-          <Typography variant="h3" sx={{ fontWeight: 'bold', mb: 3, color: '#ffffff' }}>
-            Shield Security&apos;s Commitment
-          </Typography>
-          <Typography variant="body1" sx={{ color: '#cfcfcf', maxWidth: '900px', margin: '0 auto' }}>
-            At Shield Security, our mission is to deliver uncompromising security solutions that prioritize the safety of people, the protection of assets, and the security of environments. We are committed to maintaining the highest standards of professionalism, reliability, and integrity in every service we provide. Our team is extensively trained and equipped to respond effectively to dynamic security challenges across diverse industries, including retail, residential, commercial, and event settings.
-          </Typography>
-        </motion.div>
-      </Container>
+      <Box sx={{ py: 5, textAlign: 'center', backgroundColor: 'white' }}>
+  <Container>
+    <motion.div
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+      viewport={{ once: true }}
+    >
+      <Typography variant="h3" sx={{ fontWeight: 'bold', mb: 3, color: 'black' }}>
+        Shield Secure&apos;s Commitment
+      </Typography>
+      <Typography variant="body1" sx={{ color: 'black', maxWidth: '900px', margin: '0 auto' }}>
+        At Shield Secure, our mission is to deliver uncompromising security solutions that prioritize the safety of people, the protection of assets, and the security of environments. We are committed to maintaining the highest standards of professionalism, reliability, and integrity in every service we provide. Our team is extensively trained and equipped to respond effectively to dynamic security challenges across diverse industries, including retail, residential, commercial, and event settings.
+      </Typography>
+    </motion.div>
+  </Container>
+</Box>
+
 
       <OurMission />
       <ServicesShowcase currentService='Mobile Patrol'/>

@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Typography} from "@mui/material";
+import { Box, Typography, Grid } from "@mui/material";
 import { motion } from "framer-motion";
 import RequestQuote from "@/components/RequestQuote";
 import ClientLogoCarousel from "@/components/ClientLogoCarousel";
@@ -11,145 +11,205 @@ const fadeInUp = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
 };
 
-const stagger = {
-  visible: {
-    transition: {
-      staggerChildren: 0.2,
-    },
-  },
-};
-
 const CochraneSecurity = () => {
   return (
     <>
-      {/* Hero Section */}
+      {/* ✅ Hero Section */}
       <Box
         sx={{
           position: "relative",
-          height: "80vh",
+          height: "85vh",
           backgroundImage: "url(/images/1.jpg)",
           backgroundSize: "cover",
           backgroundPosition: "center",
+          backgroundAttachment: "fixed",
           display: "flex",
-          alignItems: "flex-end",
+          alignItems: "center",
           justifyContent: "center",
-          paddingBottom: "60px",
+          px: 2,
         }}
       >
         <Box
           sx={{
+            position: "absolute",
+            width: "100%",
+            height: "100%",
             backgroundColor: "rgba(0, 0, 0, 0.6)",
-            padding: "30px 50px",
-            borderRadius: "12px",
-            textAlign: "center",
-            backdropFilter: "blur(4px)",
-            maxWidth: { xs: "90%", md: "70%" },
+            top: 0,
+            left: 0,
+            zIndex: 2,
           }}
+        />
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9, y: 30 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          style={{ zIndex: 3, textAlign: "center" }}
         >
-          <motion.div initial="hidden" animate="visible" variants={fadeInUp}>
-            <Typography variant="h2" sx={{ color: "#fff", fontWeight: "bold", mb: 2 }}>
-              Cochrane Security Services
-            </Typography>
-            <Typography variant="h6" sx={{ color: "#ccc" }}>
-              Trusted Security Solutions in the Foothills Region
-            </Typography>
-          </motion.div>
-        </Box>
-      </Box>
-
-      {/* Intro Section */}
-      <Box
-        sx={{
-          backgroundColor: "#111",
-          color: "#fff",
-          px: { xs: 3, md: 10 },
-          py: { xs: 6, md: 10 },
-          textAlign: "center",
-        }}
-      >
-        <motion.div initial="hidden" whileInView="visible" variants={fadeInUp} viewport={{ once: true }}>
-          <Typography variant="h4" sx={{ fontWeight: "bold", mb: 3 }}>
-            Local Protection Backed by National Standards
+          <Typography
+            variant="h2"
+            sx={{
+              color: "#fff",
+              fontWeight: 800,
+              fontSize: { xs: "2rem", md: "4rem" },
+              letterSpacing: "2px",
+              textTransform: "uppercase",
+              fontFamily: "'Bebas Neue', 'Poppins', sans-serif",
+              textShadow: "4px 4px 12px rgba(0,0,0,0.8)",
+              mb: 2,
+            }}
+          >
+            Cochrane Security Services
           </Typography>
           <Typography
-            variant="body1"
+            variant="h6"
             sx={{
-              color: "#ccc",
-              maxWidth: "900px",
+              color: "#eee",
+              maxWidth: "700px",
               mx: "auto",
-              lineHeight: 1.8,
-              fontSize: { xs: "1rem", md: "1.1rem" },
+              fontWeight: 300,
+              fontSize: { xs: "1rem", md: "1.2rem" },
+              textShadow: "1px 1px 6px rgba(0,0,0,0.6)",
+              fontFamily: "'Poppins', sans-serif",
             }}
           >
-            Shield Security is committed to safeguarding Cochrane through customized, scalable, and responsive solutions. From residential neighborhoods to growing commercial zones, our team is ready to serve with local knowledge and professional training.
+            Trusted Security Solutions in the Foothills Region
           </Typography>
         </motion.div>
       </Box>
 
-      {/* Content Sections */}
-      <motion.div variants={stagger} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-        {/* Logos */}
-        <motion.div variants={fadeInUp}>
-          <ClientLogoCarousel />
-        </motion.div>
+      {/* ✅ Intro Section */}
+      <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+        <Box sx={{ background: "#fff", py: 10, px: { xs: 3, md: 12 }, textAlign: "center" }}>
+          <Typography variant="h4" fontWeight={700} mb={2} fontFamily="'Poppins', sans-serif" color="#111">
+            Local Protection Backed by National Standards
+          </Typography>
+          <Typography sx={{ color: "#444", maxWidth: "900px", mx: "auto", fontSize: "1.1rem" }}>
+            Shield Security is committed to safeguarding Cochrane through customized, scalable, and responsive
+            solutions. From residential neighborhoods to growing commercial zones, our team is ready to serve with
+            local knowledge and professional training.
+          </Typography>
+        </Box>
+      </motion.div>
 
-        {/* Why We're the Best in Cochrane */}
-        <motion.div variants={fadeInUp}>
+      {/* ✅ Trusted Brands */}
+                        <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+                          <Box sx={{ background: "#f7f7f7", py: 8, px: { xs: 3, md: 12 }, textAlign: "center" }}>
+                            <Typography variant="h5" fontWeight={600} fontFamily="'Poppins', sans-serif" color="#111" mb={4}>
+                              Trusted by Leading Businesses
+                            </Typography>
+                            <Grid container spacing={4} justifyContent="center">
+                              {["/logos/canadian-tire.png", "/logos/canadian-tire.png", "/logos/canadian-tire.png", "/logos/canadian-tire.png"].map(
+                                (logo, idx) => (
+                                  <Grid item key={idx} xs={6} sm={3} md={2}>
+                                    <Box
+                                      component="img"
+                                      src={logo}
+                                      alt={`Client ${idx + 1}`}
+                                      sx={{ width: "100%", opacity: 0.8 }}
+                                    />
+                                  </Grid>
+                                )
+                              )}
+                            </Grid>
+                          </Box>
+                        </motion.div>
+
+      {/* ✅ Why We’re the Best in Cochrane Section */}
+      <Grid
+        container
+        spacing={0}
+        alignItems="stretch"
+        sx={{
+          width: "100%",
+          m: 0,
+          background: "linear-gradient(90deg, #0f1114, #1c1f25)",
+          color: "#f1f1f1",
+          borderRadius: 0,
+          boxShadow: "0 10px 40px rgba(0, 0, 0, 0.3)",
+        }}
+      >
+        {/* Image */}
+        <Grid
+          item
+          xs={12}
+          md={6}
+          sx={{
+            position: "relative",
+            height: { xs: "400px", md: "600px" },
+          }}
+        >
           <Box
+            component="img"
+            src="/images/3.jpg"
+            alt="Why We're Best in Cochrane"
             sx={{
-              display: "flex",
-              flexDirection: { xs: "column", md: "row" },
-              alignItems: "stretch",
-              backgroundColor: "#111",
-              color: "#fff",
-              borderRadius: "20px",
-              overflow: "hidden",
-              boxShadow: "0 8px 30px rgba(0,0,0,0.2)",
-              mx: { xs: 2, md: 6 },
-              mb: 10,
-              height: { md: "400px", xs: "auto" },
+              position: "absolute",
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
             }}
+          />
+        </Grid>
+
+        {/* Text Block */}
+        <Grid
+          item
+          xs={12}
+          md={6}
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            px: { xs: 3, md: 6 },
+            py: { xs: 6, md: 8 },
+            backgroundColor: "#3a506b",
+          }}
+        >
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
           >
-            <Box
-              component="img"
-              src="/images/3.jpg"
-              alt="Why We're Best in Cochrane"
+            <Typography
+              variant="h4"
               sx={{
-                width: { xs: "100%", md: "50%" },
-                height: { xs: "250px", md: "100%" },
-                objectFit: "cover",
-              }}
-            />
-            <Box
-              sx={{
-                p: { xs: 4, md: 6 },
-                width: { xs: "100%", md: "50%" },
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "center",
+                fontWeight: "bold",
+                mb: 3,
+                fontSize: { xs: "2rem", md: "2.5rem" },
+                color: "#fff",
+                fontFamily: "'Poppins', sans-serif",
               }}
             >
-              <Typography variant="h4" sx={{ fontWeight: "bold", mb: 2 }}>
-                Why We’re the Best in Cochrane
-              </Typography>
-              <Typography variant="body1" sx={{ color: "#ccc", lineHeight: 1.8 }}>
-                From community events to large-scale developments, Shield Security delivers reliable protection in Cochrane. Our guards know the region, our systems provide real-time insight, and our plans are crafted just for you.
-              </Typography>
-            </Box>
-          </Box>
-        </motion.div>
+              Why We’re the Best in Cochrane
+            </Typography>
+            <Typography
+              sx={{
+                fontSize: "1.1rem",
+                lineHeight: 1.8,
+                mb: 0,
+                color: "#cfcfcf",
+                fontFamily: "'Poppins', sans-serif",
+              }}
+            >
+              From community events to large-scale developments, Shield Security delivers reliable protection
+              in Cochrane. Our guards know the region, our systems provide real-time insight, and our plans are
+              crafted just for you.
+            </Typography>
+          </motion.div>
+        </Grid>
+      </Grid>
 
-        {/* Testimonials and Services */}
-        <motion.div variants={fadeInUp}>
-          <TestimonialsSection />
-          <ServicesShowcase currentService="Mobile Patrol" />
-        </motion.div>
+      {/* ✅ Testimonials + Services */}
+      <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+        <TestimonialsSection />
+        <ServicesShowcase currentService="Cochrane" />
+      </motion.div>
 
-
-        {/* Request Form */}
-        <motion.div variants={fadeInUp}>
-          <RequestQuote />
-        </motion.div>
+      {/* ✅ Request Quote */}
+      <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+        <RequestQuote />
       </motion.div>
     </>
   );

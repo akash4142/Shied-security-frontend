@@ -17,6 +17,7 @@ const inquiryReasons = [
   "Corporate Security",
   "Retail Security",
   "Construction Security",
+  "Vacant Property Security",
   "General Inquiry",
 ];
 
@@ -39,15 +40,15 @@ const referralSources = [
 
 const inputStyles = {
   '& .MuiInputBase-root': {
-    backgroundColor: '#1e1e1e',
-    color: '#fff',
+    backgroundColor: '#f9f9f9',
+    color: '#111',
   },
   '& .MuiInputLabel-root': {
-    color: '#bbb',
+    color: '#555',
   },
   '& .MuiOutlinedInput-root': {
     '& fieldset': {
-      borderColor: '#444',
+      borderColor: '#ccc',
     },
     '&:hover fieldset': {
       borderColor: '#ff0000',
@@ -56,11 +57,8 @@ const inputStyles = {
       borderColor: '#ff0000',
     },
   },
-  '& input': {
-    color: '#fff',
-  },
-  '& textarea': {
-    color: '#fff',
+  '& input, & textarea': {
+    color: '#111',
   },
 };
 
@@ -111,22 +109,40 @@ const RequestQuote = () => {
   };
 
   return (
-    <Box sx={{ backgroundColor: "", py: 8 }}>
+    <Box sx={{ backgroundColor: "#fff", py: 10 }}>
       <Container maxWidth="md">
-        <Typography variant="h4" sx={{ textAlign: "center", fontWeight: "bold", mb: 4 }}>
+        <Typography
+          variant="h3"
+          sx={{
+            textAlign: "center",
+            fontWeight: "bold",
+            mb: 4,
+            fontFamily: "'Poppins', sans-serif",
+            fontSize: { xs: "2rem", md: "2.5rem" },
+            color:"black"
+          }}
+        >
           Request a Quote
         </Typography>
 
-        <Typography sx={{ color: "#bbb", mb: 4, textAlign: "center" }}>
-          Interested in learning more about Shield Security’s range of professional security services? Simply complete the form below and we’ll be in touch.
+        <Typography
+          sx={{
+            color: "#444",
+            mb: 6,
+            textAlign: "center",
+            fontSize: "1rem",
+            maxWidth: 800,
+            mx: "auto",
+            lineHeight: 1.7,
+          }}
+        >
+          Interested in learning more about Shield Security’s range of professional security services? 
+          Complete the form below and we’ll be in touch shortly.
           <br /><br />
-          <strong>Looking for employment?</strong> Check out our {" "}
+          <strong>Looking for employment?</strong> Check out our{" "}
           <Link href="/careers" passHref legacyBehavior>
-            <a style={{ color: "#ff0000", textDecoration: "underline" }}>
-              Job Board
-            </a>
-          </Link>{" "}
-          for current openings. Please note that all job inquiries must be made on Indeed and will be blocked if submitted through this form.
+            <a style={{ color: "#ff0000", textDecoration: "underline" }}>Job Board</a>
+          </Link>. Please note: Job inquiries via this form will be automatically filtered.
         </Typography>
 
         <form onSubmit={handleSubmit}>
@@ -171,7 +187,24 @@ const RequestQuote = () => {
               <TextField fullWidth multiline rows={4} label="Message" name="message" value={formData.message} onChange={handleChange} sx={inputStyles} />
             </Grid>
             <Grid item xs={12} textAlign="center">
-              <Button type="submit" variant="contained" disabled={loading} sx={{ backgroundColor: "#ff0000", color: "#fff", fontSize: "18px", px: 5, py: 1.5, fontWeight: "bold", mt: 2, '&:hover': { backgroundColor: "#e60000" } }}>
+              <Button
+                type="submit"
+                variant="contained"
+                disabled={loading}
+                sx={{
+                  backgroundColor: "#ff0000",
+                  color: "#fff",
+                  fontSize: "18px",
+                  px: 5,
+                  py: 1.5,
+                  fontWeight: "bold",
+                  mt: 2,
+                  borderRadius: "30px",
+                  '&:hover': {
+                    backgroundColor: "#e60000",
+                  },
+                }}
+              >
                 {loading ? "Submitting..." : "Submit Request"}
               </Button>
             </Grid>

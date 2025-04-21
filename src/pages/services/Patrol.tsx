@@ -1,4 +1,3 @@
-// PatrolSecurity.jsx
 import React from "react";
 import { Box, Typography, Grid } from "@mui/material";
 import { motion } from "framer-motion";
@@ -26,83 +25,97 @@ const PatrolSecurity = () => {
       {/* Hero Section */}
       <Box
         sx={{
-          height: "100vh",
-          backgroundImage: "url(/images/1.jpg)",
+          position: "relative",
+          height: "85vh",
+          backgroundImage: "url(/images/PAtrolSEcurity.jpg)",
           backgroundSize: "cover",
           backgroundAttachment: "fixed",
           backgroundPosition: "center",
           display: "flex",
-          alignItems: "flex-end",
-          justifyContent: "flex-end",
-          p: { xs: 3, md: 10 },
+          alignItems: "center",
+          justifyContent: "center",
+          textAlign: "center",
+          px: 2,
+          zIndex: 1,
         }}
       >
-        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1 }}>
-          <Box
+        <Box
+          sx={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            background: "linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.6))",
+            zIndex: 2,
+          }}
+        />
+
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9, y: 30 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          style={{ zIndex: 3 }}
+        >
+          <Typography
+            variant="h2"
             sx={{
-              backgroundColor: "rgba(0, 0, 0, 0.7)",
-              px: 4,
-              py: 4,
-              borderRadius: 2,
-              maxWidth: "500px",
-              textAlign: "right",
+              color: "#fff",
+              fontWeight: 800,
+              fontSize: { xs: "2rem", md: "4rem" },
+              letterSpacing: "2px",
+              textTransform: "uppercase",
+              textShadow: "4px 4px 12px rgba(0,0,0,0.8)",
+              mb: 2,
+              fontFamily: "'Bebas Neue', 'Poppins', sans-serif",
             }}
           >
-            <Typography variant="h2" sx={{ color: "white", fontWeight: "bold" }}>
-              Patrol Security
-            </Typography>
-            <Typography variant="h6" sx={{ color: "#ccc", mt: 1 }}>
-              Visible, Reliable Protection On The Move
-            </Typography>
-          </Box>
+            Patrol Security
+          </Typography>
+          <Typography
+            variant="h6"
+            sx={{
+              color: "#eee",
+              maxWidth: "700px",
+              mx: "auto",
+              fontWeight: 300,
+              fontSize: { xs: "1rem", md: "1.2rem" },
+              textShadow: "1px 1px 6px rgba(0,0,0,0.6)",
+              fontFamily: "'Poppins', sans-serif",
+            }}
+          >
+            Visible, Reliable Protection On The Move
+          </Typography>
         </motion.div>
       </Box>
 
       {/* Intro Section */}
       <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-        <Box sx={{ background: "#0f1114", py: 10, px: { xs: 3, md: 12 }, textAlign: "center" }}>
-          <Typography variant="h4" color="white" fontWeight="bold" gutterBottom>
+        <Box sx={{ background: "#fff", py: 10, px: { xs: 3, md: 12 }, textAlign: "center" }}>
+          <Typography variant="h4" fontWeight={700} mb={2} fontFamily="'Poppins', sans-serif" color="#111">
             Agile Security That Never Sleeps
           </Typography>
-          <Typography sx={{ color: "#aaa", maxWidth: "900px", mx: "auto" }}>
+          <Typography sx={{ color: "#444", maxWidth: "900px", mx: "auto", fontSize: "1.1rem" }}>
             Our mobile patrol services are ideal for properties that need consistent and active security coverage without the
             cost of a full-time presence. Whether by vehicle, bike, or foot, our patrol officers are always alert and ready to respond.
           </Typography>
         </Box>
       </motion.div>
 
-      {/* Trusted By Section */}
+      
+
+      {/* Why Patrol Security is Important */}
       <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-        <Box sx={{ background: "#1a1d22", py: 8, px: { xs: 3, md: 12 }, textAlign: "center" }}>
-          <Typography variant="h5" color="white" fontWeight="bold" gutterBottom>
-            Trusted By Leading Organizations
-          </Typography>
-          <Grid container spacing={4} justifyContent="center" sx={{ mt: 3 }}>
-            {["/logos/canadian-tire.png", "/logos/canadian-tire.png", "/logos/canadian-tire.png", "/logos/canadian-tire.png"].map(
-              (logo, idx) => (
-                <Grid item key={idx} xs={6} sm={3} md={2}>
-                  <Box
-                    component="img"
-                    src={logo}
-                    alt={`Client ${idx + 1}`}
-                    sx={{ width: "100%", filter: "grayscale(1) brightness(0.8)" }}
-                  />
-                </Grid>
-              )
-            )}
-          </Grid>
-        </Box>
+        <WhyPatrolSecurityImportant />
       </motion.div>
 
-      <WhyPatrolSecurityImportant/>
-
-      {/* Key Patrol Duties */}
+      {/* Responsibilities Section */}
       <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-        <Box sx={{ background: "#0f1114", py: 10, px: { xs: 3, md: 12 } }}>
-          <Typography variant="h4" color="white" fontWeight="bold" gutterBottom>
+        <Box sx={{ background: "#fff", py: 10, px: { xs: 3, md: 12 } }}>
+          <Typography variant="h4" fontWeight={700} color="#111" fontFamily="'Poppins', sans-serif" mb={3} textAlign="center">
             Core Patrol Responsibilities
           </Typography>
-          <Typography sx={{ color: "#aaa", mb: 5, maxWidth: "900px" }}>
+          <Typography sx={{ color: "#555", mb: 5, maxWidth: "900px", mx: "auto", textAlign: "center", fontSize: "1.05rem" }}>
             Our patrol officers actively monitor your premises, providing proactive security coverage with professionalism and accuracy:
           </Typography>
 
@@ -119,17 +132,21 @@ const PatrolSecurity = () => {
                 <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
                   <Box
                     sx={{
-                      background: "linear-gradient(135deg, #1c1f25, #262a31)",
+                      background: "#f1f1f1",
                       borderRadius: 4,
                       p: 4,
                       textAlign: "center",
-                      color: "white",
-                      boxShadow: "0 6px 30px rgba(0,0,0,0.3)",
                       height: "100%",
+                      transition: "all 0.3s ease",
+                      "&:hover": {
+                        background: "#e4e4e4",
+                      },
                     }}
                   >
-                    <Box sx={{ fontSize: 40, mb: 2 }}>{item.icon}</Box>
-                    <Typography variant="h6">{item.label}</Typography>
+                    <Box sx={{ fontSize: 40, mb: 2, color: "#111" }}>{item.icon}</Box>
+                    <Typography variant="h6" fontWeight={600} color="#222">
+                      {item.label}
+                    </Typography>
                   </Box>
                 </motion.div>
               </Grid>
@@ -141,6 +158,29 @@ const PatrolSecurity = () => {
       {/* Other Services */}
       <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
         <ServicesShowcase currentService="Patrol Security" />
+      </motion.div>
+
+      {/* Trusted By Section */}
+      <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+        <Box sx={{ background: "#f7f7f7", py: 8, px: { xs: 3, md: 12 }, textAlign: "center" }}>
+          <Typography variant="h5" fontWeight={600} fontFamily="'Poppins', sans-serif" color="#111" mb={4}>
+            Trusted By Leading Organizations
+          </Typography>
+          <Grid container spacing={4} justifyContent="center">
+            {["/logos/canadian-tire.png", "/logos/canadian-tire.png", "/logos/canadian-tire.png", "/logos/canadian-tire.png"].map(
+              (logo, idx) => (
+                <Grid item key={idx} xs={6} sm={3} md={2}>
+                  <Box
+                    component="img"
+                    src={logo}
+                    alt={`Client ${idx + 1}`}
+                    sx={{ width: "100%", opacity: 0.8 }}
+                  />
+                </Grid>
+              )
+            )}
+          </Grid>
+        </Box>
       </motion.div>
 
       {/* Testimonials + CTA */}

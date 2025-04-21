@@ -1,181 +1,212 @@
 import React from "react";
-import {
-  Box,
-  Typography,
-  Grid,
-  Button,
-} from "@mui/material";
+import { Box, Typography, Grid } from "@mui/material";
 import { motion } from "framer-motion";
 import RequestQuote from "@/components/RequestQuote";
-import ServicesShowcase from "@/components/serviceShowcase";
+import ClientLogoCarousel from "@/components/ClientLogoCarousel";
 import TestimonialsSection from "@/components/TestimonialsSection";
-import LocalHospitalIcon from "@mui/icons-material/LocalHospital";
-import VisibilityIcon from "@mui/icons-material/Visibility";
-import PeopleIcon from "@mui/icons-material/People";
-import SecurityIcon from "@mui/icons-material/Security";
+import ServicesShowcase from "@/components/serviceShowcase";
 
 const fadeInUp = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
-};
-
-const stagger = {
-  visible: {
-    transition: {
-      staggerChildren: 0.2,
-    },
-  },
+  hidden: { opacity: 0, y: 40 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
 };
 
 const HealthcareSecurity = () => {
   return (
-    <Box sx={{ overflowX: "hidden" }}>
+    <>
       {/* ✅ Hero Section */}
       <Box
         sx={{
           position: "relative",
-          height: "70vh",
+          height: "85vh",
           backgroundImage: "url(/images/1.jpg)",
           backgroundSize: "cover",
           backgroundPosition: "center",
+          backgroundAttachment: "fixed",
           display: "flex",
-          alignItems: "flex-end",
+          alignItems: "center",
           justifyContent: "center",
-          paddingBottom: "60px",
+          textAlign: "center",
+          px: 2,
+          zIndex: 1,
         }}
       >
         <Box
           sx={{
-            backgroundColor: "rgba(0, 0, 0, 0.6)",
-            padding: "30px 50px",
-            borderRadius: "12px",
-            textAlign: "center",
-            backdropFilter: "blur(4px)",
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            background: "linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.6))",
+            zIndex: 2,
           }}
+        />
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9, y: 30 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          style={{ zIndex: 3 }}
         >
-          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1 }}>
-            <Typography variant="h2" sx={{ color: "#fff", fontWeight: "bold", fontFamily: "'Poppins', sans-serif" }}>
-              Healthcare Security
-            </Typography>
-          </motion.div>
-        </Box>
+          <Typography
+            variant="h2"
+            sx={{
+              color: "#fff",
+              fontWeight: 800,
+              fontSize: { xs: "2rem", md: "4rem" },
+              letterSpacing: "2px",
+              textTransform: "uppercase",
+              textShadow: "4px 4px 12px rgba(0,0,0,0.8)",
+              mb: 2,
+              fontFamily: "'Bebas Neue', 'Poppins', sans-serif",
+            }}
+          >
+            Healthcare Security
+          </Typography>
+          <Typography
+            variant="h6"
+            sx={{
+              color: "#eee",
+              maxWidth: "700px",
+              mx: "auto",
+              fontWeight: 300,
+              fontSize: { xs: "1rem", md: "1.2rem" },
+              textShadow: "1px 1px 6px rgba(0,0,0,0.6)",
+              fontFamily: "'Poppins', sans-serif",
+            }}
+          >
+            Trusted by Hospitals, Clinics, and Medical Facilities Across Alberta
+          </Typography>
+        </motion.div>
       </Box>
 
       {/* ✅ Intro Section */}
-      <Box sx={{ background: "#111318", color: "#fff", px: { xs: 3, md: 10 }, py: 8, textAlign: "center" }}>
-        <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-          <Typography variant="h5" fontWeight="300" sx={{ mb: 2 }}>
-            Trusted Security for Medical Spaces
-          </Typography>
-          <Typography variant="h6" sx={{ mb: 4, maxWidth: 700, mx: "auto", color: "#ccc", fontWeight: 300 }}>
-            Our healthcare-trained officers are equipped to handle sensitive scenarios with empathy, professionalism, and readiness.
-          </Typography>
-          <Button variant="contained" color="error" size="large">
-            Request a Quote
-          </Button>
-        </motion.div>
-      </Box>
-
-      {/* ✅ Feature Highlights */}
-      <Box sx={{ background: "#1c1f25", color: "#fff", px: { xs: 3, md: 10 }, py: 10 }}>
-        <motion.div variants={stagger} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-          <Grid container spacing={4}>
-            {[{
-              icon: <LocalHospitalIcon sx={{ fontSize: 70, color: '#e53935' }} />,
-              title: "Healthcare Access Control",
-              description: "Ensure only authorized personnel and visitors access sensitive areas."
-            }, {
-              icon: <VisibilityIcon sx={{ fontSize: 70, color: '#e53935' }} />,
-              title: "Patient & Staff Protection",
-              description: "Maintain safety and order in high-stress medical environments."
-            }, {
-              icon: <PeopleIcon sx={{ fontSize: 70, color: '#e53935' }} />,
-              title: "Compassionate Crisis Response",
-              description: "De-escalate incidents with trauma-informed, respectful support."
-            }, {
-              icon: <SecurityIcon sx={{ fontSize: 70, color: '#e53935' }} />,
-              title: "24/7 Security Readiness",
-              description: "Prepared for emergencies, code calls, and behavioral incidents anytime."
-            }].map((item, idx) => (
-              <Grid item xs={12} sm={6} md={3} key={idx} textAlign="center">
-                <motion.div variants={fadeInUp}>
-                  <Box sx={{ mb: 2 }}>{item.icon}</Box>
-                  <Typography variant="h6" fontWeight="bold" sx={{ mb: 1 }}>{item.title}</Typography>
-                  <Typography variant="body1" color="#ccc">{item.description}</Typography>
-                </motion.div>
-              </Grid>
-            ))}
-          </Grid>
-        </motion.div>
-      </Box>
-
-      {/* ✅ Customer-Focused Approach */}
-      <Box sx={{ background: "#111318", color: "#fff", px: { xs: 3, md: 10 }, py: 12 }}>
-        <Grid container spacing={6} alignItems="center">
-          <Grid item xs={12} md={6} order={{ xs: 2, md: 1 }}>
-            <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-              <Typography variant="h4" fontWeight="bold" gutterBottom>
-                More Than Security — It&apos;s Patient-Centered Care
-              </Typography>
-              <Typography variant="h6" sx={{ color: "#ccc", mb: 3, fontWeight: 300 }}>
-                We understand the emotional weight of healthcare spaces. Our officers practice active listening and clear communication while maintaining a strong, calm presence.
-              </Typography>
-              <Typography variant="body1" sx={{ color: "#aaa", fontWeight: 300, mb: 4 }}>
-                We assist in patient watch, manage escalations with dignity, and collaborate with your clinical team to deliver smooth, compassionate service without disrupting care.
-              </Typography>
-              <Typography variant="body1" sx={{ color: "#aaa", fontWeight: 300 }}>
-                Our guards undergo specialized training for mental health response, infection control, and non-violent crisis intervention — ensuring every interaction supports your mission.
-              </Typography>
-            </motion.div>
-          </Grid>
-          <Grid item xs={12} md={6} order={{ xs: 1, md: 2 }}>
-            <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-              <Box
-                component="img"
-                src="/images/2.jpg"
-                alt="Healthcare Guard"
-                sx={{ width: "100%", borderRadius: 4, boxShadow: 4 }}
-              />
-            </motion.div>
-          </Grid>
-        </Grid>
-      </Box>
-
-
-{/* ✅ Trusted By Section */}
-            <Box sx={{ background: "#1a1d22", py: 8, px: { xs: 3, md: 12 }, textAlign: "center" }}>
-              <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-                <Typography variant="h5" color="white" fontWeight="bold" gutterBottom>
-                  Trusted By Leading Retailers
-                </Typography>
-                <Grid container spacing={4} justifyContent="center" sx={{ mt: 3 }}>
-                  {["/logos/canadian-tire.png", "/logos/canadian-tire.png", "/logos/canadian-tire.png", "/logos/canadian-tire.png"].map(
-                    (logo, idx) => (
-                      <Grid item key={idx} xs={6} sm={3} md={2}>
-                        <Box
-                          component="img"
-                          src={logo}
-                          alt={`Client ${idx + 1}`}
-                          sx={{ width: "100%" }}
-                        />
-                      </Grid>
-                    )
-                  )}
-                </Grid>
-              </motion.div>
-            </Box>
-
-      {/* ✅ Other Services */}
       <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+        <Box sx={{ background: "#fff", py: 10, px: { xs: 3, md: 12 }, textAlign: "center" }}>
+          <Typography variant="h4" fontWeight={700} mb={2} fontFamily="'Poppins', sans-serif" color="#111">
+            Compassionate Protection in Sensitive Spaces
+          </Typography>
+          <Typography sx={{ color: "#444", maxWidth: "900px", mx: "auto", fontSize: "1.1rem" }}>
+            Our officers are trained in trauma-informed care, non-violent crisis intervention, and medical emergency response — delivering respectful, calm support in every interaction.
+          </Typography>
+        </Box>
+      </motion.div>
+
+      {/* ✅ Trusted Brands
+      <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+        <Box sx={{ background: "#f7f7f7", py: 8, px: { xs: 3, md: 12 }, textAlign: "center" }}>
+          <Typography variant="h5" fontWeight={600} fontFamily="'Poppins', sans-serif" color="#111" mb={4}>
+            Trusted by Leading Institutions
+          </Typography>
+          <Grid container spacing={4} justifyContent="center">
+            {["/logos/canadian-tire.png", "/logos/canadian-tire.png", "/logos/canadian-tire.png"].map(
+              (logo, idx) => (
+                <Grid item key={idx} xs={6} sm={3} md={2}>
+                  <Box
+                    component="img"
+                    src={logo}
+                    alt={`Client ${idx + 1}`}
+                    sx={{ width: "100%", opacity: 0.8 }}
+                  />
+                </Grid>
+              )
+            )}
+          </Grid>
+        </Box>
+      </motion.div> */}
+
+      {/* ✅ Why We’re the Best (OurMission-style) */}
+      <Grid
+        container
+        spacing={0}
+        alignItems="stretch"
+        sx={{
+          width: "100%",
+          m: 0,
+          background: "linear-gradient(90deg, #0f1114, #1c1f25)",
+          color: "#f1f1f1",
+          boxShadow: "0 10px 40px rgba(0, 0, 0, 0.3)",
+        }}
+      >
+        {/* Image */}
+        <Grid
+          item
+          xs={12}
+          md={6}
+          sx={{ position: "relative", height: { xs: "400px", md: "600px" } }}
+        >
+          <Box
+            component="img"
+            src="/images/2.jpg"
+            alt="Healthcare Facility"
+            sx={{
+              position: "absolute",
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+            }}
+          />
+        </Grid>
+
+        {/* Text */}
+        <Grid
+          item
+          xs={12}
+          md={6}
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            px: { xs: 3, md: 6 },
+            py: { xs: 6, md: 8 },
+            backgroundColor: "#3a506b",
+          }}
+        >
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <Typography
+              variant="h4"
+              sx={{
+                fontWeight: "bold",
+                mb: 3,
+                fontSize: { xs: "2rem", md: "2.5rem" },
+                color: "#fff",
+                fontFamily: "'Poppins', sans-serif",
+              }}
+            >
+              Why We’re the Best in Healthcare Security
+            </Typography>
+
+            <Typography
+              sx={{
+                fontSize: "1.1rem",
+                lineHeight: 1.8,
+                mb: 4,
+                color: "#cfcfcf",
+                fontFamily: "'Poppins', sans-serif",
+              }}
+            >
+              From patient safety to mental health response, our team supports your facility’s mission with specialized training and a compassionate approach. We integrate seamlessly with your clinical staff while staying alert to threats and escalation.
+            </Typography>
+          </motion.div>
+        </Grid>
+      </Grid>
+
+      {/* ✅ Testimonials + Services */}
+      <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+        <TestimonialsSection />
         <ServicesShowcase currentService="Healthcare Security" />
       </motion.div>
 
-      {/* ✅ Testimonials + CTA */}
+      {/* ✅ CTA */}
       <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-        <TestimonialsSection />
         <RequestQuote />
       </motion.div>
-    </Box>
+    </>
   );
 };
 
