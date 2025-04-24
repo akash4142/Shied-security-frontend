@@ -26,7 +26,7 @@ const MobileSecurity = () => {
       <Box
         sx={{
           position: "relative",
-          height: "85vh",
+          height: "90vh",
           backgroundImage: "url(/images/PatrolSecurity.jpg)",
           backgroundSize: "cover",
           backgroundAttachment: "fixed",

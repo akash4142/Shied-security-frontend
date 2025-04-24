@@ -11,6 +11,7 @@ import ClientLogoCarousel from '@/components/ClientLogoCarousel';
 import OurMission from '@/components/ourMission';
 import Head from 'next/head';
 import FinalCTA from '@/components/FinalCTA';
+import GoogleReviewBadge from '@/components/GoogleReviewBadge';
 
 const Home = () => {
   return (
@@ -92,6 +93,7 @@ const Home = () => {
       <ClientLogoCarousel />
       <FinalCTA/>
       <RequestQuote />
+      <GoogleReviewBadge/>
     </>
   );
 };

@@ -1,8 +1,14 @@
 import React from "react";
-import { Box, Typography, Grid, Card, CardContent } from "@mui/material";
+import { Box, Typography, Grid, Card, CardContent} from "@mui/material";
 import { motion } from "framer-motion";
-import Image from "next/image";
+import SecurityIcon from "@mui/icons-material/Security";
+import BuildIcon from "@mui/icons-material/Build";
+import FinalCTA from "@/components/FinalCTA";
+import RequestQuote from "@/components/RequestQuote";
+import TestimonialsSection from "@/components/TestimonialsSection";
 
+
+// Animations
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
@@ -10,9 +16,7 @@ const fadeInUp = {
 
 const stagger = {
   visible: {
-    transition: {
-      staggerChildren: 0.2,
-    },
+    transition: { staggerChildren: 0.2 },
   },
 };
 
@@ -23,7 +27,7 @@ const About = () => {
       <Box
         sx={{
           position: "relative",
-          height: "85vh",
+          height: "90vh",
           backgroundImage: "url(/images/3.jpg)",
           backgroundSize: "cover",
           backgroundPosition: "center",
@@ -31,39 +35,27 @@ const About = () => {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          textAlign: "center",
           px: 2,
-          zIndex: 1,
         }}
       >
-        <Box
-          sx={{
-            position: "absolute",
-            top: 0,
-            left: 0,
-            width: "100%",
-            height: "100%",
-            background: "linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.6))",
-            zIndex: 2,
-          }}
-        />
+        <Box sx={{ position: "absolute", inset: 0, background: "rgba(0,0,0,0.65)", zIndex: 1 }} />
         <motion.div
           initial={{ opacity: 0, scale: 0.9, y: 30 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ duration: 1 }}
-          style={{ zIndex: 3 }}
+          style={{ zIndex: 2 }}
         >
           <Typography
             variant="h2"
             sx={{
               color: "#fff",
               fontWeight: 800,
-              fontSize: { xs: "2rem", md: "4rem" },
-              letterSpacing: "2px",
+              fontSize: { xs: "2.5rem", md: "4rem" },
               textTransform: "uppercase",
-              textShadow: "4px 4px 12px rgba(0,0,0,0.8)",
-              mb: 2,
-              fontFamily: "'Bebas Neue', 'Poppins', sans-serif",
+              fontFamily: "'Bebas Neue', sans-serif",
+              letterSpacing: 1,
+              textAlign: "center",
+              textShadow: "6px 6px 20px rgba(0,0,0,0.8)",
             }}
           >
             About Shield Security
@@ -72,124 +64,134 @@ const About = () => {
             variant="h6"
             sx={{
               color: "#eee",
-              maxWidth: "700px",
+              mt: 2,
+              maxWidth: 700,
               mx: "auto",
               fontWeight: 300,
               fontSize: { xs: "1rem", md: "1.2rem" },
-              textShadow: "1px 1px 6px rgba(0,0,0,0.6)",
+              textAlign: "center",
+              textShadow: "1px 1px 6px rgba(0,0,0,0.5)",
               fontFamily: "'Poppins', sans-serif",
             }}
           >
-            Trusted Protection. Proven Experience.
+            Providing trusted protection across Canada, backed by technology and integrity.
           </Typography>
         </motion.div>
       </Box>
 
-      {/* ✅ Company Overview */}
-      <Box sx={{ background: "#111", color: "#fff", py: 10, px: { xs: 3, md: 10 } }}>
-        <motion.div initial="hidden" whileInView="visible" variants={fadeInUp} viewport={{ once: true }}>
-          <Typography variant="h4" textAlign="center" fontWeight="bold" gutterBottom>
-            Who We Are
-          </Typography>
-          <Typography
-            variant="body1"
-            sx={{ color: "#ccc", maxWidth: "900px", mx: "auto", lineHeight: 1.8, fontSize: "1.1rem", textAlign: "center" }}
+
+{/* ✅ Company Overview Text */}
+<Box
+  sx={{
+    background: "#eee",
+    color: "#111",
+    px: { xs: 3, md: 12 },
+    py: { xs: 6, md: 8 },
+    textAlign: "center",
+  }}
+>
+  <motion.div
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{ duration: 0.7 }}
+  >
+    <Typography variant="h5" fontWeight={600} gutterBottom>
+      Shield Secure
+    </Typography>
+    <Typography variant="body1" sx={{ maxWidth: 900, mx: "auto", lineHeight: 2.8, color: "#111" }}>
+      Shield Secure Ltd. is a customer service focused security services company based in Canmore, also serving Banff,
+      Cochrane and Calgary. We specialize in offering a wide range of security solutions including mobile patrol,
+      event security, fire watch, emergency response, construction security, and wedding security services.
+      <br /><br />
+      Contact us for information about our services, team, and commitment to delivering professional and reliable
+      security solutions. We take pride in our extensive range of services and our dedication to ensuring the safety
+      and security of our clients' premises and events.
+    </Typography>
+  </motion.div>
+</Box>
+
+     
+
+     {/* ✅ Core Values - Upgraded */}
+<Box sx={{ background: "#fff", py: 12, px: { xs: 3, md: 10 } }}>
+  <Typography
+    variant="h4"
+    fontWeight={700}
+    textAlign="center"
+    gutterBottom
+    sx={{ color: "#111" }}
+  >
+    Our Core Values
+  </Typography>
+
+  <Grid container spacing={4} mt={4}>
+    {[
+      {
+        title: "Integrity",
+        desc: "We operate with complete honesty, respect, and moral conduct.",
+        icon: <SecurityIcon sx={{ fontSize: 40, color: "#1976d2" }} />,
+      },
+      {
+        title: "Accountability",
+        desc: "Real-time GPS tracking and reporting ensures transparency.",
+        icon: <BuildIcon sx={{ fontSize: 40, color: "#388e3c" }} />,
+      },
+      {
+        title: "Community",
+        desc: "We support and protect the communities we live in.",
+        icon: <SecurityIcon sx={{ fontSize: 40, color: "#ff9800" }} />,
+      },
+      {
+        title: "Reliability",
+        desc: "We’re committed to being present and responsive when it matters most.",
+        icon: <BuildIcon sx={{ fontSize: 40, color: "#0288d1" }} />,
+      },
+      {
+        title: "Innovation",
+        desc: "We leverage technology to improve efficiency and results.",
+        icon: <BuildIcon sx={{ fontSize: 40, color: "#673ab7" }} />,
+      },
+      {
+        title: "Customer Focus",
+        desc: "Your safety, needs, and satisfaction guide everything we do.",
+        icon: <SecurityIcon sx={{ fontSize: 40, color: "#e91e63" }} />,
+      },
+    ].map((value, idx) => (
+      <Grid item xs={12} sm={6} md={4} key={idx}>
+        <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+          <Card
+            sx={{
+              height: "100%",
+              textAlign: "center",
+              borderRadius: "16px",
+              boxShadow: 3,
+              p: 4,
+              transition: "0.3s ease",
+              "&:hover": {
+                boxShadow: 6,
+              },
+            }}
           >
-            At <strong>Shield Security</strong>, we are more than just a security company — we are guardians of trust,
-            committed to safeguarding people, property, and peace of mind. With over a decade of experience and a presence
-            across Canada, we serve commercial, residential, and institutional clients with integrity and professionalism.
-            <br /><br />
-            Our services are powered by real-time tech such as <em>TrackTik</em> and GPS-based patrol tracking, and our guards
-            are trained not just in protection, but in people-first service — combining vigilance with empathy.
-          </Typography>
+            <CardContent>
+              <Box sx={{ mb: 2 }}>{value.icon}</Box>
+              <Typography variant="h6" fontWeight={600} gutterBottom sx={{ color: "#111" }}>
+                {value.title}
+              </Typography>
+              <Typography variant="body2" sx={{ color: "#444", lineHeight: 1.7 }}>
+                {value.desc}
+              </Typography>
+            </CardContent>
+          </Card>
         </motion.div>
-      </Box>
+      </Grid>
+    ))}
+  </Grid>
+</Box>
 
-      {/* ✅ Core Values Section */}
-      <Box sx={{ py: 10, px: { xs: 3, md: 10 }, backgroundColor: "#f7f9fc" }}>
-        <Typography variant="h4" fontWeight="bold" textAlign="center" gutterBottom>
-          Our Core Values
-        </Typography>
-        <motion.div variants={stagger} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-          <Grid container spacing={4} mt={4}>
-            {[
-              {
-                title: "Integrity",
-                desc: "We operate with complete transparency, honesty, and ethical conduct at every level.",
-                img: "/images/1.jpg",
-              },
-              {
-                title: "Accountability",
-                desc: "From mobile patrols to incident logs, we provide full visibility with real-time reporting.",
-                img: "/images/2.jpg",
-              },
-              {
-                title: "Community",
-                desc: "We care deeply about the communities we serve and foster positive local relationships.",
-                img: "/images/3.jpg",
-              },
-            ].map((item, idx) => (
-              <Grid item xs={12} md={4} key={idx}>
-                <Card sx={{ textAlign: "center", p: 3, borderRadius: 4, boxShadow: 3 }}>
-                  <Image src={item.img} alt={item.title} width={60} height={60} />
-                  <CardContent>
-                    <Typography variant="h6" fontWeight="bold" gutterBottom>
-                      {item.title}
-                    </Typography>
-                    <Typography variant="body2" sx={{ color: "#555" }}>{item.desc}</Typography>
-                  </CardContent>
-                </Card>
-              </Grid>
-            ))}
-          </Grid>
-        </motion.div>
-      </Box>
-
-      {/* ✅ Why Choose Shield Section */}
-      <Box sx={{ backgroundColor: "#111", color: "#fff", py: 10, px: { xs: 3, md: 10 } }}>
-        <Typography variant="h4" textAlign="center" fontWeight="bold" gutterBottom>
-          Why Choose Shield Security?
-        </Typography>
-        <Grid container spacing={4} mt={3}>
-          {[
-            "24/7 Mobile Patrols & Monitoring",
-            "Trusted by Government & Private Sector",
-            "Tailored Security Solutions",
-            "TrackTik Real-Time Reporting",
-            "Licensed, Insured & Bonded Professionals",
-            "Rapid Emergency Response Capabilities",
-          ].map((point, idx) => (
-            <Grid key={idx} item xs={12} sm={6} md={4}>
-              <Box sx={{ backgroundColor: "#1a1a1a", p: 4, borderRadius: 3, height: "100%" }}>
-                <Typography variant="body1" sx={{ color: "#ccc" }}>• {point}</Typography>
-              </Box>
-            </Grid>
-          ))}
-        </Grid>
-      </Box>
-
-      {/* ✅ Stats Section */}
-      <Box sx={{ py: 10, px: { xs: 3, md: 10 }, backgroundColor: "#fff" }}>
-        <Typography variant="h4" textAlign="center" fontWeight="bold" gutterBottom>
-          Our Impact in Numbers
-        </Typography>
-        <motion.div variants={stagger} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-          <Grid container spacing={4} mt={3} justifyContent="center">
-            {[
-              { title: "10+ Years of Trusted Service", img: "/images/1.jpg" },
-              { title: "500+ Clients Secured", img: "/images/2.jpg" },
-              { title: "1M+ Patrols Logged via TrackTik", img: "/images/3.jpg" },
-            ].map((stat, idx) => (
-              <Grid key={idx} item xs={12} sm={6} md={4}>
-                <Card sx={{ textAlign: "center", p: 4, borderRadius: 4, boxShadow: 3 }}>
-                  <Image src={stat.img} alt={stat.title} width={80} height={80} />
-                  <Typography variant="h6" mt={2}>{stat.title}</Typography>
-                </Card>
-              </Grid>
-            ))}
-          </Grid>
-        </motion.div>
-      </Box>
+      <TestimonialsSection />
+      <FinalCTA/>
+      <RequestQuote />
     </>
   );
 };

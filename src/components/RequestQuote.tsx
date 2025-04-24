@@ -1,5 +1,7 @@
 import React, { ChangeEvent, FormEvent, useState } from "react";
 import { api } from '@/utils/api';
+import { submitQuoteRequest, QuoteFormData } from "@/utils/apiFunction"; // or quoteService
+
 import {
   Box,
   Button,
@@ -85,10 +87,10 @@ const RequestQuote = () => {
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
-
+  
     try {
-      const response = await api.post('/quotes', formData);
-      alert(response.data.message);
+      const response = await submitQuoteRequest(formData); // ✅ use the service function
+      alert(response.message); // Show success message
       setFormData({
         firstName: "",
         lastName: "",
@@ -100,13 +102,15 @@ const RequestQuote = () => {
         heardFrom: "",
         message: "",
       });
-    } catch (error) {
-      console.error("Quote submission error:", error);
-      alert("Something went wrong. Please try again later.");
-    } finally {
+    } catch (error: any) {
+      console.error("Quote submission error:", error?.response || error);
+      alert(error?.response?.data?.error || "Something went wrong. Please try again later.");
+    }
+     finally {
       setLoading(false);
     }
   };
+  
 
   return (
     <Box sx={{ backgroundColor: "#fff", py: 10 }}>

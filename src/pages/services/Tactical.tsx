@@ -26,7 +26,7 @@ const TacticalSecurity = () => {
       <Box
         sx={{
           position: "relative",
-          height: "85vh",
+          height: "90vh",
           backgroundImage: "url(/images/REtail.jpg)",
           backgroundSize: "cover",
           backgroundAttachment: "fixed",

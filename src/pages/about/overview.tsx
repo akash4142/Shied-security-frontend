@@ -1,111 +1,222 @@
 import React from "react";
-import { Box, Container, Typography, Grid, Paper, Button, Divider } from "@mui/material";
+import { Box, Container, Typography, Grid, Card, CardContent, Button, Paper } from "@mui/material";
+import { motion } from "framer-motion";
+import GppGoodIcon from "@mui/icons-material/GppGood";
+import SecurityIcon from "@mui/icons-material/Security";
+import GroupsIcon from "@mui/icons-material/Groups";
+import AutorenewIcon from "@mui/icons-material/Autorenew";
 import Image from "next/image";
+import FinalCTA from "@/components/FinalCTA";
+import RequestQuote from "@/components/RequestQuote";
 
-
+// Animation
+const fadeInUp = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+};
 
 const CompanyOverview = () => {
   return (
-    <Box>
-      {/* Hero */}
+    <>
+      {/* ✅ Hero Section */}
       <Box
         sx={{
+          position: "relative",
+          height: "90vh",
           backgroundImage: "url(/images/1.jpg)",
           backgroundSize: "cover",
           backgroundPosition: "center",
-          height: "60vh",
+          backgroundAttachment: "fixed",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
+          px: 2,
         }}
       >
-        <Box sx={{ backgroundColor: "rgba(0,0,0,0.6)", p: 4, borderRadius: 2, textAlign: "center" }}>
-          <Typography variant="h2" sx={{ color: "#fff", fontWeight: "bold" }}>
+        <Box sx={{ position: "absolute", inset: 0, background: "rgba(0,0,0,0.65)", zIndex: 1 }} />
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9, y: 30 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          style={{ zIndex: 2 }}
+        >
+          <Typography
+            variant="h2"
+            sx={{
+              color: "#fff",
+              fontWeight: 800,
+              fontSize: { xs: "2.5rem", md: "4rem" },
+              textTransform: "uppercase",
+              fontFamily: "'Bebas Neue', sans-serif",
+              letterSpacing: 1,
+              textAlign: "center",
+              textShadow: "6px 6px 20px rgba(0,0,0,0.8)",
+            }}
+          >
             Company Overview
           </Typography>
-          <Typography variant="h6" sx={{ color: "#ddd", mt: 2 }}>
-            Learn About Shield Secure and Our Mission
+          <Typography
+            variant="h6"
+            sx={{
+              color: "#eee",
+              mt: 2,
+              maxWidth: 700,
+              mx: "auto",
+              fontWeight: 300,
+              fontSize: { xs: "1rem", md: "1.2rem" },
+              textAlign: "center",
+              textShadow: "1px 1px 6px rgba(0,0,0,0.5)",
+              fontFamily: "'Poppins', sans-serif",
+            }}
+          >
+            Learn about Shield Secure’s leadership, mission, and operations across Alberta.
           </Typography>
-        </Box>
+        </motion.div>
       </Box>
 
-      <Container sx={{ py: 8 }}>
-        {/* Company Description */}
-        <Paper sx={{ p: 4, backgroundColor: "#f7f9fc", mb: 6 }}>
-          <Typography variant="h4" fontWeight="bold" gutterBottom>
+      {/* ✅ Company Description */}
+      <Box
+        sx={{
+          background: "#eee",
+          color: "#111",
+          px: { xs: 3, md: 12 },
+          py: { xs: 6, md: 8 },
+          textAlign: "center",
+        }}
+      >
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+        >
+          <Typography variant="h5" fontWeight={600} gutterBottom>
             Who We Are
           </Typography>
-          <Typography>
-            Shield Secure Ltd. is a customer-focused security services company based in Canmore, proudly serving the surrounding areas including Banff, Cochrane, and Calgary. We specialize in providing a wide range of security services such as mobile patrol, event security, fire watch, emergency response, construction security, and wedding security.
+          <Typography
+            variant="body1"
+            sx={{ maxWidth: 900, mx: "auto", lineHeight: 2.2, color: "#111" }}
+          >
+            Shield Secure Ltd. is a customer service–focused security company based in Canmore, also serving Banff,
+            Cochrane, and Calgary. We provide reliable, responsive security solutions including mobile patrol, event security, fire watch,
+            construction and emergency response coverage.
             <br /><br />
-            Our mission is to deliver professional and dependable security solutions that ensure the protection of our clients’ properties and the safety of the public. We pride ourselves on our comprehensive services, our community involvement, and our unwavering commitment to safety, integrity, and adaptability.
+            With a leadership team rooted in public service and operational excellence, we take pride in community involvement,
+            professional conduct, and ensuring your property and people are safe—always.
           </Typography>
-        </Paper>
+        </motion.div>
+      </Box>
 
-        {/* Leadership */}
-        <Grid container spacing={4} alignItems="center">
+      {/* ✅ Leadership */}
+      <Container sx={{ py: 8 }}>
+        <Grid container spacing={6} alignItems="center">
           <Grid item xs={12} md={5}>
-            <Image src="/images/sourav.jpg" alt="Sourav Gupta" width={500} height={500} style={{ width: "100%", borderRadius: 10 }} />
+            <Image
+              src="/images/sourav.jpg"
+              alt="Sourav Gupta"
+              width={500}
+              height={500}
+              style={{
+                width: "100%",
+                borderRadius: 10,
+                objectFit: "cover",
+                boxShadow: "0 10px 30px rgba(0,0,0,0.3)",
+              }}
+            />
           </Grid>
           <Grid item xs={12} md={7}>
             <Typography variant="h5" fontWeight="bold" gutterBottom>
-              Meet Our Founder: Sourav Gupta
+              Meet Our Founder
             </Typography>
-            <Typography>
-              Sourav Gupta is the founder and General Manager of Shield Secure Ltd. After immigrating to Canada in 2017, Sourav brought with him a wealth of knowledge and a passion for security. With a background in accounting and administration, as well as hands-on experience with Alberta Health Services and the Town of Canmore, Sourav ensures that every aspect of the company runs with excellence.
+            <Typography sx={{ fontWeight: 500, color: "#666", mb: 2 }}>
+              Sourav Gupta – General Manager
+            </Typography>
+            <Typography variant="body1" sx={{ lineHeight: 1.8 }}>
+              Sourav Gupta, the founder and GM of Shield Secure Ltd., brings deep experience from working with Alberta Health Services and the
+              Town of Canmore. His values of accountability, responsiveness, and community engagement are embedded in the
+              company's approach to service.
               <br /><br />
-              Sourav is committed to ethical operations, proactive communication, and the highest standards in training and professionalism. His leadership drives the success of Shield Secure.
+              Under his leadership, Shield Secure delivers consistent, ethical, and reliable security for clients and communities across Alberta.
             </Typography>
           </Grid>
         </Grid>
-
-        {/* Core Values */}
-        <Paper sx={{ mt: 8, p: 4, backgroundColor: "#f7f9fc" }}>
-          <Typography variant="h4" fontWeight="bold" gutterBottom textAlign="center">
-            Our Core Values
-          </Typography>
-          <Grid container spacing={4}>
-            {[{
-              title: "Safety",
-              desc: "We prioritize safety in all operations, ensuring the well-being of both clients and the public."
-            }, {
-              title: "Integrity",
-              desc: "We believe in transparency, respect, and honest conduct. Our guards embody these principles."
-            }, {
-              title: "Teamwork",
-              desc: "Our staff collaborate closely, sharing insights and supporting one another to provide exceptional service."
-            }, {
-              title: "Adaptability",
-              desc: "We train our personnel to respond efficiently to any situation, from emergencies to event security."
-            }].map((item, idx) => (
-              <Grid item xs={12} md={3} key={idx}>
-                <Typography variant="h6" fontWeight="bold">{item.title}</Typography>
-                <Typography variant="body2" sx={{ mt: 1 }}>{item.desc}</Typography>
-              </Grid>
-            ))}
-          </Grid>
-        </Paper>
-
-        {/* Contact Info */}
-        <Box sx={{ mt: 10, textAlign: "center" }}>
-          <Divider sx={{ mb: 4 }} />
-          <Typography variant="h5" fontWeight="bold" gutterBottom>
-            Contact Shield Secure
-          </Typography>
-          <Typography>
-            Based in Canmore, Alberta
-            <br />
-            Phone: 403-953-1998
-            <br />
-            Email: Shieldsecure82@gmail.com
-          </Typography>
-          <Box sx={{ mt: 2 }}>
-            <Button variant="contained" color="error" sx={{ mx: 1 }}>Facebook</Button>
-            <Button variant="contained" color="error" sx={{ mx: 1 }}>Instagram</Button>
-          </Box>
-        </Box>
       </Container>
-    </Box>
+
+      {/* ✅ Core Values */}
+      <Box sx={{ background: "#fff", py: 12, px: { xs: 3, md: 10 } }}>
+        <Typography
+          variant="h4"
+          fontWeight={700}
+          textAlign="center"
+          gutterBottom
+          sx={{ color: "#111" }}
+        >
+          Our Core Values
+        </Typography>
+
+        <Grid container spacing={4} mt={4}>
+          {[
+            {
+              title: "Safety",
+              desc: "We prioritize safety in all operations and decisions.",
+              icon: <GppGoodIcon sx={{ fontSize: 40, color: "#1976d2" }} />,
+            },
+            {
+              title: "Integrity",
+              desc: "We operate with honesty, respect, and ethical conduct.",
+              icon: <SecurityIcon sx={{ fontSize: 40, color: "#388e3c" }} />,
+            },
+            {
+              title: "Teamwork",
+              desc: "We collaborate to ensure smooth and professional execution.",
+              icon: <GroupsIcon sx={{ fontSize: 40, color: "#ff9800" }} />,
+            },
+            {
+              title: "Adaptability",
+              desc: "We adjust rapidly to changing situations and needs.",
+              icon: <AutorenewIcon sx={{ fontSize: 40, color: "#0288d1" }} />,
+            },
+          ].map((value, idx) => (
+            <Grid item xs={12} sm={6} md={3} key={idx}>
+              <motion.div
+                variants={fadeInUp}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+              >
+                <Card
+                  sx={{
+                    height: "100%",
+                    textAlign: "center",
+                    borderRadius: "16px",
+                    boxShadow: 3,
+                    p: 4,
+                    transition: "0.3s ease",
+                    "&:hover": {
+                      boxShadow: 6,
+                    },
+                  }}
+                >
+                  <CardContent>
+                    <Box sx={{ mb: 2 }}>{value.icon}</Box>
+                    <Typography variant="h6" fontWeight={600} gutterBottom sx={{ color: "#111" }}>
+                      {value.title}
+                    </Typography>
+                    <Typography variant="body2" sx={{ color: "#444", lineHeight: 1.7 }}>
+                      {value.desc}
+                    </Typography>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            </Grid>
+          ))}
+        </Grid>
+      </Box>
+
+      
+      <FinalCTA/>
+      <RequestQuote/>
+    </>
   );
 };
 

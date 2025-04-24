@@ -4,13 +4,12 @@ import Image from 'next/image';
 
 const clientLogos = [
   { src: '/logos/canadian-tire.png', alt: 'Canadian Tire' },
-  { src: '/logos/canadian-tire.png', alt: 'Walmart' },
-  { src: '/logos/canadian-tire.png', alt: 'Dollarama' },
-  { src: '/logos/canadian-tire.png', alt: 'Best Buy' },
-  { src: '/logos/canadian-tire.png', alt: 'Costco' },
-  { src: '/logos/canadian-tire.png', alt: 'Shoppers Drug Mart' },
-  { src: '/logos/canadian-tire.png', alt: 'Home Depot' },
-  { src: '/logos/canadian-tire.png', alt: 'Metro' },
+  { src: '/logos/Town of canmore.png', alt: 'Town of Canmore' },
+  { src: '/logos/peka.jpg', alt: 'Peka' },
+  { src: '/logos/fillmore.jpg', alt: 'Fill more' },
+  { src: '/logos/CanmoreHostel.jpg', alt: 'Canmore hostel' },
+  { src: '/logos/cornerStone.jpg', alt: 'Fill more' },
+  { src: '/logos/spyfilms.jpg', alt: 'spy Films' },
 ];
 
 const animationVariants = {

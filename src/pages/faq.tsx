@@ -6,147 +6,270 @@ import {
   Accordion,
   AccordionSummary,
   AccordionDetails,
-  Grid,
+  Button,
+  Divider,
 } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { motion } from "framer-motion";
 
-const fadeInUp = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+const fadeIn = {
+  hidden: { opacity: 0, y: 20 },
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: { delay: i * 0.1, duration: 0.4 },
+  }),
 };
 
-const FAQPage = () => {
-  const faqData = [
-    {
-      question: "What services do security companies offer?",
-      answer: "Security companies like Shield Security offer a wide range of services including uniformed guards, mobile patrols, event security, CCTV monitoring, loss prevention, access control, and more."
-    },
-    {
-      question: "How do I choose the right security provider?",
-      answer: "Look for licensed, experienced providers who offer customization, transparency, and strong client support. Check reviews and ensure they provide real-time reporting and scalable solutions."
-    },
-    {
-      question: "Can security services be customized?",
-      answer: "Yes, Shield Security offers fully customizable plans to suit your business needs, risk level, hours of operation, and location."
-    },
-    {
-      question: "What qualifications do security guards need?",
-      answer: "Guards must hold a valid provincial security license and undergo training in areas like conflict de-escalation, emergency response, and customer service."
-    },
-    {
-      question: "Are security providers in Canada regulated?",
-      answer: "Yes, security providers must be licensed and regulated by provincial agencies. All Shield Security guards comply with local requirements."
-    },
-    {
-      question: "How do I measure the effectiveness of security measures?",
-      answer: "We provide reports, KPIs, incident logs, and real-time tracking tools through platforms like TrackTik to help you assess impact."
-    },
-    {
-      question: "What level of support can I expect from Shield Security?",
-      answer: "24/7 client support with access to a dedicated account manager, real-time updates, and immediate escalation procedures."
-    },
-    {
-      question: "What type of reports can I expect from Shield Security?",
-      answer: "Detailed incident reports, shift summaries, patrol verification, entry logs, and daily activity logs depending on service."
-    },
-    {
-      question: "What do Security Guards do on patrols?",
-      answer: "They inspect entry points, monitor surveillance feeds, report hazards, enforce policies, and ensure the safety of the premises."
-    },
-    {
-      question: "What’s the difference between Uniform guards and Tactical guards?",
-      answer: "Uniform guards are suited for general presence and customer interaction, while tactical guards are trained for high-risk, high-alert scenarios requiring enhanced gear and preparation."
-    },
-    {
-      question: "What type of businesses do you provide security for?",
-      answer: "We serve retail, hospitality, healthcare, industrial, construction, residential, education, and government sectors."
-    },
-    {
-      question: "What's the minimum notice needed for urgent guard requests?",
-      answer: "We can often deploy within hours, but recommend 24-hour notice when possible. Contact us for urgent support."
-    },
-    {
-      question: "How well trained are Shield Security guards?",
-      answer: "All guards complete Shield Academy training, covering topics such as mental health response, conflict resolution, and customer care."
-    },
-    {
-      question: "What is Risk Assessment?",
-      answer: "Risk assessment involves evaluating your site’s vulnerabilities and needs to create an effective security strategy."
-    },
-    {
-      question: "What is your policy around Diversity and Inclusion?",
-      answer: "We are proud of our inclusive hiring practices and diverse team, and we provide cultural sensitivity training to all staff."
-    },
-    {
-      question: "I am a job seeker, why should I work at Shield Security?",
-      answer: "We offer continuous training, flexible schedules, advancement opportunities, and a positive team culture."
-    },
-    {
-      question: "Do I need a license to work in the security industry?",
-      answer: "Yes, a provincial security license is required. We guide all recruits through the application process."
-    },
-    {
-      question: "I’m a Canadian Forces veteran, is security work a good fit?",
-      answer: "Absolutely. Many veterans excel in this field thanks to their discipline and situational awareness."
-    },
-    {
-      question: "How do I apply for a job at Shield Security?",
-      answer: "Visit our Careers page or search Shield Security on Indeed. We only accept applications submitted through those channels."
-    },
-    {
-      question: "When can I get in contact with Shield Security?",
-      answer: "Our team is available 24/7 for service inquiries or emergencies. Contact us via our website or emergency line."
-    }
-  ];
+const faqData = [
+  {
+    question: "What services do security companies offer?",
+    answer:
+      "Shield Security provides mobile patrols, uniformed guards, tactical response, event security, access control, CCTV monitoring, and loss prevention.",
+  },
+  {
+    question: "Can services be customized to fit our needs?",
+    answer:
+      "Absolutely. We tailor every service package based on your risk level, location, hours, and budget. Reach out for a free consultation.",
+  },
+  {
+    question: "What qualifications do your guards have?",
+    answer:
+      "All our guards are provincially licensed, background-checked, and Shield Academy trained in de-escalation, safety, mental health, and professionalism.",
+  },
+  {
+    question: "What industries do you serve?",
+    answer:
+      "We serve retail, hospitality, healthcare, construction, corporate, industrial, and government sectors throughout Canada.",
+  },
+  {
+    question: "How quickly can you deploy guards?",
+    answer:
+      "We’re known for rapid response and can often deploy within hours. For planned coverage, we recommend 24–48 hours notice.",
+  },
+  {
+    question: "Do you offer real-time reporting?",
+    answer:
+      "Yes. We use TrackTik for real-time patrol monitoring, incident reports, shift logs, and visitor access tracking.",
+  },
+  {
+    question: "Is Shield Security licensed and insured?",
+    answer:
+      "Yes. We are fully insured and licensed across multiple provinces in Canada, meeting or exceeding all legal requirements.",
+  },
+  {
+    question: "How can I get a quote?",
+    answer:
+      "Visit our Request a Quote page or contact us directly to speak with a security advisor about a tailored solution.",
+  },
+  {
+    question: "What makes Shield Security different from other providers?",
+    answer:
+      "Our combination of advanced technology, rapid response times, Shield Academy-trained guards, and transparent reporting sets us apart from traditional providers.",
+  },
+  {
+    question: "Can I request a specific type of guard for my site?",
+    answer:
+      "Yes, depending on your requirements, we can provide uniformed, tactical, bilingual, or concierge-style guards tailored to your environment.",
+  },
+  {
+    question: "Do your guards receive ongoing training?",
+    answer:
+      "Yes. In addition to initial certification, our team participates in ongoing professional development through the Shield Academy.",
+  },
+  {
+    question: "What areas do you currently serve?",
+    answer:
+      "We provide services across Alberta, British Columbia, and Ontario, with a growing presence in other provinces. Contact us to check local availability.",
+  },
+  {
+    question: "Can you integrate with existing alarm or camera systems?",
+    answer:
+      "Absolutely. Our team can work alongside your current security infrastructure or recommend upgrades to enhance protection.",
+  },
+  {
+    question: "Do you provide security for one-time events?",
+    answer:
+      "Yes. We specialize in both short-term and long-term coverage, including concerts, festivals, private parties, and corporate gatherings.",
+  },
+  {
+    question: "Is there a minimum contract duration?",
+    answer:
+      "We offer flexible contracts ranging from a few hours to multi-year agreements. No long-term commitment is required for short-term needs.",
+  },
+  {
+    question: "What happens in case of an emergency on-site?",
+    answer:
+      "Our guards are trained in emergency protocols and will respond immediately. We also provide 24/7 escalation support and incident reporting.",
+  },
+  {
+    question: "Can your team support construction site security?",
+    answer:
+      "Yes. We offer mobile patrols, gate monitoring, equipment protection, and overnight surveillance for construction and industrial sites.",
+  },
+  {
+    question: "How do I start working with Shield Security?",
+    answer:
+      "It starts with a free risk assessment and consultation. Visit our Contact page or call us to get started.",
+  },
+  
+];
 
+const FAQPage = () => {
   return (
-    <Box>
-      {/* Hero */}
+    <>
+      {/* ✅ Hero Section */}
       <Box
         sx={{
           backgroundImage: "url(/images/3.jpg)",
           backgroundSize: "cover",
           backgroundPosition: "center",
-          height: "50vh",
+          height: "90vh",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
+          position: "relative",
           textAlign: "center",
         }}
       >
-        <Box sx={{ backgroundColor: "rgba(0,0,0,0.6)", p: 4, borderRadius: 2 }}>
-          <Typography variant="h2" sx={{ color: "#fff", fontWeight: "bold" }}>
+        <Box
+          sx={{
+            position: "absolute",
+            inset: 0,
+            backgroundColor: "rgba(0, 0, 0, 0.6)",
+            zIndex: 1,
+          }}
+        />
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          style={{ zIndex: 2 }}
+        >
+          <Typography
+            variant="h3"
+            sx={{
+              color: "#fff",
+              fontWeight: "bold",
+              fontSize: { xs: "2rem", md: "3rem" },
+              textShadow: "2px 2px 8px rgba(0,0,0,0.7)",
+            }}
+          >
             Frequently Asked Questions
           </Typography>
-          <Typography variant="h6" sx={{ color: "#ddd", mt: 2 }}>
-            Common Security Questions Answered
+          <Typography
+            variant="h6"
+            sx={{
+              color: "#ddd",
+              mt: 2,
+              fontWeight: 300,
+              maxWidth: 700,
+              mx: "auto",
+            }}
+          >
+            Everything you need to know about our security solutions, deployment, and support.
           </Typography>
-        </Box>
+        </motion.div>
       </Box>
 
-      {/* FAQ Content */}
-      <Container sx={{ py: 8 }}>
-        <Grid container spacing={4}>
-          {faqData.map((item, idx) => (
-            <Grid item xs={12} key={idx}>
-              <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-                <Accordion>
-                  <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                    <Typography variant="h6" fontWeight="bold">
-                      {item.question}
-                    </Typography>
-                  </AccordionSummary>
-                  <AccordionDetails>
-                    <Typography>{item.answer}</Typography>
-                  </AccordionDetails>
-                </Accordion>
-              </motion.div>
-            </Grid>
+      {/* ✅ FAQ Section */}
+      <Box sx={{ backgroundColor: "#fff", py: 10 }}>
+        <Container maxWidth="md">
+          <Typography
+            variant="h4"
+            sx={{
+              color:"black",
+              fontWeight: "bold",
+              textAlign: "center",
+              mb: 6,
+              fontFamily: "'Poppins', sans-serif",
+              fontSize: { xs: "2rem", md: "2.5rem" },
+            }}
+          >
+            Your Questions Answered
+          </Typography>
+
+          {faqData.map((item, index) => (
+            <motion.div
+              key={index}
+              custom={index}
+              variants={fadeIn}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+            >
+              <Accordion
+                disableGutters
+                elevation={0}
+                sx={{
+                  borderBottom: "1px solid #ddd",
+                  "&:before": { display: "none" },
+                  backgroundColor: "#fff",
+                  px: 0,
+                }}
+              >
+                <AccordionSummary
+                  expandIcon={
+                    <ExpandMoreIcon sx={{ color: "#ff0000", fontSize: "2rem" }} />
+                  }
+                  sx={{
+                    py: 2,
+                  }}
+                >
+                  <Typography
+                    variant="subtitle1"
+                    fontWeight={600}
+                    sx={{
+                      fontFamily: "'Poppins', sans-serif",
+                      color: "#222",
+                    }}
+                  >
+                    {item.question}
+                  </Typography>
+                </AccordionSummary>
+                <AccordionDetails sx={{ pb: 2 }}>
+                  <Typography
+                    variant="body2"
+                    sx={{
+                      color: "#555",
+                      fontFamily: "'Poppins', sans-serif",
+                      lineHeight: 1.7,
+                    }}
+                  >
+                    {item.answer}
+                  </Typography>
+                </AccordionDetails>
+              </Accordion>
+            </motion.div>
           ))}
-        </Grid>
-      </Container>
-    </Box>
+
+          {/* CTA */}
+          <Box sx={{ textAlign: "center", mt: 8 }}>
+            <Button
+              variant="contained"
+              href="/contact"
+              sx={{
+                backgroundColor: "#ff0000",
+                color: "#fff",
+                fontWeight: "bold",
+                px: 5,
+                py: 1.5,
+                fontSize: "1rem",
+                borderRadius: "30px",
+                textTransform: "none",
+                boxShadow: "0 5px 15px rgba(255, 0, 0, 0.2)",
+                "&:hover": {
+                  backgroundColor: "#e60000",
+                  boxShadow: "0 8px 25px rgba(255, 0, 0, 0.3)",
+                },
+              }}
+            >
+              Still Have Questions?
+            </Button>
+          </Box>
+        </Container>
+      </Box>
+    </>
   );
 };
 

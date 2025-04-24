@@ -26,7 +26,7 @@ const LossPrevention = () => {
       <Box
         sx={{
           position: "relative",
-          height: "85vh",
+          height: "90vh",
           backgroundImage: "url(/images/LossPrevention.jpg)",
           backgroundSize: "cover",
           backgroundAttachment: "fixed",

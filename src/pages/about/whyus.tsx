@@ -1,112 +1,178 @@
 import React from "react";
-import { Box, Container, Typography, Grid, Paper, Button, Divider } from "@mui/material";
+import { Box, Container, Typography, Grid, Button, Divider, Chip } from "@mui/material";
 import Image from "next/image";
+import { motion } from "framer-motion";
+import VerifiedUserIcon from "@mui/icons-material/VerifiedUser";
+import BuildIcon from "@mui/icons-material/Build";
+import GroupsIcon from "@mui/icons-material/Groups";
+import SecurityIcon from "@mui/icons-material/Security";
+import FinalCTA from "@/components/FinalCTA";
+import RequestQuote from "@/components/RequestQuote";
+import ServicesShowcase from "@/components/serviceShowcase";
+
+// Animations
+const fadeInUp = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+};
+
+const stagger = {
+  visible: {
+    transition: { staggerChildren: 0.15 },
+  },
+};
 
 const WhyUs = () => {
   return (
     <Box>
-      {/* Hero Section */}
+      {/* ✅ Hero Section */}
       <Box
         sx={{
+          position: "relative",
+          height: "85vh",
           backgroundImage: "url(/images/1.jpg)",
           backgroundSize: "cover",
           backgroundPosition: "center",
-          height: "80vh",
+          backgroundAttachment: "fixed",
           display: "flex",
-          alignItems: "flex-end",
+          alignItems: "center",
           justifyContent: "center",
-          paddingBottom: "60px",
+          textAlign: "center",
+          px: 2,
         }}
       >
-        <Box sx={{ backgroundColor: "rgba(0,0,0,0.6)", p: 4, borderRadius: 2, textAlign: "center", backdropFilter: "blur(4px)" }}>
-          <Typography variant="h2" sx={{ color: "#fff", fontWeight: "bold" }}>
+        <Box sx={{ position: "absolute", inset: 0, background: "rgba(0,0,0,0.6)", zIndex: 1 }} />
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9, y: 30 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          style={{ zIndex: 2 }}
+        >
+          <Typography
+            variant="h2"
+            sx={{
+              color: "#fff",
+              fontWeight: 800,
+              fontSize: { xs: "2.5rem", md: "4rem" },
+              letterSpacing: 2,
+              fontFamily: "'Bebas Neue', sans-serif",
+              textShadow: "4px 4px 12px rgba(0,0,0,0.8)",
+            }}
+          >
             Why Choose Shield Security?
           </Typography>
-          <Typography variant="h6" sx={{ color: "#ddd", mt: 2 }}>
+          <Typography
+            variant="h6"
+            sx={{
+              color: "#ddd",
+              mt: 2,
+              fontWeight: 300,
+              fontSize: { xs: "1rem", md: "1.2rem" },
+              textShadow: "1px 1px 6px rgba(0,0,0,0.5)",
+              fontFamily: "'Poppins', sans-serif",
+            }}
+          >
             Your Protection, Our Commitment
           </Typography>
-        </Box>
+        </motion.div>
       </Box>
 
-      {/* Mission & Overview */}
-      <Box sx={{ backgroundColor: "#111", color: "#fff", py: 10, px: { xs: 3, md: 10 }, textAlign: "center" }}>
-        <Typography variant="h4" fontWeight="bold" gutterBottom>
-          Personalized, Professional, Proven
-        </Typography>
-        <Typography variant="body1" sx={{ color: "#ccc", maxWidth: "900px", mx: "auto", lineHeight: 1.8 }}>
-          Shield Security is redefining protection in Canada by blending personalized attention with large-scale capability. We focus on delivering proactive, technology-enhanced security solutions for organizations of every size. Our team isn&apos;t just trained; they&apos;re empowered, responsive, and dedicated to safeguarding what matters most to you.
-        </Typography>
-      </Box>
-
-      {/* Principles Section */}
-      <Container sx={{ py: 8 }}>
-        <Grid container spacing={4}>
-          {[{
-            title: "Hands-On Leadership",
-            desc: "Our executive team is personally involved with every client, conducting regular site audits and maintaining open communication.",
-          }, {
-            title: "Customizable Strategies",
-            desc: "We tailor every solution to fit your unique operational needs, industry standards, and security risks.",
-          }, {
-            title: "Scalable Operations",
-            desc: "From a single location to multi-site deployments across provinces, our infrastructure is built to grow with you.",
-          }, {
-            title: "Certified Excellence",
-            desc: "All personnel are licensed, insured, and trained under our Shield Academy programs, including crisis management, cultural awareness, and WHMIS.",
-          }].map((item, idx) => (
-            <Grid key={idx} item xs={12} md={6}>
-              <Paper sx={{ p: 4, backgroundColor: "#f7f9fc" }}>
-                <Typography variant="h5" fontWeight="bold" gutterBottom>
-                  {item.title}
-                </Typography>
-                <Typography>{item.desc}</Typography>
-              </Paper>
-            </Grid>
-          ))}
-        </Grid>
-      </Container>
-
-      {/* Services List */}
-      <Container sx={{ mt: 6, px: { xs: 3, md: 10 }, py: 10, backgroundColor: "#f7f9fc" }}>
-        <Typography variant="h4" fontWeight="bold" textAlign="center" gutterBottom>
-          Comprehensive Security Services
-        </Typography>
-        <Grid container spacing={2} mt={2}>
-          {["Mobile Patrol", "Event Security", "Concierge & Front Desk", "Construction Site Security", "Loss Prevention", "Residential Security", "Executive Protection", "Tactical Response", "CCTV Monitoring", "Retail & Shopping Mall Security", "Access Control", "Alarm Response"].map((service, idx) => (
-            <Grid item xs={12} sm={6} md={4} key={idx}>
-              <Typography sx={{ color: "#444" }}>• {service}</Typography>
-            </Grid>
-          ))}
-        </Grid>
-      </Container>
-
-      {/* Clients */}
-      <Box sx={{ textAlign: "center", py: 10 }}>
-        <Typography variant="h4" fontWeight="bold" gutterBottom>
-          Trusted by Leading Brands
-        </Typography>
-        <Grid container spacing={3} justifyContent="center" mt={2}>
-          {["logo1.png", "logo2.png", "logo3.png", "logo4.png"].map((logo, idx) => (
-            <Grid item key={idx}>
-              <Image src={`/images/${logo}`} alt={`Client Logo ${idx + 1}`} width={100} height={60} />
-            </Grid>
-          ))}
+      {/* ✅ Mission & Overview */}
+      <Box sx={{ backgroundColor: "#fff", color: "#111", py: 10, px: { xs: 3, md: 10 } }}>
+        <Grid container spacing={6} alignItems="center">
+          <Grid item xs={12} md={6}>
+            <motion.div initial="hidden" whileInView="visible" variants={fadeInUp} viewport={{ once: true }}>
+              <Image
+                src="/images/about-real.jpg"
+                alt="Why Shield Security"
+                width={600}
+                height={400}
+                style={{
+                  borderRadius: 16,
+                  width: "100%",
+                  height: "auto",
+                  objectFit: "cover",
+                  boxShadow: "0 6px 20px rgba(0,0,0,0.15)",
+                }}
+              />
+            </motion.div>
+          </Grid>
+          <Grid item xs={12} md={6}>
+            <motion.div initial="hidden" whileInView="visible" variants={fadeInUp} viewport={{ once: true }}>
+              <Typography variant="h4" fontWeight="bold" gutterBottom>
+                Personalized, Professional, Proven
+              </Typography>
+              <Typography variant="body1" sx={{ color: "#333", lineHeight: 1.8 }}>
+                At Shield Security, we bring together the power of innovation with personalized service. Our commitment goes
+                beyond watchful eyes — we become your dedicated security partner. With scalable solutions, fully licensed personnel,
+                and real-time response capabilities, we adapt to your unique needs and work environments.
+              </Typography>
+            </motion.div>
+          </Grid>
         </Grid>
       </Box>
 
-      {/* CTA */}
-      <Box sx={{ backgroundColor: "#111", color: "#fff", textAlign: "center", py: 10, px: { xs: 3, md: 10 } }}>
-        <Divider sx={{ mb: 4, backgroundColor: "#444" }} />
-        <Typography variant="h5" fontWeight="bold" gutterBottom>
-          Let’s Build a Safer Tomorrow
+      {/* ✅ Operational Principles */}
+      <Box sx={{ py: 10, px: { xs: 3, md: 10 }, backgroundColor: "#111" }}>
+        <Typography variant="h4" textAlign="center" fontWeight={700} gutterBottom>
+          Our Operational Principles
         </Typography>
-        <Typography variant="body1" sx={{ color: "#ccc", maxWidth: "800px", mx: "auto", mb: 4 }}>
-          Contact us today and discover how Shield Security can help elevate your protection strategy with integrity, insight, and innovation.
-        </Typography>
-        <Button variant="contained" color="error" sx={{ px: 5, py: 1.5, fontSize: "16px", borderRadius: "30px" }}>
-          Contact Us
-        </Button>
+        <motion.div variants={stagger} initial="hidden" whileInView="visible" viewport={{ once: true }}>
+          <Grid container spacing={4} mt={4} color="black">
+            {[
+              {
+                title: "Hands-On Leadership",
+                icon: <GroupsIcon sx={{ fontSize: 40, color: "#1976d2", mb: 1 }} />,
+                desc: "Our leadership is actively involved in every contract through site visits, audits, and direct engagement.",
+              },
+              {
+                title: "Customizable Strategies",
+                icon: <BuildIcon sx={{ fontSize: 40, color: "#388e3c", mb: 1 }} />,
+                desc: "Security plans tailored to your operations, risks, and environment — not just templates.",
+              },
+              {
+                title: "Scalable Operations",
+                icon: <SecurityIcon sx={{ fontSize: 40, color: "#f57c00", mb: 1 }} />,
+                desc: "From a single site to a nationwide presence, our team is built to scale with your needs.",
+              },
+              {
+                title: "Certified Excellence",
+                icon: <VerifiedUserIcon sx={{ fontSize: 40, color: "#d32f2f", mb: 1 }} />,
+                desc: "Shield officers are WHMIS, First Aid, and De-escalation certified academy",
+              },
+            ].map((item, idx) => (
+              <Grid key={idx} item xs={12} md={6}>
+                <motion.div variants={fadeInUp}>
+                  <Box
+                    sx={{
+                      p: 4,
+                      backgroundColor: "#fff",
+                      borderRadius: 4,
+                      border: "1px solid #eee",
+                      boxShadow: 1,
+                      height: "100%",
+                      textAlign: "left",
+                      transition: "0.3s",
+                      "&:hover": { transform: "translateY(-5px)", boxShadow: 3 },
+                    }}
+                  >
+                    {item.icon}
+                    <Typography variant="h5" fontWeight="bold" gutterBottom>
+                      {item.title}
+                    </Typography>
+                    <Typography sx={{ color: "#555", lineHeight: 1.6 }}>{item.desc}</Typography>
+                  </Box>
+                </motion.div>
+              </Grid>
+            ))}
+          </Grid>
+        </motion.div>
       </Box>
+
+      <ServicesShowcase currentService="Retail"/>
+
+     <FinalCTA/>
+     <RequestQuote/>
     </Box>
   );
 };
