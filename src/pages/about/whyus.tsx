@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Container, Typography, Grid, Button, Divider, Chip } from "@mui/material";
+import { Box,  Typography, Grid} from "@mui/material";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import VerifiedUserIcon from "@mui/icons-material/VerifiedUser";

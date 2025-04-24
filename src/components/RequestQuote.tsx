@@ -1,6 +1,5 @@
 import React, { ChangeEvent, FormEvent, useState } from "react";
-import { api } from '@/utils/api';
-import { submitQuoteRequest, QuoteFormData } from "@/utils/apiFunction"; // or quoteService
+import { submitQuoteRequest } from "@/utils/apiFunction"; // or quoteService
 
 import {
   Box,
@@ -102,9 +101,9 @@ const RequestQuote = () => {
         heardFrom: "",
         message: "",
       });
-    } catch (error: any) {
-      console.error("Quote submission error:", error?.response || error);
-      alert(error?.response?.data?.error || "Something went wrong. Please try again later.");
+    } catch (error) {
+      console.error("Quote submission error:",  error);
+      alert("Something went wrong. Please try again later.");
     }
      finally {
       setLoading(false);

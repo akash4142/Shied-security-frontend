@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Container, Typography, Grid, Card, CardContent, Button, Paper } from "@mui/material";
+import { Box, Container, Typography, Grid, Card, CardContent } from "@mui/material";
 import { motion } from "framer-motion";
 import GppGoodIcon from "@mui/icons-material/GppGood";
 import SecurityIcon from "@mui/icons-material/Security";
@@ -134,7 +134,7 @@ const CompanyOverview = () => {
             <Typography variant="body1" sx={{ lineHeight: 1.8 }}>
               Sourav Gupta, the founder and GM of Shield Secure Ltd., brings deep experience from working with Alberta Health Services and the
               Town of Canmore. His values of accountability, responsiveness, and community engagement are embedded in the
-              company's approach to service.
+              company&apos;s approach to service.
               <br /><br />
               Under his leadership, Shield Secure delivers consistent, ethical, and reliable security for clients and communities across Alberta.
             </Typography>

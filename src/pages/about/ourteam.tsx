@@ -7,13 +7,12 @@ import {
   CardContent,
   Avatar,
   Box,
-  Chip,
   Tabs,
   Tab,
 } from "@mui/material";
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { WidthFull } from "@mui/icons-material";
+
 
 const tabStyles = {
   fontWeight: "bold",

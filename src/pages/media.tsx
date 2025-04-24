@@ -124,7 +124,7 @@ const MediaPage = () => {
           }}
         >
           Welcome to the Shield Secure Security Media Center — your hub for the latest updates, security insights, and impactful stories from the field.
-          Whether you're a journalist, a client, or just curious, stay tuned for regular updates from our team.
+          Whether you&apos;re a journalist, a client, or just curious, stay tuned for regular updates from our team.
         </Typography>
       </Container>
   

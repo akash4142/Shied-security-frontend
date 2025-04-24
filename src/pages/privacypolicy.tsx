@@ -60,7 +60,7 @@ const sections = [
       <>
         <strong>Report:</strong> Immediately notify the contract manager and call the designated incident line.<br />
         <strong>Recover:</strong> Act swiftly to retrieve exposed data, prioritizing employee safety.<br />
-        <strong>Remediate:</strong> Notify individuals if there's a risk of harm, fraud, or reputational damage.<br />
+        <strong>Remediate:</strong> Notify individuals if there&apos;s a risk of harm, fraud, or reputational damage.<br />
         <strong>Prevent:</strong> Implement stronger controls and raise awareness to mitigate future risks.
       </>
     ),

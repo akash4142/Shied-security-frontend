@@ -14,11 +14,11 @@ const fadeInUp = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
 };
 
-const stagger = {
-  visible: {
-    transition: { staggerChildren: 0.2 },
-  },
-};
+// const stagger = {
+//   visible: {
+//     transition: { staggerChildren: 0.2 },
+//   },
+// };
 
 const About = () => {
   return (
@@ -106,7 +106,7 @@ const About = () => {
       <br /><br />
       Contact us for information about our services, team, and commitment to delivering professional and reliable
       security solutions. We take pride in our extensive range of services and our dedication to ensuring the safety
-      and security of our clients' premises and events.
+      and security of our clients&apos; premises and events.
     </Typography>
   </motion.div>
 </Box>
