@@ -13,7 +13,7 @@ import { motion } from "framer-motion";
 
 // ✅ Location Data
 const locationsData = [
-  { name: "Calgary", img: "/images/canmore.jpg", link: "/location/calgary" },
+  { name: "Calgary", img: "/images/canmore.jpg", link: "/locations/calgary" },
   { name: "Banff", img: "/images/calgary.jpg", link: "/locations/banff" },
   { name: "Canmore", img: "/images/canmore.jpg", link: "/locations/canmore" },
   { name: "Cochrane", img: "/images/calgary.jpg", link: "/locations/cochrane" },
@@ -45,7 +45,7 @@ const CardOverlay = styled("div")({
   width: "100%",
   height: "100%",
   backgroundColor: "rgba(0, 0, 0, 0.4)",
-  backdropFilter: "blur(1.5px)",
+  //backdropFilter: "blur(1.5px)",
   display: "flex",
   alignItems: "flex-end",
   justifyContent: "center",
