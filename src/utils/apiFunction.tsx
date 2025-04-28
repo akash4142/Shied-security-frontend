@@ -14,6 +14,7 @@ export interface QuoteFormData {
 }
 
 export const submitQuoteRequest = async (formData: QuoteFormData) => {
-  const response = await api.post("/quotes", formData);
+  const response = await api.post("/api/quotes", formData);
   return response.data;
 };
+

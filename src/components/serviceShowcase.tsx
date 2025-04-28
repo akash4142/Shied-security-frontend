@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 
 const allServices = [
   { title: 'Mobile Patrol', img: '/images/PatrolSecurity.jpg', link: '/services/Mobile' },
-  { title: 'Event Security', img: '/images/EventSecurity.jpg', link: '/services/Event' },
+  { title: 'Event Security', img: '/images/event.jpg', link: '/services/Event' },
   { title: 'Loss Prevention', img: '/images/LossPrevention.jpg', link: '/services/Loss' },
   { title: 'Uniformed Security', img: '/images/Uniformed2.jpg', link: '/services/Uniformed' },
   { title: 'Tactical Security', img: '/images/PatrolSecurity2.jpg', link: '/services/Tactical' },

@@ -13,6 +13,7 @@ import Head from 'next/head';
 import FinalCTA from '@/components/FinalCTA';
 import GoogleReviewBadge from '@/components/GoogleReviewBadge';
 
+
 const Home = () => {
   return (
     <>
@@ -34,7 +35,7 @@ const Home = () => {
     alignItems: 'center',
     justifyContent: 'flex-start',
     px: { xs: 2, md: 8 },
-    pt: { xs: '40px', md: '100px' }, // Adjust for any fixed Navbar height
+    pt: { xs: '140px', md: '100px' }, // Adjust for any fixed Navbar height
     overflow: 'hidden',
   }}
 >
@@ -59,7 +60,7 @@ const Home = () => {
     style={{ position: 'relative', zIndex: 2 }} // ABOVE the overlay
   >
     <Box sx={{ maxWidth: 600, p: 4, borderRadius: 2 }}>
-      <Typography variant="h2" sx={{ fontWeight: 'bold', color: '#fff' }}>
+      <Typography variant="h2" sx={{ fontWeight: 'bold', color: '#fff' , fontSize: { xs: '26px', md: '60px' }, }}>
         Security Services You Can Trust
       </Typography>
       <Typography variant="h6" sx={{ mt: 2, mb: 4, color: '#e0e0e0' }}>
@@ -70,7 +71,7 @@ const Home = () => {
           variant="contained"
           sx={{
             backgroundColor: '#ff0000',
-            fontSize: '18px',
+            fontSize: { xs: '10px', md: '18px' },
             px: 4,
             '&:hover': {
               backgroundColor: '#cc0000',

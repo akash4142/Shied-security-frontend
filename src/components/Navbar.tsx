@@ -15,6 +15,9 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
+import { Accordion, AccordionSummary, AccordionDetails, Divider } from "@mui/material";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import CloseIcon from "@mui/icons-material/Close";
 import { useRouter } from "next/router";
 
 const Navbar = () => {
@@ -96,7 +99,7 @@ const Navbar = () => {
     <Box
       sx={{
         width: 140,
-        height: 140,
+        height:140,
         backgroundColor: "#0f0f0f", // dark circle background
         borderRadius: "50%",        // perfect circle
         display: "flex",
@@ -212,129 +215,93 @@ const Navbar = () => {
         </IconButton>
       </Toolbar>
 
-      {/* Drawer Menu (Mobile) */}
-      <Drawer
-        anchor="right"
-        open={mobileOpen}
-        onClose={handleDrawerToggle}
-        sx={{
-          "& .MuiDrawer-paper": {
-            backgroundColor: "#0f0f0f",
-            color: "#fff",
-            width: 280,
-            padding: "20px 15px",
-          },
-        }}
-      >
-        <Box sx={{ display: "flex", alignItems: "center", justifyContent: "space-between", mb: 3 }}>
-          <Link href="/" passHref legacyBehavior>
-            <Image src="/images/logo.jpg" alt="Shield Logo" width={100} height={60} />
-          </Link>
-          <IconButton onClick={handleDrawerToggle} sx={{ color: "#fff" }}>
-            <MenuIcon />
-          </IconButton>
-        </Box>
+      
+<Drawer
+  anchor="right"
+  open={mobileOpen}
+  onClose={handleDrawerToggle}
+  sx={{
+    zIndex:1400,
+    "& .MuiDrawer-paper": {
+      backgroundColor: "blak", // White background like Blackbird
+      color: "#000",
+      width: 280,
+      padding: "10px 15px",
+    },
+  }}
+>
+  {/* Drawer Header: Logo and X Close Button */}
+  <Box sx={{ display: "flex", alignItems: "center", justifyContent: "space-between", mb: 2 }}>
+    
 
-        <motion.div
-          initial="hidden"
-          animate="visible"
-          exit="exit"
-          variants={{
-            hidden: { opacity: 0, x: 30 },
-            visible: {
-              opacity: 1,
-              x: 0,
-              transition: {
-                type: "spring",
-                damping: 18,
-                stiffness: 80,
-                staggerChildren: 0.1,
-              },
-            },
-            exit: { opacity: 0, x: 30 },
-          }}
+    <IconButton onClick={handleDrawerToggle}>
+      <CloseIcon />
+    </IconButton>
+  </Box>
+
+  <Divider sx={{ mb: 2 }} />
+
+  {/* Accordion Menu */}
+  <Box>
+    {Object.entries(menuItems).map(([menu, subItems]) => (
+      <Accordion key={menu} disableGutters elevation={0} sx={{ backgroundColor: "transparent" }}>
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls={`${menu}-content`}
+          id={`${menu}-header`}
         >
-          {Object.entries(menuItems).map(([menu, subItems]) => {
-            const isActive = router.pathname.includes(menu);
+          <Typography sx={{ fontWeight: 600, fontSize: "15px" }}>
+            {menu.toUpperCase()}
+          </Typography>
+        </AccordionSummary>
 
-            return (
-              <motion.div key={menu} variants={{ hidden: { opacity: 0 }, visible: { opacity: 1 } }}>
-                <Link href={`/${menu}`} passHref legacyBehavior>
-                  <Typography
-                    component="span"
-                    onClick={handleDrawerToggle}
-                    sx={{
-                      fontSize: "16px",
-                      fontWeight: 600,
-                      mb: 1,
-                      color: isActive ? "#ff0000" : "#fff",
-                      cursor: "pointer",
-                      display: "block",
-                      "&:hover": { color: "#ff0000" },
-                    }}
-                  >
-                    {menu.toUpperCase()}
-                  </Typography>
-                </Link>
+        <AccordionDetails sx={{ pl: 2 }}>
+          {subItems.map((item) => (
+            <Link key={item.text} href={item.link} passHref legacyBehavior>
+              <Typography
+                component="span"
+                onClick={handleDrawerToggle}
+                sx={{
+                  fontSize: "14px",
+                  display: "block",
+                  mb: 1,
+                  cursor: "pointer",
+                  "&:hover": { color: "#ff0000" },
+                }}
+              >
+                {item.text}
+              </Typography>
+            </Link>
+          ))}
+        </AccordionDetails>
+      </Accordion>
+    ))}
+  </Box>
 
-                <Box sx={{ pl: 2, mb: 2 }}>
-                  {subItems.map((item, idx) => {
-                    const isSubActive = router.pathname === item.link;
+  <Divider sx={{ mt: 3, mb: 2 }} />
 
-                    return (
-                      <motion.div
-                        key={item.text}
-                        initial={{ opacity: 0, x: 10 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: 0.05 * idx }}
-                      >
-                        <Link href={item.link} passHref legacyBehavior>
-                          <Typography
-                            component="span"
-                            onClick={handleDrawerToggle}
-                            sx={{
-                              fontSize: "14px",
-                              fontWeight: 400,
-                              color: isSubActive ? "#ff0000" : "#ccc",
-                              py: 0.5,
-                              display: "block",
-                              cursor: "pointer",
-                              "&:hover": { color: "#ff0000" },
-                            }}
-                          >
-                            • {item.text}
-                          </Typography>
-                        </Link>
-                      </motion.div>
-                    );
-                  })}
-                </Box>
-              </motion.div>
-            );
-          })}
+  {/* Social Media Icons */}
+  <Box sx={{ display: "flex", justifyContent: "space-around" }}>
+    <IconButton
+      href="https://www.instagram.com/shieldsecuresecurity"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <InstagramIcon sx={{ color: "#000" }} />
+    </IconButton>
 
-          {/* CTA Button */}
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }}>
-            <Box sx={{ mt: 3 }}>
-              <Link href="/quote" passHref legacyBehavior>
-                <Button
-                  fullWidth
-                  variant="contained"
-                  onClick={handleDrawerToggle}
-                  sx={{
-                    backgroundColor: "#ff0000",
-                    fontWeight: "bold",
-                    fontSize: "15px",
-                    "&:hover": { backgroundColor: "#cc0000" },
-                  }}
-                >
-                  Get a Quote
-                </Button>
-              </Link>
-            </Box>
-          </motion.div>
-        </motion.div>
-      </Drawer>
+    <IconButton
+      href="https://www.facebook.com/share/1Ca1o6NnKu"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <FacebookIcon sx={{ color: "#000" }} />
+    </IconButton>
+
+  
+  </Box>
+</Drawer>
+
     </AppBar>
   );
 };

@@ -13,11 +13,11 @@ import { motion } from "framer-motion";
 
 // ✅ Location Data
 const locationsData = [
-  { name: "Calgary", img: "/images/canmore.jpg", link: "/locations/calgary" },
-  { name: "Banff", img: "/images/calgary.jpg", link: "/locations/banff" },
+  { name: "Calgary", img: "/images/calgary.jpg", link: "/locations/calgary" },
+  { name: "Banff", img: "/images/banff.jpg", link: "/locations/banff" },
   { name: "Canmore", img: "/images/canmore.jpg", link: "/locations/canmore" },
-  { name: "Cochrane", img: "/images/calgary.jpg", link: "/locations/cochrane" },
-  { name: "Exshaw", img: "/images/canmore.jpg", link: "/locations/exshaw" },
+  { name: "Cochrane", img: "/images/cochrane.jpg", link: "/locations/cochrane" },
+  { name: "Exshaw", img: "/images/exshaw.jpg", link: "/locations/exshaw" },
 ];
 
 // ✅ Styled Components (same as services)
