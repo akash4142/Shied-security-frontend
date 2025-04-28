@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Container, Grid, Typography, TextField, Button, Box } from '@mui/material';
-import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { api } from '@/utils/api';
 
@@ -84,7 +83,7 @@ const Contact = () => {
             Contact Us
           </Typography>
           <Typography variant="h6" sx={{ color: '#ccc', fontSize: { xs: '16px', md: '20px' } }}>
-            We're here to support your security needs.
+            We&apos;re here to support your security needs.
           </Typography>
         </Box>
       </Box>
