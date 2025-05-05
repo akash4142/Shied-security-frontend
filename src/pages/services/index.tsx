@@ -19,6 +19,7 @@ const servicesData = [
   { name: "Loss Prevention", img: "/images/LossPrevention2.jpg", link: "/services/Loss" },
   { name: "Patrol Security", img: "/images/PatrolSecurity2.jpg", link: "/services/Patrol" },
   { name: "Tactical Security", img: "/images/Uniformed2.jpg", link: "/services/Tactical" },
+  {name:"Parking Enforcement", img: "/images/Uniformed.jpg",link: "/services/ParkingEnforcement"}
 ];
 
 // ✅ Styled Components
@@ -95,7 +96,7 @@ const ServicePage = () => {
       <Box
         sx={{
           position: "relative",
-          height: "85vh",
+          height: "100vh",
           backgroundImage: "url(/images/PatrolSecurity.jpg)",
           backgroundSize: "cover",
           backgroundPosition: "center",

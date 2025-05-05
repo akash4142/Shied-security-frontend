@@ -44,6 +44,7 @@ const Navbar = () => {
       { text: "Patrol Security", link: "/services/Patrol" },
       { text: "Mobile Security", link: "/services/Mobile" },
       { text: "Tactical Security", link: "/services/Tactical" },
+      {text:"Parking Enforcement", link: "/services/ParkingEnforcement"}
     ],
     locations: [
       { text: "Canmore", link: "/locations/canmore" },
@@ -58,6 +59,12 @@ const Navbar = () => {
       { text: "Corporate Security", link: "/industries/corporate" },
       { text: "Retail Security", link: "/industries/retail" },
       { text: "Warehouse Security", link: "/industries/warehouse" },
+      { text: "Construction Security", link: "/industries/construction" },
+      { text: "Education & Campus", link: "/industries/Education" },
+      { text: "Government & Municipality", link: "/industries/Government" },
+      { text: "Residential & Commerical ", link: "/industries/Residental" },
+      { text: "Patrol Security", link: "/services/Patrol" },
+      
     ],
     about: [
       { text: "Company Overview", link: "/about/overview" },
@@ -79,7 +86,8 @@ const Navbar = () => {
       }}
     >
       {/* Top Right Social Icons */}
-      <Box sx={{ display: "flex", justifyContent: "flex-end", px: 5, pt: 2 }}>
+      <Box sx={{ pr: 8}}>
+      <Box sx={{ display: "flex", justifyContent: "flex-end", px: 5, pt: 2,gap:2 }}>
         {[
           { icon: <InstagramIcon />, href: "https://www.instagram.com/shieldsecuresecurity?igsh=MWRkOWFkaWZ0NXNqZQ==" },
           { icon: <FacebookIcon />, href: "https://www.facebook.com/share/1Ca1o6NnKu/?mibextid=wwXIfr" },
@@ -91,32 +99,37 @@ const Navbar = () => {
           </motion.div>
         ))}
       </Box>
+</Box>
 
-      <Toolbar sx={{ justifyContent: "space-between", alignItems: "center", px: 2, flexWrap: "wrap" }}>
+
+      <Toolbar sx={{ justifyContent: "space-between", alignItems: "center",py:2, flexWrap: "wrap" }}>
         {/* Logo */}
-        <Link href="/" passHref legacyBehavior>
-  <motion.div whileHover={{ scale: 1.05 }}>
-    <Box
-      sx={{
-        width: 140,
-        height:140,
-        backgroundColor: "#0f0f0f", // dark circle background
-        borderRadius: "50%",        // perfect circle
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        overflow: "hidden",
-        boxShadow: "0 0 12px rgba(255,77,77,0.5)", // slight glow to match theme
-      }}
-    >
-      <Image src="/images/logo.jpg" alt="Shield Logo" width={160} height={140} />
-    </Box>
-  </motion.div>
-</Link>
+        <Box sx={{ pl: 10 }}> {/* or ml: 4 */}
+  <Link href="/" passHref legacyBehavior>
+    <motion.div whileHover={{ scale: 1.05 }}>
+      <Box
+        sx={{
+          width: 140,
+          height: 140,
+          backgroundColor: "#0f0f0f",
+          borderRadius: "50%",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          overflow: "hidden",
+          boxShadow: "0 0 12px rgba(255,77,77,0.5)",
+        }}
+      >
+        <Image src="/images/logo.jpg" alt="Shield Logo" width={160} height={140} />
+      </Box>
+    </motion.div>
+  </Link>
+</Box>
+
 
 
         {/* Desktop Menu */}
-        <Box sx={{ display: { xs: "none", md: "flex" }, gap: 3 }}>
+        <Box sx={{ display: { xs: "none", md: "flex" }, gap: 8 }}>
           {Object.keys(menuItems).map((menu) => (
             <Box
               key={menu}
@@ -188,26 +201,28 @@ const Navbar = () => {
           ))}
         </Box>
 
-        {/* CTA Button */}
-        <motion.div whileHover={{ scale: 1.05 }}>
-          <Link href="/quote" passHref legacyBehavior>
-            <Button
-              variant="contained"
-              sx={{
-                backgroundColor: "#ff0000",
-                fontWeight: "bold",
-                fontSize: "16px",
-                px: 3,
-                display: { xs: "none", md: "inline-flex" },
-                '&:hover': {
-                  backgroundColor: "#cc0000",
-                },
-              }}
-            >
-              Get a Quote
-            </Button>
-          </Link>
-        </motion.div>
+        <Box sx={{ pr: 8 }}>
+  <motion.div whileHover={{ scale: 1.05 }}>
+    <Link href="/quote" passHref legacyBehavior>
+      <Button
+        variant="contained"
+        sx={{
+          backgroundColor: "#ff0000",
+          fontWeight: "bold",
+          fontSize: "16px",
+          px: 4,
+          display: { xs: "none", md: "inline-flex" },
+          '&:hover': {
+            backgroundColor: "#cc0000",
+          },
+        }}
+      >
+        Get a Quote
+      </Button>
+    </Link>
+  </motion.div>
+</Box>
+
 
         {/* Mobile Menu Icon */}
         <IconButton onClick={handleDrawerToggle} sx={{ display: { md: "none" }, color: "#fff" }}>

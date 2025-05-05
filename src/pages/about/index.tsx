@@ -6,7 +6,7 @@ import BuildIcon from "@mui/icons-material/Build";
 import FinalCTA from "@/components/FinalCTA";
 import RequestQuote from "@/components/RequestQuote";
 import TestimonialsSection from "@/components/TestimonialsSection";
-
+import ClientLogoCarousel from "@/components/ClientLogoCarousel";
 
 // Animations
 const fadeInUp = {
@@ -111,7 +111,7 @@ const About = () => {
   </motion.div>
 </Box>
 
-     
+    
 
      {/* ✅ Core Values - Upgraded */}
 <Box sx={{ background: "#fff", py: 12, px: { xs: 3, md: 10 } }}>
@@ -175,10 +175,10 @@ const About = () => {
           >
             <CardContent>
               <Box sx={{ mb: 2 }}>{value.icon}</Box>
-              <Typography variant="h6" fontWeight={600} gutterBottom sx={{ color: "#111" }}>
+              <Typography variant="h6" fontWeight={600} gutterBottom sx={{ color: "#fff" }}>
                 {value.title}
               </Typography>
-              <Typography variant="body2" sx={{ color: "#444", lineHeight: 1.7 }}>
+              <Typography variant="body2" sx={{ color: "#fff", lineHeight: 1.7 }}>
                 {value.desc}
               </Typography>
             </CardContent>
@@ -190,6 +190,7 @@ const About = () => {
 </Box>
 
       <TestimonialsSection />
+      <ClientLogoCarousel/>
       <FinalCTA/>
       <RequestQuote />
     </>

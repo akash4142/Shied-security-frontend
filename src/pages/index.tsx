@@ -12,7 +12,7 @@ import OurMission from '@/components/ourMission';
 import Head from 'next/head';
 import FinalCTA from '@/components/FinalCTA';
 import GoogleReviewBadge from '@/components/GoogleReviewBadge';
-
+import VacantPropertyCheck from '@/components/vacantPropertyCheck';
 
 const Home = () => {
   return (
@@ -114,6 +114,7 @@ const Home = () => {
 
       <OurMission />
       <ServicesShowcase currentService='Mobile Patrol'/>
+      <VacantPropertyCheck/>
       <TestimonialsSection />
       <ClientLogoCarousel />
       <FinalCTA/>

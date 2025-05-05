@@ -10,9 +10,7 @@ import {
 } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import FacebookIcon from "@mui/icons-material/Facebook";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import InstagramIcon from "@mui/icons-material/Instagram";
-import TwitterIcon from "@mui/icons-material/Twitter";
 import ShieldIcon from "@mui/icons-material/Shield";
 import Link from "next/link";
 import Image from "next/image";
@@ -98,14 +96,19 @@ const MobileFooter = () => {
         </AccordionSummary>
         <AccordionDetails>
           <Typography variant="body2" sx={{ color: "#ccc", mb: 1 }}>📞 403-953-1998</Typography>
-          <Typography variant="body2" sx={{ color: "#ccc", mb: 1 }}>📧 shieldsecure82@gmail.com</Typography>
+          <Typography variant="body2" sx={{ color: "#ccc", mb: 1 }}>
+    📧{" "}
+    <a href="mailto:shieldsecure82@gmail.com" style={{ color: "#ccc", textDecoration: "none" }}>
+      shieldsecure82@gmail.com
+    </a>
+  </Typography>
           <Typography variant="body2" sx={{ color: "#ccc" }}>🏢 Head Office: Canmore, AB</Typography>
         </AccordionDetails>
       </Accordion>
 
       {/* Social Icons */}
       <Box sx={{ mt: 4, display: "flex", justifyContent: "center", gap: 2 }}>
-        {[InstagramIcon, FacebookIcon, LinkedInIcon, TwitterIcon].map((Icon, index) => (
+        {[InstagramIcon, FacebookIcon].map((Icon, index) => (
           <IconButton key={index} sx={{ color: "#ccc", background: "#1f1f1f", "&:hover": { background: "#ff4d4d", color: "#fff" } }}>
             <Icon />
           </IconButton>

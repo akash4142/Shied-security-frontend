@@ -168,7 +168,7 @@ const UniformedSecurity = () => {
             Trusted by Leading Brands
           </Typography>
           <Grid container spacing={4} justifyContent="center">
-            {["/logos/canadian-tire.png", "/logos/canadian-tire.png", "/logos/canadian-tire.png", "/logos/canadian-tire.png"].map(
+            {["/logos/canadian-tire.png", "/logos/CanmoreHostel.jpg", "/logos/cornerStone.jpg", "/logos/fillmore.jpg"].map(
               (logo, idx) => (
                 <Grid item key={idx} xs={6} sm={3} md={2}>
                   <Box

@@ -17,6 +17,10 @@ const industriesData = [
   { name: "Corporate Security", img: "/images/calgary.jpg", link: "/industries/corporate" },
   { name: "Retail Security", img: "/images/calgary.jpg", link: "/industries/retail" },
   { name: "Warehouse Security", img: "/images/canmore.jpg", link: "/industries/warehouse" },
+  { name: "Construction Security", img: "/images/canmore.jpg", link: "/industries/construction" },
+  { name: "Education & Campuses", img: "/images/canmore.jpg", link: "/industries/Education" },
+  { name: "Residental & Commerical", img: "/images/canmore.jpg", link: "/industries/Residental" },
+  { name: "Event Security", img: "/images/calgary.jpg", link: "/industries/Event" },
 ];
 
 // Styled Components

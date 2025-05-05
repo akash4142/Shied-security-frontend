@@ -143,7 +143,7 @@ const TestimonialsSection = () => {
                     mb: 3,
                     position: 'relative',
                     '&::before': {
-                      content: '"“"',
+                      //content: '"“"',
                       position: 'absolute',
                       left: -15,
                       top: -10,
@@ -152,7 +152,7 @@ const TestimonialsSection = () => {
                       opacity: 0.3,
                     },
                     '&::after': {
-                      content: '"”"',
+                      //content: '"”"',
                       position: 'absolute',
                       right: -10,
                       bottom: -15,

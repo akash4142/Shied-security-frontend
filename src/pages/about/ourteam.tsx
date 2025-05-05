@@ -4,7 +4,6 @@ import {
   Typography,
   Grid,
   Card,
-  CardContent,
   Avatar,
   Box,
   Tabs,
@@ -101,7 +100,7 @@ const OurTeamPage = () => {
             <Grid container spacing={6} alignItems="center">
               <Grid item xs={12} md={4}>
                 <Avatar
-                  src="/team/sourav.jpg"
+                  src="/images/sourav.jpg"
                   alt="Sourav Gupta"
                   sx={{ width: 200, height: 200, mx: "auto", border: "5px solid #ff0000" }}
                 />
@@ -136,46 +135,62 @@ const OurTeamPage = () => {
           </motion.div>
         )}
 
-        {/* ✅ HR & Accountant */}
-        {tabIndex === 1 && (
-          <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 0.5 }}>
-            <Grid container spacing={4} justifyContent="center">
-              {[
-                {
-                  name: "Swati Sharma",
-                  role: "HR & Recruitment Lead",
-                  img: "/team/swati.jpg",
-                },
-              ].map((staff, index) => (
-                <Grid item xs={12} sm={6} md={4} key={index}>
-                  <Card sx={{ p: 4, borderRadius: 4, textAlign: "center", boxShadow: 3 }}>
-                    <Avatar
-                      alt={staff.name}
-                      src={staff.img}
-                      sx={{ width: 110, height: 110, mx: "auto", mb: 2, border: "4px solid #ff0000" }}
-                    />
-                    <CardContent>
-                      <Typography variant="h6" fontWeight="bold">
-                        {staff.name}
-                      </Typography>
-                      <Typography variant="body2" sx={{ color: "#666" }}>
-                        {staff.role}
-                      </Typography>
-                    </CardContent>
-                  </Card>
-                </Grid>
-              ))}
-            </Grid>
-          </motion.div>
-        )}
+ {/* ✅ HR & Administrator */}
+{tabIndex === 1 && (
+  <motion.div
+    initial={{ opacity: 0 }}
+    whileInView={{ opacity: 1 }}
+    transition={{ duration: 0.5 }}
+  >
+    <Grid container spacing={6} alignItems="center">
+      <Grid item xs={12} md={4}>
+        <Avatar
+          src="/images/Muskan.jpg"
+          alt="Muskan Sharma"
+          sx={{ width: 200, height: 200, mx: "auto", border: "5px solid #ff0000" }}
+        />
+        <Typography textAlign="center" variant="h6" fontWeight="bold" mt={2}>
+          Swati Sharma
+        </Typography>
+        <Typography textAlign="center" variant="body2" sx={{ color: "#888" }}>
+          HR & Administrative Lead
+        </Typography>
+      </Grid>
+      <Grid item xs={12} md={8}>
+        <Typography variant="body1" sx={{ color: "fff", lineHeight: 1.9 }}>
+          With over 9 years of experience in the security industry as a Scheduling Coordinator and Administrator,
+          I am proud to play an essential role at Shield Secure, supporting both our clients and internal operations.
+          <br /><br />
+          Throughout my career, I have developed a deep understanding of client service, scheduling logistics,
+          and operational management, which allows me to provide seamless support and effective communication to all
+          Shield Secure clients. I believe that excellent client service is built on responsiveness, attention to detail,
+          and a commitment to delivering outstanding results — values I bring to every interaction.
+          <br /><br />
+          In my role as Administrator, I work directly with clients to ensure their service needs are met quickly,
+          professionally, and with the highest level of care. From coordinating customized security solutions to addressing
+          service inquiries, I strive to build long-lasting relationships based on trust, transparency, and reliability.
+          <br /><br />
+          At Shield Secure, we are dedicated to providing top-tier security services backed by a team that values integrity,
+          professionalism, and excellence. I am honored to represent these values in every client relationship and to
+          contribute to the continued success and reputation of our company.
+        </Typography>
+      </Grid>
+    </Grid>
+  </motion.div>
+)}
+
+
 
         {/* ✅ Guards */}
         {tabIndex === 2 && (
           <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 0.5 }}>
             <Grid container spacing={4} justifyContent="center">
               {[
-                { name: "Rajiv Singh", img: "/guards/guard1.jpg" },
-                { name: "Jessica Moore", img: "/guards/guard2.jpg" },
+                { name: "Jasbir", img: "/guards/guard1.jpg" },
+                { name: "Sourav", img: "/guards/guard2.jpg" },
+                { name: "Zed", img: "/guards/guard3.jpg" },
+                { name: "Varun", img: "/guards/guard1.jpg" },
+                { name: "Gurnoor", img: "/guards/guard2.jpg" },
                 { name: "Anthony Lee", img: "/guards/guard3.jpg" },
               ].map((guard, index) => (
                 <Grid item xs={12} sm={6} md={3} key={index}>

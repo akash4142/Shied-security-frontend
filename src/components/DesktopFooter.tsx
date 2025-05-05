@@ -8,9 +8,9 @@ import {
   Divider,
 } from "@mui/material";
 import FacebookIcon from "@mui/icons-material/Facebook";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
+
 import InstagramIcon from "@mui/icons-material/Instagram";
-import TwitterIcon from "@mui/icons-material/Twitter";
+
 import ShieldIcon from "@mui/icons-material/Shield";
 import Image from "next/image";
 import Link from "next/link";
@@ -213,9 +213,12 @@ const Footer = () => {
                 <Typography variant="body2" sx={{ color: "#bbb", textAlign: { xs: "center", md: "left" } }}>
                   📞 403-953-1998
                 </Typography>
-                <Typography variant="body2" sx={{ color: "#bbb", mb: 1, textAlign: { xs: "center", md: "left" } }}>
-                  📧 shieldsecure82@gmail.com
-                </Typography>
+                <Typography variant="body2" sx={{ color: "#ccc", mb: 1 }}>
+    📧{" "}
+    <a href="mailto:shieldsecure82@gmail.com" style={{ color: "#ccc", textDecoration: "none" }}>
+      shieldsecure82@gmail.com
+    </a>
+  </Typography>
                 <Typography variant="body2" sx={{ color: "#bbb", mt: 1, textAlign: { xs: "center", md: "left" } }}>
                   🏢 Head Office: Canmore, AB
                 </Typography>
@@ -243,9 +246,9 @@ const Footer = () => {
                 </Link>
 
                 {/* Social Media Icons */}
-                <Box sx={{ mt: 3, display: "flex", justifyContent: "center", gap: 2, flexWrap: "wrap" }}>
-                  {[InstagramIcon, FacebookIcon, LinkedInIcon, TwitterIcon].map((Icon, idx) => (
-                    <motion.div key={idx} whileHover={{ scale: 1.2 }}>
+                <Box sx={{ mt: 3, display: "flex", justifyContent: "center", gap: 4, flexWrap: "wrap" }}>
+                  {[InstagramIcon, FacebookIcon].map((Icon, idx) => (
+                    <motion.div key={idx} whileHover={{ scale: 1.5 }}>
                       <IconButton
                         component="span"
                         sx={{

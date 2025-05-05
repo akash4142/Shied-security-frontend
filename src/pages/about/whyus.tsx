@@ -1,6 +1,5 @@
 import React from "react";
 import { Box,  Typography, Grid} from "@mui/material";
-import Image from "next/image";
 import { motion } from "framer-motion";
 import VerifiedUserIcon from "@mui/icons-material/VerifiedUser";
 import BuildIcon from "@mui/icons-material/Build";
@@ -78,39 +77,53 @@ const WhyUs = () => {
       </Box>
 
       {/* ✅ Mission & Overview */}
-      <Box sx={{ backgroundColor: "#fff", color: "#111", py: 10, px: { xs: 3, md: 10 } }}>
-        <Grid container spacing={6} alignItems="center">
-          <Grid item xs={12} md={6}>
-            <motion.div initial="hidden" whileInView="visible" variants={fadeInUp} viewport={{ once: true }}>
-              <Image
-                src="/images/about-real.jpg"
-                alt="Why Shield Security"
-                width={600}
-                height={400}
-                style={{
-                  borderRadius: 16,
-                  width: "100%",
-                  height: "auto",
-                  objectFit: "cover",
-                  boxShadow: "0 6px 20px rgba(0,0,0,0.15)",
-                }}
-              />
-            </motion.div>
-          </Grid>
-          <Grid item xs={12} md={6}>
-            <motion.div initial="hidden" whileInView="visible" variants={fadeInUp} viewport={{ once: true }}>
-              <Typography variant="h4" fontWeight="bold" gutterBottom>
-                Personalized, Professional, Proven
-              </Typography>
-              <Typography variant="body1" sx={{ color: "#333", lineHeight: 1.8 }}>
-                At Shield Security, we bring together the power of innovation with personalized service. Our commitment goes
-                beyond watchful eyes — we become your dedicated security partner. With scalable solutions, fully licensed personnel,
-                and real-time response capabilities, we adapt to your unique needs and work environments.
-              </Typography>
-            </motion.div>
-          </Grid>
-        </Grid>
-      </Box>
+<Box sx={{ backgroundColor: "#fff", color: "#111", py: { xs: 6, md: 10 }, px: { xs: 3, md: 10 } }}>
+  <Grid container spacing={6} alignItems="center" justifyContent="center">
+    <Grid item xs={12} md={10}>
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        viewport={{ once: true }}
+      >
+        <Typography
+          variant="h4"
+          fontWeight="bold"
+          gutterBottom
+          sx={{
+            fontSize: { xs: "2rem", md: "2.5rem" },
+            textAlign: "center",
+            mb: 3,
+            fontFamily: "'Poppins', sans-serif",
+          }}
+        >
+          Personalized. Professional. Proven.
+        </Typography>
+        <Typography
+          variant="body1"
+          sx={{
+            fontSize: { xs: "1rem", md: "1.15rem" },
+            color: "#333",
+            lineHeight: 1.9,
+            maxWidth: "900px",
+            mx: "auto",
+            textAlign: "center",
+            fontFamily: "'Poppins', sans-serif",
+          }}
+        >
+          At <strong>Shield Security</strong>, we deliver more than protection — we provide peace of mind through 
+          tailored security strategies built on trust, technology, and training. Whether you need on-site presence, 
+          event monitoring, or mobile patrols, our licensed professionals work as an extension of your team — 
+          responsive, reliable, and ready 24/7.
+          <br /><br />
+          Every client receives personalized attention. Every challenge is met with proactive, proven solutions. 
+          Let us elevate your safety standards and become the trusted partner in your security journey.
+        </Typography>
+      </motion.div>
+    </Grid>
+  </Grid>
+</Box>
+
 
       {/* ✅ Operational Principles */}
       <Box sx={{ py: 10, px: { xs: 3, md: 10 }, backgroundColor: "#111" }}>

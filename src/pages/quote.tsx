@@ -22,7 +22,7 @@ const QuotePage = () => {
           backgroundImage: "url(/images/1.jpg)",
           backgroundSize: "cover",
           backgroundPosition: "center",
-          height: "60vh",
+          height: "80vh",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",

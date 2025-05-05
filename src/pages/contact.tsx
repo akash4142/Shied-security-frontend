@@ -4,27 +4,14 @@ import { motion } from 'framer-motion';
 import { api } from '@/utils/api';
 
 const inputStyles = {
-  '& .MuiInputBase-root': {
-    backgroundColor: '#1e1e1e',
-    color: '#fff',
-  },
-  '& .MuiInputLabel-root': {
-    color: '#bbb',
-  },
+  '& .MuiInputBase-root': { backgroundColor: '#f9f9f9', color: '#111' },
+  '& .MuiInputLabel-root': { color: '#666' },
   '& .MuiOutlinedInput-root': {
-    '& fieldset': {
-      borderColor: '#333',
-    },
-    '&:hover fieldset': {
-      borderColor: '#ff0000',
-    },
-    '&.Mui-focused fieldset': {
-      borderColor: '#ff0000',
-    },
+    '& fieldset': { borderColor: '#ccc' },
+    '&:hover fieldset': { borderColor: '#ff0000' },
+    '&.Mui-focused fieldset': { borderColor: '#ff0000' },
   },
-  '& input, & textarea': {
-    color: '#fff',
-  },
+  '& input, & textarea': { color: '#111' },
 };
 
 const fadeIn = {
@@ -44,7 +31,7 @@ const Contact = () => {
     try {
       const response = await api.post('/contact', formData);
       alert(response.data.message);
-      setFormData({ name: '', email: '', message: '' }); // Reset form after success
+      setFormData({ name: '', email: '', message: '' });
     } catch (error) {
       console.error("Contact Error:", error);
       alert("Failed to send message. Please try again.");
@@ -52,100 +39,93 @@ const Contact = () => {
   };
 
   return (
-    <>
-      {/* Hero Section */}
+    <Box sx={{ backgroundColor: '#fff', color: '#111' }}>
+      {/* ✅ Hero Section */}
       <Box
         sx={{
           position: 'relative',
-          height: { xs: '50vh', md: '70vh' },
-          backgroundImage: 'url(/contact-banner.jpg)',
+          height: '90vh',
+          backgroundImage: 'url(/images/2.jpg)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
+          backgroundAttachment: 'fixed',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
+          px: 2,
         }}
       >
-        <Box
-          component={motion.div}
+        <Box sx={{ position: 'absolute', inset: 0, background: 'rgba(0,0,0,0.65)', zIndex: 1 }} />
+        <motion.div
           initial="hidden"
           animate="visible"
           variants={fadeIn}
-          sx={{
-            backgroundColor: 'rgba(0, 0, 0, 0.7)',
-            padding: { xs: 3, md: 6 },
-            borderRadius: 3,
-            textAlign: 'center',
-            maxWidth: '90%',
-          }}
+          style={{ zIndex: 2 }}
         >
-          <Typography variant="h2" sx={{ color: '#fff', fontWeight: 'bold', mb: 2, fontSize: { xs: '32px', md: '48px' } }}>
+          <Typography
+            variant="h2"
+            sx={{
+              color: '#fff',
+              fontWeight: 800,
+              fontSize: { xs: '2.5rem', md: '4rem' },
+              textTransform: 'uppercase',
+              fontFamily: "'Bebas Neue', sans-serif",
+              letterSpacing: 1,
+              textAlign: 'center',
+              textShadow: '4px 4px 10px rgba(255,255,255,0.6)',
+            }}
+          >
             Contact Us
           </Typography>
-          <Typography variant="h6" sx={{ color: '#ccc', fontSize: { xs: '16px', md: '20px' } }}>
-            We&apos;re here to support your security needs.
+          <Typography
+            variant="h6"
+            sx={{
+              color: '#fff',
+              mt: 2,
+              maxWidth: 700,
+              mx: 'auto',
+              fontWeight: 300,
+              fontSize: { xs: '1rem', md: '1.2rem' },
+              textAlign: 'center',
+              fontFamily: "'Poppins', sans-serif",
+            }}
+          >
+            We&apos;re here to help. Let&apos;s connect.
           </Typography>
-        </Box>
+        </motion.div>
       </Box>
 
-      {/* Contact Form & Info */}
+      {/* ✅ Contact Section */}
       <Container sx={{ py: { xs: 8, md: 12 } }}>
-        <Grid container spacing={8} alignItems="center">
-          {/* Form */}
+        <Grid container spacing={8} alignItems="stretch">
+          {/* ✅ Contact Form */}
           <Grid item xs={12} md={6}>
             <motion.div initial="hidden" animate="visible" variants={fadeIn}>
-              <Typography variant="h3" sx={{ fontWeight: 'bold', color: '#fff', mb: 4 }}>
-                Get in Touch
+              <Typography variant="h4" fontWeight={700} sx={{ mb: 4 }}>
+                Send Us a Message
               </Typography>
               <Box
                 component="form"
                 onSubmit={handleSubmit}
                 sx={{
-                  backgroundColor: '#111',
-                  p: { xs: 3, md: 4 },
+                  backgroundColor: '#fafafa',
+                  p: 4,
                   borderRadius: 3,
-                  boxShadow: '0 4px 20px rgba(0,0,0,0.7)',
+                  boxShadow: '0 6px 30px rgba(0,0,0,0.1)',
                 }}
               >
-                <TextField
-                  fullWidth
-                  label="Full Name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleInputChange}
-                  sx={{ ...inputStyles, mb: 3 }}
-                  required
-                />
-                <TextField
-                  fullWidth
-                  label="Email Address"
-                  name="email"
-                  type="email"
-                  value={formData.email}
-                  onChange={handleInputChange}
-                  sx={{ ...inputStyles, mb: 3 }}
-                  required
-                />
-                <TextField
-                  fullWidth
-                  label="Your Message"
-                  name="message"
-                  multiline
-                  rows={5}
-                  value={formData.message}
-                  onChange={handleInputChange}
-                  sx={{ ...inputStyles, mb: 4 }}
-                  required
-                />
+                <TextField fullWidth label="Full Name" name="name" value={formData.name} onChange={handleInputChange} sx={{ ...inputStyles, mb: 3 }} required />
+                <TextField fullWidth label="Email Address" name="email" type="email" value={formData.email} onChange={handleInputChange} sx={{ ...inputStyles, mb: 3 }} required />
+                <TextField fullWidth label="Your Message" name="message" multiline rows={5} value={formData.message} onChange={handleInputChange} sx={{ ...inputStyles, mb: 4 }} required />
                 <Button
                   type="submit"
-                  variant="contained"
                   fullWidth
+                  variant="contained"
                   sx={{
                     backgroundColor: '#ff0000',
                     fontWeight: 'bold',
                     fontSize: '16px',
-                    paddingY: 1.5,
+                    py: 1.5,
                     '&:hover': { backgroundColor: '#cc0000' },
                   }}
                 >
@@ -155,50 +135,38 @@ const Contact = () => {
             </motion.div>
           </Grid>
 
-          {/* Contact Info */}
+          {/* ✅ Contact Info */}
           <Grid item xs={12} md={6}>
             <motion.div initial="hidden" animate="visible" variants={fadeIn}>
-              <Typography variant="h3" sx={{ fontWeight: 'bold', color: '#fff', mb: 4 }}>
-                Contact Details
+              <Typography variant="h4" fontWeight={700} sx={{ mb: 4 }}>
+                Get in Touch
               </Typography>
-              <Box sx={{ color: '#bbb', mb: 4 }}>
-                <Typography variant="h6" sx={{ color: '#fff', mb: 1 }}>
-                  📍 Office Address:
-                </Typography>
-                <Typography sx={{ mb: 2 }}>
-                  123 Security Street, Toronto, ON, Canada
-                </Typography>
-
-                <Typography variant="h6" sx={{ color: '#fff', mb: 1 }}>
-                  📞 Phone:
-                </Typography>
-                <Typography sx={{ mb: 2 }}>
-                  +1 (123) 456-7890
-                </Typography>
-
-                <Typography variant="h6" sx={{ color: '#fff', mb: 1 }}>
-                  ✉ Email:
-                </Typography>
-                <Typography sx={{ mb: 2 }}>
-                  info@shieldsecurity.com
-                </Typography>
-              </Box>
               <Box
-                component={motion.div}
-                whileHover={{ scale: 1.02 }}
                 sx={{
-                  overflow: 'hidden',
+                  backgroundColor: '#fafafa',
+                  p: 4,
                   borderRadius: 3,
-                  boxShadow: '0 4px 20px rgba(0,0,0,0.6)',
+                  boxShadow: '0 6px 30px rgba(0,0,0,0.1)',
                 }}
               >
-                
+                <Box sx={{ mb: 3 }}>
+                  <Typography variant="h6" sx={{ fontWeight: 600, mb: 1 }}>📍 Office Address</Typography>
+                  <Typography>Canmore, Alberta, Canada</Typography>
+                </Box>
+                <Box sx={{ mb: 3 }}>
+                  <Typography variant="h6" sx={{ fontWeight: 600, mb: 1 }}>📞 Phone</Typography>
+                  <Typography>+1 (403)-953-1998</Typography>
+                </Box>
+                <Box sx={{ mb: 0 }}>
+                  <Typography variant="h6" sx={{ fontWeight: 600, mb: 1 }}>✉ Email</Typography>
+                  <Typography>shieldsecure82@gmail.com</Typography>
+                </Box>
               </Box>
             </motion.div>
           </Grid>
         </Grid>
       </Container>
-    </>
+    </Box>
   );
 };
 
