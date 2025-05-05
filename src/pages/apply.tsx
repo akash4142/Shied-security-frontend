@@ -72,7 +72,7 @@ const ApplyNowPage = () => {
 
   return (
     <>
-      <section style={{ position: 'relative', height: '50vh', backgroundImage: 'url(/apply-banner.jpg)', backgroundSize: 'cover', backgroundPosition: 'center', display: 'flex', alignItems: 'center', justifyContent: 'center', textAlign: 'center' }}>
+      <section style={{ position: 'relative', height: '80vh', backgroundImage: 'url(/.jpg)', backgroundSize: 'cover', backgroundPosition: 'center', display: 'flex', alignItems: 'center', justifyContent: 'center', textAlign: 'center' }}>
         <div style={{ backgroundColor: 'rgba(0,0,0,0.6)', padding: '30px', borderRadius: '10px' }}>
           <Typography variant="h2" sx={{ color: '#fff', fontWeight: 'bold' }}>Apply Now</Typography>
           <Typography variant="h6" sx={{ color: '#ddd' }}>Join our growing team of security professionals</Typography>

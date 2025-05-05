@@ -167,9 +167,9 @@ const EventSecurity = () => {
             Trusted by Leading Brands
           </Typography>
           <Grid container spacing={4} justifyContent="center">
-            {["/logos/canadian-tire.png", "/logos/canadian-tire.png", "/logos/canadian-tire.png", "/logos/canadian-tire.png"].map(
+            {["/logos/spyfilms.jpg", "/logos/Town of canmore.png", "/logos/peka.jpg", "/logos/cornerStone.jpg"].map(
               (logo, idx) => (
-                <Grid item key={idx} xs={6} sm={3} md={2}>
+                <Grid item key={idx} xs={6} sm={3} md={2} >
                   <Box
                     component="img"
                     src={logo}

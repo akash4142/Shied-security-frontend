@@ -99,8 +99,8 @@ const BanffSecurity = () => {
           <Typography variant="h5" fontWeight={600} fontFamily="'Poppins', sans-serif" color="#111" mb={4}>
             Trusted by Leading Businesses
           </Typography>
-          <Grid container spacing={4} justifyContent="center">
-            {["/logos/canadian-tire.png", "/logos/canadian-tire.png", "/logos/canadian-tire.png", "/logos/canadian-tire.png"].map(
+          <Grid container spacing={10} justifyContent="center">
+            {["/logos/canadian-tire.png", "/logos/Town of canmore.png", "/logos/peka.jpg", "/logos/CornerStone.jpg"].map(
               (logo, idx) => (
                 <Grid item key={idx} xs={6} sm={3} md={2}>
                   <Box

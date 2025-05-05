@@ -167,7 +167,7 @@ const PatrolSecurity = () => {
             Trusted By Leading Organizations
           </Typography>
           <Grid container spacing={4} justifyContent="center">
-            {["/logos/canadian-tire.png", "/logos/canadian-tire.png", "/logos/canadian-tire.png", "/logos/canadian-tire.png"].map(
+            {["/logos/canadian-tire.png", "/logos/Town of canmore.png", "/logos/peka.jpg", "/logos/CornerStone.jpg"].map(
               (logo, idx) => (
                 <Grid item key={idx} xs={6} sm={3} md={2}>
                   <Box

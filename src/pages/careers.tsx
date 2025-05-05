@@ -13,7 +13,7 @@ const Careers = () => {
   return (
     <>
       {/* Hero Section */}
-      <section style={{ position: 'relative', height: '50vh', backgroundImage: 'url(/images/1.jpg)', backgroundSize: 'cover', display: 'flex', alignItems: 'center', justifyContent: 'center', textAlign: 'center' }}>
+      <section style={{ position: 'relative', height: '80vh', backgroundImage: 'url(/images/1.jpg)', backgroundSize: 'cover', display: 'flex', alignItems: 'center', justifyContent: 'center', textAlign: 'center' }}>
         <div style={{ backgroundColor: 'rgba(0,0,0,0.6)', padding: '30px', borderRadius: '10px' }}>
           <Typography variant="h2" sx={{ color: '#fff', fontWeight: 'bold' }}>Join Our Team</Typography>
           <Typography variant="h6" sx={{ color: '#ddd' }}>Start your career in professional security services</Typography>

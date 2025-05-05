@@ -104,7 +104,7 @@ const Navbar = () => {
 
       <Toolbar sx={{ justifyContent: "space-between", alignItems: "center",py:2, flexWrap: "wrap" }}>
         {/* Logo */}
-        <Box sx={{ pl: 10 }}> {/* or ml: 4 */}
+        <Box sx={{pl: { xs: 2, md: 10 }, }}> {/* or ml: 4 */}
   <Link href="/" passHref legacyBehavior>
     <motion.div whileHover={{ scale: 1.05 }}>
       <Box
