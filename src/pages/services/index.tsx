@@ -14,6 +14,7 @@ import { motion } from "framer-motion";
 // ✅ Service Data
 const servicesData = [
   { name: "Uniformed Security", img: "/images/Uniformed.jpg", link: "/services/Uniformed" },
+  { name: "Fire Watch", img: "/images/FireWatch.jpg", link: "/services/FireWatchSecurity" },
   { name: "Event Security", img: "/images/event.jpg", link: "/services/Event" },
   { name: "Mobile Security", img: "/images/PatrolSecurity.jpg", link: "/services/Mobile" },
   { name: "Loss Prevention", img: "/images/LossPrevention2.jpg", link: "/services/Loss" },

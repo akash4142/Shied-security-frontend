@@ -6,11 +6,13 @@ import { motion } from 'framer-motion';
 
 const allServices = [
   { title: 'Mobile Patrol', img: '/images/PatrolSecurity.jpg', link: '/services/Mobile' },
+  { title: "Fire Watch", img: "/images/FireWatch.jpg", link: "/services/FireWatchSecurity" },
   { title: 'Event Security', img: '/images/event.jpg', link: '/services/Event' },
   { title: 'Loss Prevention', img: '/images/LossPrevention.jpg', link: '/services/Loss' },
   { title: 'Uniformed Security', img: '/images/Uniformed2.jpg', link: '/services/Uniformed' },
   { title: 'Tactical Security', img: '/images/PatrolSecurity2.jpg', link: '/services/Tactical' },
   { title: 'Patrol Security', img: '/images/PatrolSEcurity.jpg', link: '/services/Patrol' },
+  {title:"Parking Enforcement", img: "/images/Uniformed.jpg",link: "/services/ParkingEnforcement"}
 ];
 
 interface ServicesShowcaseProps {

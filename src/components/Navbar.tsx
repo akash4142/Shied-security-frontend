@@ -39,6 +39,7 @@ const Navbar = () => {
   const menuItems = {
     services: [
       { text: "Uniformed Security", link: "/services/Uniformed" },
+      { text: "Fire Watch", link: "/services/FireWatchSecurity" },
       { text: "Event Security", link: "/services/Event" },
       { text: "Loss Prevention", link: "/services/Loss" },
       { text: "Patrol Security", link: "/services/Patrol" },
