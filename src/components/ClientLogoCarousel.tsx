@@ -13,6 +13,8 @@ const clientLogos = [
   { src: '/logos/CanmoreHostel.jpg', alt: 'Canmore hostel' },
   { src: '/logos/cornerStone.jpg', alt: 'Cornerstone' },
   { src: '/logos/spyfilms.jpg', alt: 'Spy Films' },
+  { src: '/logos/OIP.jpeg', alt: 'Waymarker' },
+  { src: '/logos/ghardy.jpeg', alt: 'ghardy' },
 ];
 
 const settings = {
