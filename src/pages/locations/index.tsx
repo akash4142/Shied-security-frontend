@@ -95,8 +95,8 @@ const LocationsPage = () => {
       <Box
         sx={{
           position: "relative",
-          height: "85vh",
-          backgroundImage: "url(/images/1.jpg)",
+          height: "100vh",
+          backgroundImage: "url(/images/locationindex.jpg)",
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundAttachment: "fixed",

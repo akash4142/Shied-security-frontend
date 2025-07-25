@@ -61,7 +61,7 @@ const Home = () => {
   >
     <Box sx={{ maxWidth: 600, p: 4, borderRadius: 2 }}>
       <Typography variant="h2" sx={{ fontWeight: 'bold', color: '#fff' , fontSize: { xs: '26px', md: '60px' }, }}>
-        Security Services You Can Trust
+        Security Guards You Can Trust
       </Typography>
       <Typography variant="h6" sx={{ mt: 2, mb: 4, color: '#e0e0e0' }}>
         Tailored Protection for Every Environment

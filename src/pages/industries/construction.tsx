@@ -17,8 +17,8 @@ const ConstructionSecurity: React.FC = () => {
       <Box
         sx={{
           position: "relative",
-          height: "85vh",
-          backgroundImage: "url(/images/construction.jpg)", // Replace with relevant image
+          height: "100vh",
+          backgroundImage: "url(/images/construction1.jpg)", // Replace with relevant image
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundAttachment: "fixed",
@@ -113,7 +113,7 @@ const ConstructionSecurity: React.FC = () => {
         >
           <Box
             component="img"
-            src="/images/3.jpg" // Use a real image
+            src="/images/construction.jpg" // Use a real image
             alt="Construction Site Security"
             sx={{
               position: "absolute",

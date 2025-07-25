@@ -36,7 +36,7 @@ const testimonials = [
     feedback: 'Working with Shield Secure has been a great experience. Highly recommend them for your next event or long term security needs.',
     rating: 5,
     designation: 'Manager',
-    company: 'Downtown Stone Hostel',
+    company: 'Canmore downtown hospital',
   },
 ];
 

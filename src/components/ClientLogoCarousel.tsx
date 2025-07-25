@@ -62,7 +62,7 @@ const ClientLogoCarousel = () => {
       sx={{
         backgroundColor: '#fff',
         py: { xs: 8, md: 12 },
-        mt: 10,
+        mt: 12,
         overflow: 'hidden',
       }}
     >
@@ -108,7 +108,7 @@ const ClientLogoCarousel = () => {
                 <Image
                   src={logo.src}
                   alt={logo.alt}
-                  width={140}
+                  width={220}
                   height={140}
                   style={{ objectFit: 'contain' }}
                 />

@@ -60,7 +60,7 @@ const HotelSecurity = () => {
               fontFamily: "'Bebas Neue', 'Poppins', sans-serif",
             }}
           >
-            Hotel Security
+            Hotel and Building Security
           </Typography>
           <Typography
             variant="h6"

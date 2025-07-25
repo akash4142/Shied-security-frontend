@@ -20,7 +20,7 @@ const servicesData = [
   { name: "Loss Prevention", img: "/images/LossPrevention2.jpg", link: "/services/Loss" },
   { name: "Patrol Security", img: "/images/PatrolSecurity2.jpg", link: "/services/Patrol" },
   { name: "Tactical Security", img: "/images/Uniformed2.jpg", link: "/services/Tactical" },
-  {name:"Parking Enforcement", img: "/images/Uniformed.jpg",link: "/services/ParkingEnforcement"}
+  {name:"Parking Enforcement", img: "/images/parking.jpg",link: "/services/ParkingEnforcement"}
 ];
 
 // ✅ Styled Components
