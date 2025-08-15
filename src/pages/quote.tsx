@@ -19,10 +19,10 @@ const QuotePage = () => {
       {/* ✅ Hero Section */}
       <Box
         sx={{
-          backgroundImage: "url(/images/1.jpg)",
+          backgroundImage: "url(/images/event.jpg)",
           backgroundSize: "cover",
           backgroundPosition: "center",
-          height: "80vh",
+          height: "100vh",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
