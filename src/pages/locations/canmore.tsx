@@ -18,8 +18,8 @@ const CanmoreSecurity = () => {
       <Box
         sx={{
           position: "relative",
-          height: "85vh",
-          backgroundImage: "url(/images/1.jpg)",
+          height: "100vh",
+          backgroundImage: "url(/images/canmore.jpg)",
           backgroundSize: "cover",
           backgroundAttachment: "fixed",
           backgroundPosition: "center",
@@ -101,28 +101,7 @@ const CanmoreSecurity = () => {
       </motion.div>
 
       
-      {/* ✅ Trusted Brands */}
-            <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-              <Box sx={{ background: "#f7f7f7", py: 8, px: { xs: 3, md: 12 }, textAlign: "center" }}>
-                <Typography variant="h5" fontWeight={600} fontFamily="'Poppins', sans-serif" color="#111" mb={4}>
-                  Trusted by Leading Businesses
-                </Typography>
-                <Grid container spacing={10} justifyContent="center">
-                  {["/logos/canadian-tire.png", "/logos/Town of canmore.png", "/logos/peka.jpg", "/logos/CornerStone.jpg"].map(
-                    (logo, idx) => (
-                      <Grid item key={idx} xs={6} sm={3} md={2}>
-                        <Box
-                          component="img"
-                          src={logo}
-                          alt={`Client ${idx + 1}`}
-                          sx={{ width: "100%", opacity: 0.8 }}
-                        />
-                      </Grid>
-                    )
-                  )}
-                </Grid>
-              </Box>
-            </motion.div>
+      
 
       {/* ✅ Why Shield in Canmore - Premium Split Layout */}
       <Grid
@@ -159,6 +138,8 @@ const CanmoreSecurity = () => {
             }}
           />
         </Grid>
+
+
 
         <Grid
           item
@@ -209,11 +190,14 @@ const CanmoreSecurity = () => {
         </Grid>
       </Grid>
 
-      {/* ✅ Testimonials + Services */}
+ {/* ✅ Testimonials + Services */}
       <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-        <TestimonialsSection />
         <ServicesShowcase currentService="Canmore" />
+        <TestimonialsSection />
+        
       </motion.div>
+
+     
 
       {/* ✅ Request a Quote */}
       <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>

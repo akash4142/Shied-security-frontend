@@ -31,7 +31,7 @@ const OurMission = () => {
         }}
       >
         <Image
-          src="/images/Uniformed2.jpg"
+          src="/images/ourmission2.jpg"
           alt="Our Mission"
           fill
           sizes="(max-width: 768px) 100vw, 50vw"
@@ -81,9 +81,7 @@ const OurMission = () => {
               fontFamily: "'Poppins', sans-serif",
             }}
           >
-            At Shield Secure, our mission is to deliver uncompromising security
-            solutions that prioritize the safety of people, the protection of assets,
-            and the security of environments.
+           Our mission is to create safer communities by delivering innovative, tailored security solutions that protect people, assets, and environments. We aim to set the benchmark for security excellence through proactive strategies, skilled personnel, and a relentless focus on client peace of mind.
             <br />
             <br />
             We uphold the highest standards of professionalism, reliability, and integrity —

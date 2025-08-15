@@ -27,7 +27,7 @@ const Home = () => {
     position: 'relative',
     height: '100vh',
     width: '100%',
-    backgroundImage: 'url(/images/HomePage.jpg)',
+    backgroundImage: 'url(/images/ourmission.jpg)',
     backgroundSize: 'cover',
     backgroundPosition: 'center center',
     backgroundRepeat: 'no-repeat',
@@ -104,7 +104,7 @@ const Home = () => {
         variant="body1"
         sx={{ color: 'black', maxWidth: '900px', margin: '0 auto' }}
       >
-        At Shield Secure, our mission is to deliver uncompromising security solutions that prioritize the safety of people, the protection of assets, and the security of environments. We are committed to maintaining the highest standards of professionalism, reliability, and integrity in every service we provide. Our team is extensively trained and equipped to respond effectively to dynamic security challenges across diverse industries, including retail, residential, commercial, and event settings.
+        At Shield Secure, we pledge to be more than a security provider — we are a trusted partner in safeguarding what matters most to you. Our commitment is to deliver dependable, adaptable, and discreet protection that meets the unique demands of every client. Whether securing high-traffic retail spaces, private residences, corporate facilities, or large-scale events, we stand for unwavering professionalism, integrity, and readiness in every assignment.
       </Typography>
     </motion.div>
   </Container>

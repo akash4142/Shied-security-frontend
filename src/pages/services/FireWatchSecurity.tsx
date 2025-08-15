@@ -26,7 +26,7 @@ const FireWatchSecurity = () => {
       <Box
         sx={{
           position: "relative",
-          height: "90vh",
+          height: "100vh",
           backgroundImage: "url(/images/FireWatch.jpg)", // Make sure to place a Fire Watch related image
           backgroundSize: "cover",
           backgroundAttachment: "fixed",

@@ -17,8 +17,8 @@ const WarehouseSecurity = () => {
       <Box
         sx={{
           position: "relative",
-          height: "85vh",
-          backgroundImage: "url(/images/1.jpg)",
+          height: "100vh",
+          backgroundImage: "url(/images/firewatch2.jpg)",
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundAttachment: "fixed",
@@ -110,7 +110,7 @@ const WarehouseSecurity = () => {
         <Grid item xs={12} md={6} sx={{ position: "relative", height: { xs: "400px", md: "600px" } }}>
           <Box
             component="img"
-            src="/images/3.jpg"
+            src="/images/patrolsecurity.jpg"
             alt="Warehouse Security"
             sx={{
               position: "absolute",

@@ -18,8 +18,8 @@ const CochraneSecurity = () => {
       <Box
         sx={{
           position: "relative",
-          height: "85vh",
-          backgroundImage: "url(/images/1.jpg)",
+          height: "100vh",
+          backgroundImage: "url(/images/cochrane.jpg)",
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundAttachment: "fixed",
@@ -92,28 +92,7 @@ const CochraneSecurity = () => {
         </Box>
       </motion.div>
 
-      {/* ✅ Trusted Brands */}
-                        <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-                          <Box sx={{ background: "#f7f7f7", py: 8, px: { xs: 3, md: 12 }, textAlign: "center" }}>
-                            <Typography variant="h5" fontWeight={600} fontFamily="'Poppins', sans-serif" color="#111" mb={4}>
-                              Trusted by Leading Businesses
-                            </Typography>
-                            <Grid container spacing={10} justifyContent="center">
-                              {["/logos/canadian-tire.png", "/logos/Town of canmore.png", "/logos/peka.jpg", "/logos/CornerStone.jpg"].map(
-                                (logo, idx) => (
-                                  <Grid item key={idx} xs={6} sm={3} md={2}>
-                                    <Box
-                                      component="img"
-                                      src={logo}
-                                      alt={`Client ${idx + 1}`}
-                                      sx={{ width: "100%", opacity: 0.8 }}
-                                    />
-                                  </Grid>
-                                )
-                              )}
-                            </Grid>
-                          </Box>
-                        </motion.div>
+      
 
       {/* ✅ Why We’re the Best in Cochrane Section */}
       <Grid
@@ -141,7 +120,7 @@ const CochraneSecurity = () => {
         >
           <Box
             component="img"
-            src="/images/3.jpg"
+            src="/images/uniformed2.jpg"
             alt="Why We're Best in Cochrane"
             sx={{
               position: "absolute",
@@ -203,8 +182,9 @@ const CochraneSecurity = () => {
 
       {/* ✅ Testimonials + Services */}
       <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-        <TestimonialsSection />
         <ServicesShowcase currentService="Cochrane" />
+        <TestimonialsSection />
+        
       </motion.div>
 
       {/* ✅ Request Quote */}

@@ -96,7 +96,7 @@ const LocationsPage = () => {
         sx={{
           position: "relative",
           height: "100vh",
-          backgroundImage: "url(/images/locationindex.jpg)",
+          backgroundImage: "url(/images/canmore.jpg)",
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundAttachment: "fixed",

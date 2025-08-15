@@ -63,8 +63,8 @@ const MediaPage = () => {
       <Box
         sx={{
           position: "relative",
-          height: "80vh",
-          backgroundImage: "url(/images/3.jpg)",
+          height: "100vh",
+          backgroundImage: "url(/images/event.jpg)",
           backgroundSize: "cover",
           backgroundPosition: "center",
           display: "flex",

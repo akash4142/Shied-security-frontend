@@ -30,7 +30,7 @@ const ParkingEnforcement: React.FC = () => {
       <Box
         sx={{
           position: "relative",
-          height: "90vh",
+          height: "100vh",
           backgroundImage: "url(/images/4.jpg)",
           backgroundSize: "cover",
           backgroundAttachment: "fixed",

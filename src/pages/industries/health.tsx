@@ -17,8 +17,8 @@ const HealthcareSecurity = () => {
       <Box
         sx={{
           position: "relative",
-          height: "85vh",
-          backgroundImage: "url(/images/1.jpg)",
+          height: "100vh",
+          backgroundImage: "url(/images/2.jpg)",
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundAttachment: "fixed",
@@ -136,7 +136,7 @@ const HealthcareSecurity = () => {
         >
           <Box
             component="img"
-            src="/images/2.jpg"
+            src="/images/healthcare.jpg"
             alt="Healthcare Facility"
             sx={{
               position: "absolute",

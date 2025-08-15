@@ -17,8 +17,8 @@ const BanffSecurity = () => {
       <Box
         sx={{
           position: "relative",
-          height: "85vh",
-          backgroundImage: "url(/images/1.jpg)", // Replace with actual Banff image if available
+          height: "100vh",
+          backgroundImage: "url(/images/banff.jpg)", // Replace with actual Banff image if available
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundAttachment: "fixed",
@@ -94,27 +94,6 @@ const BanffSecurity = () => {
       </motion.div>
 
 {/* ✅ Trusted Brands */}
-      <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-        <Box sx={{ background: "#f7f7f7", py: 8, px: { xs: 3, md: 12 }, textAlign: "center" }}>
-          <Typography variant="h5" fontWeight={600} fontFamily="'Poppins', sans-serif" color="#111" mb={4}>
-            Trusted by Leading Businesses
-          </Typography>
-          <Grid container spacing={10} justifyContent="center">
-            {["/logos/canadian-tire.png", "/logos/Town of canmore.png", "/logos/peka.jpg", "/logos/CornerStone.jpg"].map(
-              (logo, idx) => (
-                <Grid item key={idx} xs={6} sm={3} md={2}>
-                  <Box
-                    component="img"
-                    src={logo}
-                    alt={`Client ${idx + 1}`}
-                    sx={{ width: "100%", opacity: 0.8 }}
-                  />
-                </Grid>
-              )
-            )}
-          </Grid>
-        </Box>
-      </motion.div>
       
 
       {/* ✅ Why We’re the Best in Banff (OurMission-style layout) */}
@@ -138,7 +117,7 @@ const BanffSecurity = () => {
         >
           <Box
             component="img"
-            src="/images/3.jpg"
+            src="/images/2.jpg"
             alt="Banff Coverage"
             sx={{
               position: "absolute",
@@ -200,8 +179,9 @@ const BanffSecurity = () => {
 
       {/* ✅ Testimonials + Services */}
       <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-        <TestimonialsSection />
         <ServicesShowcase currentService="Banff" />
+        <TestimonialsSection />
+        
       </motion.div>
       
 

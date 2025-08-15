@@ -26,8 +26,8 @@ const PatrolSecurity = () => {
       <Box
         sx={{
           position: "relative",
-          height: "90vh",
-          backgroundImage: "url(/images/PAtrolSEcurity.jpg)",
+          height: "100vh",
+          backgroundImage: "url(/images/commerical.jpg)",
           backgroundSize: "cover",
           backgroundAttachment: "fixed",
           backgroundPosition: "center",

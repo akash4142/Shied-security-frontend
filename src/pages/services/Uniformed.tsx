@@ -26,8 +26,8 @@ const UniformedSecurity = () => {
       <Box
         sx={{
           position: "relative",
-          height: "90vh",
-          backgroundImage: "url(/images/uniformed.jpg)",
+          height: "100vh",
+          backgroundImage: "url(/images/uniformed2.jpg)",
           backgroundSize: "cover",
           backgroundAttachment: "fixed",
           backgroundPosition: "center",

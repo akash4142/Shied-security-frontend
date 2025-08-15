@@ -17,8 +17,8 @@ const HotelSecurity = () => {
       <Box
         sx={{
           position: "relative",
-          height: "85vh",
-          backgroundImage: "url(/images/1.jpg)",
+          height: "100vh",
+          backgroundImage: "url(/images/hotel.jpg)",
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundAttachment: "fixed",
@@ -137,7 +137,7 @@ const HotelSecurity = () => {
         >
           <Box
             component="img"
-            src="/images/3.jpg"
+            src="/images/commerical.jpg"
             alt="Hotel Security Coverage"
             sx={{
               position: "absolute",

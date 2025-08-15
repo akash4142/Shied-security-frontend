@@ -17,8 +17,8 @@ const CorporateSecurity = () => {
       <Box
         sx={{
           position: "relative",
-          height: "85vh",
-          backgroundImage: "url(/images/1.jpg)",
+          height: "100vh",
+          backgroundImage: "url(/images/aboutindex.jpg)",
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundAttachment: "fixed",
@@ -91,7 +91,7 @@ const CorporateSecurity = () => {
         </Box>
       </motion.div>
 
-      {/* ✅ Trusted Brands */}
+      {/* ✅ Trusted Brands
       <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
         <Box sx={{ background: "#f7f7f7", py: 8, px: { xs: 3, md: 12 }, textAlign: "center" }}>
           <Typography variant="h5" fontWeight={600} fontFamily="'Poppins', sans-serif" color="#111" mb={4}>
@@ -112,7 +112,7 @@ const CorporateSecurity = () => {
             )}
           </Grid>
         </Box>
-      </motion.div>
+      </motion.div> */}
 
       {/* ✅ Why We’re the Best in Corporate Security */}
       <Grid
@@ -136,7 +136,7 @@ const CorporateSecurity = () => {
         >
           <Box
             component="img"
-            src="/images/3.jpg"
+            src="/images/patrolsecurity2.jpg"
             alt="Corporate Security Guard"
             sx={{
               position: "absolute",
@@ -195,7 +195,7 @@ const CorporateSecurity = () => {
         </Grid>
       </Grid>
 
-      {/* ✅ Testimonials + Services */}
+      
       <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
         <TestimonialsSection />
         <ServicesShowcase currentService="Corporate Security" />

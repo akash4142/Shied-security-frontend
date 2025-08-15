@@ -17,7 +17,7 @@ const EducationSecurity: React.FC = () => {
       <Box
         sx={{
           position: "relative",
-          height: "85vh",
+          height: "100vh",
           backgroundImage: "url(/images/2.jpg)", // Replace with a relevant campus security image
           backgroundSize: "cover",
           backgroundPosition: "center",
@@ -114,7 +114,7 @@ const EducationSecurity: React.FC = () => {
         >
           <Box
             component="img"
-            src="/images/4.jpg" // Use a real image
+            src="/images/industryindex.jpg" // Use a real image
             alt="Campus Security Services"
             sx={{
               position: "absolute",

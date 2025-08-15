@@ -18,8 +18,8 @@ const CalgarySecurity = () => {
       <Box
         sx={{
           position: "relative",
-          height: "85vh",
-          backgroundImage: "url(/images/1.jpg)", // 🔁 Replace with Calgary image if available
+          height: "100vh",
+          backgroundImage: "url(/images/calgary.jpg)", // 🔁 Replace with Calgary image if available
           backgroundSize: "cover",
           backgroundAttachment: "fixed",
           backgroundPosition: "center",
@@ -94,29 +94,6 @@ const CalgarySecurity = () => {
             Shield Security delivers unmatched professionalism, real-time tech solutions,
             and personnel trained to handle every environment and scenario.
           </Typography>
-        </Box>
-      </motion.div>
-
-      {/* ✅ Trusted Brands */}
-      <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-        <Box sx={{ background: "#f7f7f7", py: 8, px: { xs: 3, md: 12 }, textAlign: "center" }}>
-          <Typography variant="h5" fontWeight={600} fontFamily="'Poppins', sans-serif" color="#111" mb={4}>
-            Trusted by Leading Businesses
-          </Typography>
-          <Grid container spacing={10} justifyContent="center">
-            {["/logos/canadian-tire.png", "/logos/fillmore.jpg", "/logos/peka.jpg", "/logos/CornerStone.jpg"].map(
-              (logo, idx) => (
-                <Grid item key={idx} xs={6} sm={3} md={2}>
-                  <Box
-                    component="img"
-                    src={logo}
-                    alt={`Client ${idx + 1}`}
-                    sx={{ width: "100%", opacity: 0.8 }}
-                  />
-                </Grid>
-              )
-            )}
-          </Grid>
         </Box>
       </motion.div>
 
@@ -212,8 +189,9 @@ const CalgarySecurity = () => {
 
       {/* ✅ Testimonials + Services */}
       <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-        <TestimonialsSection />
         <ServicesShowcase currentService="Calgary" />
+        <TestimonialsSection />
+       
       </motion.div>
 
       {/* ✅ Request Quote */}

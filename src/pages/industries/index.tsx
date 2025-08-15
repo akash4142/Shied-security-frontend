@@ -14,9 +14,9 @@ import { motion } from "framer-motion";
 const industriesData = [
   { name: "Hotel Security", img: "/images/hotel.jpg", link: "/industries/hotel" },
   { name: "Healthcare Security", img: "/images/healthcare.jpg", link: "/industries/health" },
-  { name: "Corporate Security", img: "/images/calgary.jpg", link: "/industries/corporate" },
-  { name: "Retail Security", img: "/images/calgary.jpg", link: "/industries/retail" },
-  { name: "Warehouse Security", img: "/images/canmore.jpg", link: "/industries/warehouse" },
+  { name: "Corporate Security", img: "/images/aboutindex.jpg", link: "/industries/corporate" },
+  { name: "Retail Security", img: "/images/retail.jpg", link: "/industries/retail" },
+  { name: "Warehouse Security", img: "/images/firewatch2.jpg", link: "/industries/warehouse" },
   { name: "Construction Security", img: "/images/construction.jpg", link: "/industries/construction" },
   { name: "Education & Campuses", img: "/images/education.jpg", link: "/industries/Education" },
   { name: "Residental & Commerical", img: "/images/commerical.jpg", link: "/industries/Residental" },

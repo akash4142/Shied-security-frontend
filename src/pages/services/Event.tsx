@@ -26,7 +26,7 @@ const EventSecurity = () => {
       <Box
         sx={{
           position: "relative",
-          height: "85vh",
+          height: "100vh",
           backgroundImage: "url(/images/EventSecurity.jpg)",
           backgroundSize: "cover",
           backgroundAttachment: "fixed",

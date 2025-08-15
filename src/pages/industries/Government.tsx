@@ -17,8 +17,8 @@ const GovernmentSecurity: React.FC = () => {
       <Box
         sx={{
           position: "relative",
-          height: "85vh",
-          backgroundImage: "url(/images/2.jpg)", // Replace with a real image
+          height: "100vh",
+          backgroundImage: "url(/images/GovernmentAndMunicipal.jpg)", // Replace with a real image
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundAttachment: "fixed",

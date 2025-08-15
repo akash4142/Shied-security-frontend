@@ -96,8 +96,8 @@ const sections = [
     content: (
       <>
         For questions or concerns related to this Privacy Policy:<br />
-        📧 <strong>privacy@shieldsecurity.ca</strong><br />
-        📞 <strong>+1 (123) 456-7890</strong>
+        📧 <strong>shieldsecure82@gmail.com</strong><br />
+        📞 <strong>+1 403-953-1998</strong>
       </>
     ),
   },
@@ -109,10 +109,10 @@ const PrivacyPolicyPage = () => {
       {/* ✅ Hero Section */}
       <Box
         sx={{
-          backgroundImage: "url(/images/3.jpg)",
+          backgroundImage: "url(/images/ourmission.jpg)",
           backgroundSize: "cover",
           backgroundPosition: "center",
-          height: "55vh",
+          height: "100vh",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",

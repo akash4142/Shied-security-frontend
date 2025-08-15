@@ -17,8 +17,8 @@ const ResidentialSecurity: React.FC = () => {
       <Box
         sx={{
           position: "relative",
-          height: "85vh",
-          backgroundImage: "url(/images/3.jpg)", // Replace with a residential building or neighborhood image
+          height: "100vh",
+          backgroundImage: "url(/images/commerical.jpg)", // Replace with a residential building or neighborhood image
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundAttachment: "fixed",
@@ -113,7 +113,7 @@ const ResidentialSecurity: React.FC = () => {
         >
           <Box
             component="img"
-            src="/images/2.jpg" // Replace with guard/patrol in a residential context
+            src="/images/uniformed2.jpg" // Replace with guard/patrol in a residential context
             alt="Residential Security Patrol"
             sx={{
               position: "absolute",
