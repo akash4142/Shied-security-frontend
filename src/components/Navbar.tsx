@@ -257,7 +257,7 @@ const Navbar = () => {
     </IconButton>
   </Box>
 
-  <Divider sx={{ mb: 2 , borderColor: "#444"}} />
+  <Divider sx={{ mb: 2 }} />
 
   {/* Accordion Menu */}
   <Box>

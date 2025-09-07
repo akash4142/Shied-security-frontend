@@ -16,8 +16,18 @@ body {
 * {
   transition: all 0.3s ease;
   box-sizing: border-box;
-  max-width: 100%;
+  /* max-width: 100%; */
 }
+
+.slick-slide {
+  display: block !important;
+}
+
+.slick-slide > div {
+  display: flex;
+  justify-content: center;
+}
+
 
 /* Scrollbar styling */
 ::-webkit-scrollbar {

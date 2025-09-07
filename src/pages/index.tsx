@@ -115,7 +115,7 @@ const Home = () => {
       <OurMission />
       <ServicesShowcase currentService='Mobile Patrol'/>
       <VacantPropertyCheck/>
-      <TestimonialsSection />
+      <TestimonialsSection/>
       <ClientLogoCarousel />
       <FinalCTA/>
       <RequestQuote />
