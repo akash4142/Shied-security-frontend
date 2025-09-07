@@ -239,39 +239,42 @@ const Navbar = () => {
   sx={{
     zIndex:1400,
     "& .MuiDrawer-paper": {
-      backgroundColor: "blak", // White background like Blackbird
-      color: "#000",
+      backgroundColor: "#0f0f0f", //#White background like Blackbird
+      color: "#fff",
       width: 280,
-      padding: "10px 15px",
+      padding: "20px 15px",
     },
   }}
 >
   {/* Drawer Header: Logo and X Close Button */}
-  <Box sx={{ display: "flex", alignItems: "center", justifyContent: "space-between", mb: 2 }}>
-    
-
-    <IconButton onClick={handleDrawerToggle}>
+  <Box sx={{ display: "flex", alignItems: "center", justifyContent: "space-between", mb: 2 , px:1 }}>
+    <Box sx={{ display: "flex", alignItems: "center" }}>
+      <Image src="/images/logo.jpg" alt="Shield Logo" width={50} height={50} style={{ borderRadius: "50%" }} />
+      <Typography sx={{ ml: 1, fontWeight: 700, fontSize: "18px" }}>Shield Secure</Typography>
+    </Box>
+    <IconButton onClick={handleDrawerToggle} sx={{color: "#fff"}}>
       <CloseIcon />
     </IconButton>
   </Box>
 
-  <Divider sx={{ mb: 2 }} />
+  <Divider sx={{ mb: 2 , borderColor: "#444"}} />
 
   {/* Accordion Menu */}
   <Box>
     {Object.entries(menuItems).map(([menu, subItems]) => (
-      <Accordion key={menu} disableGutters elevation={0} sx={{ backgroundColor: "transparent" }}>
+      <Accordion key={menu} disableGutters elevation={0} sx={{ backgroundColor: "transparent", mb:1 }}>
         <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
+          expandIcon={<ExpandMoreIcon  sx={{color: "#fff"}}/>}
           aria-controls={`${menu}-content`}
           id={`${menu}-header`}
+          sx={{px:0}}
         >
           <Typography sx={{ fontWeight: 600, fontSize: "15px" }}>
             {menu.toUpperCase()}
           </Typography>
         </AccordionSummary>
 
-        <AccordionDetails sx={{ pl: 2 }}>
+        <AccordionDetails sx={{ pl: 2 , px :0}}>
           {subItems.map((item) => (
             <Link key={item.text} href={item.link} passHref legacyBehavior>
               <Typography
@@ -283,6 +286,7 @@ const Navbar = () => {
                   mb: 1,
                   cursor: "pointer",
                   "&:hover": { color: "#ff0000" },
+                  transition: "color 0.2s ease-in-out",
                 }}
               >
                 {item.text}
@@ -294,14 +298,15 @@ const Navbar = () => {
     ))}
   </Box>
 
-  <Divider sx={{ mt: 3, mb: 2 }} />
+  <Divider sx={{ mt: 3, mb: 2 , borderColor:"#444" }} />
 
   {/* Social Media Icons */}
-  <Box sx={{ display: "flex", justifyContent: "space-around" }}>
+  <Box sx={{ display: "flex", justifyContent: "center" , gap:3 }}>
     <IconButton
       href="https://www.instagram.com/shieldsecuresecurity"
       target="_blank"
       rel="noopener noreferrer"
+      sx={{color:"#fff"}}
     >
       <InstagramIcon sx={{ color: "#000" }} />
     </IconButton>
@@ -310,6 +315,7 @@ const Navbar = () => {
       href="https://www.facebook.com/share/1Ca1o6NnKu"
       target="_blank"
       rel="noopener noreferrer"
+      sx={{ color: "#fff" }}
     >
       <FacebookIcon sx={{ color: "#000" }} />
     </IconButton>
