@@ -17,11 +17,11 @@ const EventSecurity: React.FC = () => {
       <Box
         sx={{
           position: "relative",
-          height: "85vh",
+          minHeight: { xs: "100svh", md: "100vh" },
           backgroundImage: "url(/images/event.jpg)", // Replace with relevant event image
           backgroundSize: "cover",
           backgroundPosition: "center",
-          backgroundAttachment: "fixed",
+          backgroundAttachment: { xs: "scroll", md: "fixed" },
           display: "flex",
           alignItems: "center",
           justifyContent: "center",

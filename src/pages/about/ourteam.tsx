@@ -30,10 +30,11 @@ const OurTeamPage = () => {
       {/* ✅ Hero Section */}
       <Box
         sx={{
-          height: "100vh",
+          minHeight: { xs: "100svh", md: "100vh" },
           backgroundImage: "url(/images/eventsecurity.jpg)",
           backgroundSize: "cover",
           backgroundPosition: "center",
+          backgroundAttachment: { xs: "scroll", md: "fixed" },
           display: "flex",
           alignItems: "center",
           justifyContent: "center",

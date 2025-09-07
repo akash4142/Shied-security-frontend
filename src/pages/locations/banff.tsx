@@ -17,11 +17,11 @@ const BanffSecurity = () => {
       <Box
         sx={{
           position: "relative",
-          height: "100vh",
+           minHeight: { xs: "100svh", md: "100vh" },
           backgroundImage: "url(/images/banff.jpg)", // Replace with actual Banff image if available
           backgroundSize: "cover",
           backgroundPosition: "center",
-          backgroundAttachment: "fixed",
+          backgroundAttachment: { xs: "scroll", md: "fixed" },
           display: "flex",
           alignItems: "center",
           justifyContent: "center",

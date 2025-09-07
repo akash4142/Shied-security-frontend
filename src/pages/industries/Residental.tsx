@@ -17,11 +17,11 @@ const ResidentialSecurity: React.FC = () => {
       <Box
         sx={{
           position: "relative",
-          height: "100vh",
+          minHeight: { xs: "100svh", md: "100vh" },
           backgroundImage: "url(/images/commerical.jpg)", // Replace with a residential building or neighborhood image
           backgroundSize: "cover",
           backgroundPosition: "center",
-          backgroundAttachment: "fixed",
+          backgroundAttachment: { xs: "scroll", md: "fixed" },
           display: "flex",
           alignItems: "center",
           justifyContent: "center",

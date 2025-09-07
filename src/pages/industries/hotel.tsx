@@ -17,11 +17,11 @@ const HotelSecurity = () => {
       <Box
         sx={{
           position: "relative",
-          height: "100vh",
+          minHeight: { xs: "100svh", md: "100vh" },
           backgroundImage: "url(/images/hotel.jpg)",
           backgroundSize: "cover",
           backgroundPosition: "center",
-          backgroundAttachment: "fixed",
+          backgroundAttachment: { xs: "scroll", md: "fixed" },
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
