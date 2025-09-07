@@ -30,10 +30,10 @@ const ParkingEnforcement: React.FC = () => {
       <Box
         sx={{
           position: "relative",
-          height: "100vh",
+          minHeight: { xs: "100svh", md: "100vh" }, 
           backgroundImage: "url(/images/4.jpg)",
           backgroundSize: "cover",
-          backgroundAttachment: "fixed",
+          backgroundAttachment: { xs: "scroll", md: "fixed" },
           backgroundPosition: "10% 40%",
           display: "flex",
           alignItems: "center",

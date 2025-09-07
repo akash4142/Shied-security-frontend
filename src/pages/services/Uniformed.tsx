@@ -26,10 +26,10 @@ const UniformedSecurity = () => {
       <Box
         sx={{
           position: "relative",
-          height: "100vh",
+          minHeight: { xs: "100svh", md: "100vh" },
           backgroundImage: "url(/images/uniformed2.jpg)",
           backgroundSize: "cover",
-          backgroundAttachment: "fixed",
+          backgroundAttachment: { xs: "scroll", md: "fixed" },
           backgroundPosition: "center",
           display: "flex",
           alignItems: "center",
