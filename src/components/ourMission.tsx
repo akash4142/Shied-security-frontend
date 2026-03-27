@@ -31,7 +31,7 @@ const OurMission = () => {
         }}
       >
         <Image
-          src="/images/uniformed2.jpg"
+          src="/images/game.jpeg"
           alt="Our Mission"
           fill
           sizes="(max-width: 768px) 100vw, 50vw"

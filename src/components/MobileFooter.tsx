@@ -121,7 +121,7 @@ const MobileFooter = () => {
         variant="body2"
         sx={{ textAlign: "center", color: "#888", fontSize: "13px" }}
       >
-        <ShieldIcon fontSize="small" /> {new Date().getFullYear()} Shield Security. All rights reserved.
+        <ShieldIcon fontSize="small" /> {new Date().getFullYear()} Shield Secure Security. All rights reserved.
       </Typography>
     </Box>
   );

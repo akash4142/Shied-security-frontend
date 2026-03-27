@@ -329,7 +329,7 @@ const Footer = () => {
               gap: 1,
             }}
           >
-            <ShieldIcon fontSize="small" /> {new Date().getFullYear()} Shield Security. All rights reserved.
+            <ShieldIcon fontSize="small" /> {new Date().getFullYear()} Shield Service Security. All rights reserved.
           </Typography>
         </Container>
       </Box>

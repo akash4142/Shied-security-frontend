@@ -114,22 +114,18 @@ const OurTeamPage = () => {
               </Grid>
               <Grid item xs={12} md={8}>
                 <Typography variant="body1" sx={{ color: "#", lineHeight: 1.9 }}>
-                  Sourav is the founder and General Manager of Shield Secure Ltd. Sourav has always had an interest in security
-                  and enforcement and focused his early career on understanding the principals of maintaining peace and order.
-                  <br /><br />
-                  Immigrating to Canada in 2017, Sourav brings a well-rounded set of skills to Shield Secure. Educated at one of
-                  the best English private schools in northern India, he honed his skills in accounting and administration,
-                  allowing him to successfully oversee the financial and human resources aspect of Shield Secure. Sourav has
-                  worked extensively in the security industry including with Alberta Health Services as a Protective Services
-                  Officer and with the Town of Canmore as a Municipal Enforcement Officer.
-                  <br /><br />
-                  Sourav has a very intuitive understanding of human nature, foreseeing and defusing potential problems and in
-                  the de-escalation of altercations. Sourav ensures that all of his team members are well trained, professional,
-                  and customer service oriented.
-                  <br /><br />
-                  Sourav is committed to ethical practices, honest, lawful processes along with open communication. His desire
-                  to offer his clients trustworthy and reliable service is paramount and his comprehensive approach ensures his
-                  clients, and their assets remain safe and secure.
+                  Sourav Gupta, founder and General Manager of Shield Secure Ltd., brings extensive experience in law enforcement and security, including roles with Alberta Health Services as a Peace Officer and Protective Security Officer, as well as Municipal Enforcement in Canmore, working closely with the RCMP. He has also worked with leading security companies in Calgary and Canmore.
+
+With a background in Business Administration from Toronto, Ontario, and a lifelong passion for business, Sourav combined his professional law enforcement experience with his entrepreneurial vision to create a local security company that meets the growing needs of Canmore and Banff.
+
+Shield Secure Ltd. started small but has grown into a trusted, professional, and reliable security provider. Today, we serve:
+	•	Major construction companies like Filmore Construction, Bird Construction and more
+	•	Event and wedding companies
+	•	Hotels, Airbnb properties, and property management firms
+	•	Community events and the Town of Canmore programs
+
+We provide mobile patrols, on-call security, vacant property checks, and full on-site protection, always with trained, licensed, and professional guards.
+
                 </Typography>
               </Grid>
             </Grid>

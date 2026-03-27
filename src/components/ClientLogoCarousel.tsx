@@ -15,6 +15,10 @@ const clientLogos = [
   { src: '/logos/spyfilms.jpg', alt: 'Spy Films' },
   { src: '/logos/OIP.jpeg', alt: 'Waymarker' },
   { src: '/logos/ghardy.jpeg', alt: 'ghardy' },
+  {src: '/logos/asset.webp', alt: 'ghardy' },
+  {src: '/logos/bird.webp', alt: 'ghardy' },
+{src: '/logos/Eagles.webp', alt: 'ghardy' },
+{src: '/logos/wedding.jpg', alt: 'ghardy' },
 ];
 
 const settings = {
@@ -79,7 +83,7 @@ const ClientLogoCarousel = () => {
             letterSpacing: 1,
           }}
         >
-          Trusted by Leading Brands
+          Trusted by Businesses Across Multiple Industries
         </Typography>
 
         <Slider {...settings}>

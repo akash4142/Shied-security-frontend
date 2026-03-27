@@ -8,7 +8,7 @@ const testimonials = [
     feedback: 'Sourav and his team have taken care of our security needs for our onsite events since 2024.  They are professional and courteous to our guests and our staff feel safe and supported during the evening.  We have increased our bookings with Shield Security for 2025 and look forward to working with them more this year.',
     rating: 5,
     designation: 'Manager',
-    company: 'CornerStone Theatre',
+    company: 'Cornerstone Theatre',
   },
   {
     name: 'PEKA ',
@@ -38,6 +38,28 @@ const testimonials = [
     designation: 'Manager',
     company: 'Canmore downtown hostel',
   },
+  {
+    name: 'Elle West',
+    feedback: 'We recently worked with Shield Secure, and had a really positive experience. Sourav is supportive, genuinely collaborative, and he takes the time to check in and ensure everything running smoothly. It’s clear that he cares about the work and wants to see our program succeed. We are very happy with the service and intend to contract Shield Secure again this coming summer.',
+    rating: 5,
+    designation: 'Manager',
+    company: 'City Events',
+  },
+  {
+    name: 'Bryan Arneson',
+    feedback: 'Shield has been an extremely valuable addition to our game day process with the Canmore Eagles makings fans and athletes feel comfortable and safe at EVERY home game at the Canmore Recreation Center. Strongly recommend their services to anyone looking for added security in the Bow Valley.',
+    rating: 5,
+    designation: 'Manager',
+    company: 'Canmore Recreation Centre',
+  },
+  {
+    name: 'Logan',
+    feedback: 'Just wanted to post this review purely for the service we received from Sourav. He was the kindest, most helpful and nice individual, who helped us a ton at the end of our wedding night. He ensured that all our guest made it home safely, and even drove a few home when travel plans went array. Even the day following, when one of the guests lost his phone, Sourav was able to locate it, and bring it back to the individual. Really don’t have enough good things to say about the guy. 10/10 service.',
+    rating: 5,
+    designation: 'Client',
+    company: 'Wedding Client',
+  },
+  
 ];
 
 const settings = {

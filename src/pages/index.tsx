@@ -13,6 +13,7 @@ import Head from 'next/head';
 import FinalCTA from '@/components/FinalCTA';
 import GoogleReviewBadge from '@/components/GoogleReviewBadge';
 import VacantPropertyCheck from '@/components/vacantPropertyCheck';
+import CommunityImpact from '@/components/CommunityImpact';
 
 const Home = () => {
   return (
@@ -59,32 +60,142 @@ const Home = () => {
     transition={{ duration: 1 }}
     style={{ position: 'relative', zIndex: 2 }} // ABOVE the overlay
   >
-    <Box sx={{ maxWidth: 600, p: 4, borderRadius: 2 }}>
-      <Typography variant="h2" sx={{ fontWeight: 'bold', color: '#fff' , fontSize: { xs: '26px', md: '60px' }, }}>
-        Security Guards You Can Trust
-      </Typography>
-      <Typography variant="h6" sx={{ mt: 2, mb: 4, color: '#e0e0e0' }}>
-        Tailored Protection for Every Environment
-      </Typography>
-      <Link href="/quote" passHref legacyBehavior>
-        <Button
-          variant="contained"
+    <Box
+  sx={{
+    maxWidth: '900px',
+    p: { xs: 3, md: 6 },
+  }}
+>
+  <Typography
+    variant="h2"
+    sx={{
+      fontWeight: 800,
+      color: '#fff',
+      fontSize: { xs: '24px', md: '60px' },
+      lineHeight: 1.2,
+    }}
+  >
+    Security Company in Canmore & Banff
+  </Typography>
+
+  <Typography
+    sx={{
+      mt: 2,
+      color: '#ff4d4d',
+      fontWeight: 1000,
+      letterSpacing: '2px',
+      fontSize: '18px',
+    }}
+  >
+    YOU CAN TRUST
+  </Typography>
+
+  <Typography
+  variant="h6"
+  sx={{
+    mt: 1,
+    mb: 4,
+    color: '#e0e0e0',
+    fontSize: { xs: '14px', md: '18px' },
+    lineHeight: 1.6,
+    maxWidth: '700px',
+  }}
+>
+  Professional security services for hotels, events & weddings, mobile patrols, construction sites, and 24/7 on-call protection across Banff, Canmore, and Alberta.
+</Typography>
+
+  <Link href="/quote" passHref legacyBehavior>
+    <Button
+      variant="contained"
+      sx={{
+        backgroundColor: '#ff0000',
+        fontSize: { xs: '12px', md: '16px' },
+        px: 5,
+        py: 1.5,
+        borderRadius: '30px',
+        fontWeight: 'bold',
+        textTransform: 'none',
+        '&:hover': {
+          backgroundColor: '#cc0000',
+        },
+      }}
+    >
+      Request a Quote
+    </Button>
+  </Link>
+</Box>
+  </motion.div>
+</Box>
+<Box sx={{ py: 10, backgroundColor: '#0f1114', textAlign: 'center' }}>
+  <Container>
+    <Typography
+      variant="h3"
+      sx={{
+        fontWeight: 700,
+        mb: 2,
+        color: '#fff',
+      }}
+    >
+      Why Choose Shield Secure Services
+    </Typography>
+
+    <Typography
+      sx={{
+        color: '#aaa',
+        mb: 6,
+        fontSize: '16px',
+      }}
+    >
+      Professional. Reliable. Trusted across Canmore & Banff.
+    </Typography>
+
+    <Box
+      sx={{
+        display: 'grid',
+        gridTemplateColumns: { xs: '1fr', md: 'repeat(3, 1fr)' },
+        gap: 4,
+      }}
+    >
+      {[
+        '24/7 Availability',
+        'Fast Response Time',
+        'Local Canmore & Banff Presence',
+        'Fully Licensed & Insured',
+        'Trusted by Hotels, Properties & Events',
+        'Construction Site Security Experts',
+      ].map((item, index) => (
+        <Box
+          key={index}
           sx={{
-            backgroundColor: '#ff0000',
-            fontSize: { xs: '10px', md: '18px' },
-            px: 4,
+            p: 4,
+            borderRadius: 3,
+            background: 'linear-gradient(145deg, #1a1d22, #111)',
+            border: '1px solid rgba(255,255,255,0.06)',
+            transition: 'all 0.3s ease',
+            position: 'relative',
+            overflow: 'hidden',
+
             '&:hover': {
-              backgroundColor: '#cc0000',
+              transform: 'translateY(-8px)',
+              borderColor: '#ff0000',
+              boxShadow: '0 10px 40px rgba(255,0,0,0.2)',
             },
           }}
         >
-          Request a Quote
-        </Button>
-      </Link>
+          <Typography
+            sx={{
+              color: '#fff',
+              fontWeight: 600,
+              fontSize: '17px',
+            }}
+          >
+            {item}
+          </Typography>
+        </Box>
+      ))}
     </Box>
-  </motion.div>
+  </Container>
 </Box>
-
 {/* Mission Section */}
 <Box sx={{ py: 5, textAlign: 'center', backgroundColor: 'white' }}>
   <Container>
@@ -114,6 +225,7 @@ const Home = () => {
 
       <OurMission />
       <ServicesShowcase currentService='Mobile Patrol'/>
+      <CommunityImpact />   {/* ADD HERE */}
       <VacantPropertyCheck/>
       <TestimonialsSection/>
       <ClientLogoCarousel />
