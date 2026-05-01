@@ -1,141 +1,251 @@
-import { Box, Container, Typography } from '@mui/material';
+import {
+  Box,
+  Container,
+  Typography,
+  Grid,
+  Card,
+  CardContent,
+} from '@mui/material';
+
+const sections = [
+  {
+    title: 'Canada Day & Major Events',
+    emoji: '🇨🇦',
+    image: '/images/canadaday.jpeg',
+    description:
+      'We proudly support major events in Canmore, working alongside RCMP and local authorities to ensure safety.',
+    points: [
+      'Crowd control and public safety',
+      'Road closures and access management',
+      'Monitoring high-traffic areas',
+      'Supporting emergency teams',
+    ],
+  },
+  {
+    title: 'Canmore Eagles',
+    emoji: '🏒',
+    image: '/images/canmoreeagle.jpeg',
+    description:
+      'Providing game-day security to ensure a safe and enjoyable experience for fans and players.',
+    points: [
+      'Entry monitoring and access control',
+      'Crowd management and fan safety',
+      'Professional incident handling',
+    ],
+  },
+  {
+    title: 'Safe Park Program',
+    emoji: '🅿️',
+    image: '/images/parkingday.jpeg',
+    description:
+      'Supporting Canmore’s Safe Park initiative by offering affordable security services to local workers.',
+    points: [
+      'Patrols and safety monitoring',
+      'Ensuring compliance and site security',
+      'Working with Town staff',
+    ],
+  },
+];
 
 const CommunityImpact = () => {
   return (
-    <Box sx={{ backgroundColor: '#0f1114', py: 10 }}>
+    <Box sx={{ backgroundColor: '#0b0d10', py: { xs: 8, md: 12 } }}>
       <Container maxWidth="lg">
-
-        {/* SECTION TITLE */}
+        {/* HEADER */}
         <Typography
           variant="h3"
-          sx={{ color: '#fff', fontWeight: 700, mb: 2, textAlign: 'center' }}
+          sx={{
+            color: '#fff',
+            fontWeight: 700,
+            textAlign: 'center',
+            mb: 2,
+          }}
         >
-          Community Commitment & Local Impact
+          Community Commitment & Impact
         </Typography>
 
         <Typography
           sx={{
             color: '#aaa',
             textAlign: 'center',
-            mb: 6,
-            maxWidth: '700px',
+            mb: 8,
+            maxWidth: '650px',
             mx: 'auto',
+            fontSize: '1.05rem',
           }}
         >
-          Proudly supporting Canmore through events, sports, and community programs.
+          Supporting Canmore through events, sports, and community programs with
+          reliable, professional security services.
         </Typography>
 
-        {/* BLOCK 1 */}
-        <Box sx={{ mb: 8 }}>
-          <Typography sx={{ color: '#ff4d4d', fontWeight: 600, mb: 2 }}>
-            🇨🇦 Canada Day & Major Events
-          </Typography>
+        {/* CARDS */}
+        <Grid container spacing={4}>
+          {sections.map((section, index) => (
+            <Grid item xs={12} md={4} key={index}>
+              <Card
+                sx={{
+                  backgroundColor: '#12151a',
+                  borderRadius: 4,
+                  overflow: 'hidden',
+                  height: '100%',
+                  transition: 'all 0.3s ease',
+                  border: '1px solid rgba(255,255,255,0.05)',
+                  '&:hover': {
+                    transform: 'translateY(-6px)',
+                    boxShadow: '0 15px 40px rgba(0,0,0,0.6)',
+                  },
+                }}
+              >
+                {/* IMAGE WITH OVERLAY */}
+                <Box sx={{ position: 'relative' }}>
+                  <Box
+                    component="img"
+                    src={section.image}
+                    alt={section.title}
+                    sx={{
+                      width: '100%',
+                      height: 200,
+                      objectFit: 'cover',
+                    }}
+                  />
 
-          <Typography sx={{ color: '#ccc', mb: 2 }}>
-            We proudly support Canada Day celebrations and major events in Canmore,
-            working alongside RCMP, Community Peace Officers, and Town staff.
-          </Typography>
+                  <Box
+                    sx={{
+                      position: 'absolute',
+                      inset: 0,
+                      background:
+                        'linear-gradient(to top, rgba(0,0,0,0.7), transparent)',
+                    }}
+                  />
+                </Box>
 
-          <Typography sx={{ color: '#888' }}>
-            • Crowd control and public safety <br />
-            • Road closures and access management <br />
-            • Monitoring high-traffic areas <br />
-            • Supporting emergency teams
-          </Typography>
+                <CardContent sx={{ p: 3 }}>
+                  <Typography
+                    sx={{
+                      color: '#ff4d4d',
+                      fontWeight: 600,
+                      mb: 1,
+                      fontSize: '1.1rem',
+                    }}
+                  >
+                    {section.emoji} {section.title}
+                  </Typography>
 
-          <Typography sx={{ color: '#aaa', mt: 2, fontStyle: 'italic' }}>
-            “Responsive, knowledgeable, and truly cares about clients.”
-          </Typography>
-        </Box>
+                  <Typography
+                    sx={{ color: '#bbb', mb: 2, fontSize: '0.95rem' }}
+                  >
+                    {section.description}
+                  </Typography>
 
-        {/* BLOCK 2 */}
-        <Box sx={{ mb: 8 }}>
-          <Typography sx={{ color: '#ff4d4d', fontWeight: 600, mb: 2 }}>
-            🏒 Canmore Eagles
-          </Typography>
+                  {/* FIXED LIST */}
+                  <Box component="ul" sx={{ pl: 2, m: 0, color: '#888' }}>
+                    {section.points.map((p, i) => (
+                      <Box
+                        component="li"
+                        key={i}
+                        sx={{ mb: 0.5, fontSize: '0.9rem' }}
+                      >
+                        {p}
+                      </Box>
+                    ))}
+                  </Box>
+                </CardContent>
+              </Card>
+            </Grid>
+          ))}
+        </Grid>
 
-          <Typography sx={{ color: '#ccc', mb: 2 }}>
-            We provide security at every home game, ensuring a safe and enjoyable
-            environment for fans, players, and staff.
-          </Typography>
-
-          <Typography sx={{ color: '#888' }}>
-            • Entry monitoring and access control <br />
-            • Crowd management and fan safety <br />
-            • Handling incidents professionally
-          </Typography>
-
-          <Typography sx={{ color: '#aaa', mt: 2, fontStyle: 'italic' }}>
-            “An extremely valuable part of our game day operations.”
-          </Typography>
-        </Box>
-
-        {/* BLOCK 3 */}
-        <Box sx={{ mb: 8 }}>
-          <Typography sx={{ color: '#ff4d4d', fontWeight: 600, mb: 2 }}>
-            🅿️ Safe Park Program
-          </Typography>
-
-          <Typography sx={{ color: '#ccc', mb: 2 }}>
-            Supporting Canmore’s Safe Park program by providing security services
-            at minimal cost to assist local workers.
-          </Typography>
-
-          <Typography sx={{ color: '#888' }}>
-            • Patrols and safety monitoring <br />
-            • Ensuring compliance and site security <br />
-            • Working closely with Town staff
-          </Typography>
-
-          <Typography sx={{ color: '#aaa', mt: 2, fontStyle: 'italic' }}>
-            “Supportive, collaborative, and ensures everything runs smoothly.”
-          </Typography>
-        </Box>
-
-        {/* 🔥 CTA SECTION */}
+        {/* CTA SECTION */}
         <Box
           sx={{
-            mt: 10,
-            p: 5,
-            borderRadius: 3,
-            background: 'linear-gradient(145deg, #1a1d22, #111)',
+            mt: 12,
+            borderRadius: 4,
+            overflow: 'hidden',
+            position: 'relative',
             textAlign: 'center',
           }}
         >
-          <Typography
-            variant="h4"
-            sx={{ color: '#fff', fontWeight: 700, mb: 2 }}
-          >
-            24/7 On-Call Security in the Bow Valley
-          </Typography>
-
-          <Typography sx={{ color: '#ccc', mb: 3 }}>
-            Serving Canmore, Banff, Harvie Heights, Dead Man’s Flats, and Exshaw.
-            We protect hotels, construction sites, vacant properties, and respond
-            to emergencies anytime—day or night.
-          </Typography>
-
-          <Typography sx={{ color: '#ff4d4d', fontWeight: 600, mb: 3 }}>
-            Call today: (403) 953-1998
-          </Typography>
-
-          {/* <Button
-            variant="contained"
+          {/* BACKGROUND IMAGE */}
+          <Box
+            component="img"
+            src="/images/canadaday.jpeg"
+            alt="security"
             sx={{
-              backgroundColor: '#ff0000',
-              px: 5,
-              py: 1.5,
-              borderRadius: '30px',
-              fontWeight: 'bold',
-              '&:hover': {
-                backgroundColor: '#cc0000',
-              },
+              position: 'absolute',
+              inset: 0,
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover',
+              filter: 'brightness(0.3)',
+            }}
+          />
+
+          <Box
+            sx={{
+              position: 'relative',
+              zIndex: 2,
+              py: { xs: 6, md: 8 },
+              px: 3,
             }}
           >
-            Request Service Now
-          </Button> */}
-        </Box>
+            <Typography
+              variant="h4"
+              sx={{ color: '#fff', fontWeight: 700, mb: 3 }}
+            >
+              24/7 On-Call Security Response
+            </Typography>
 
+            <Typography
+              sx={{
+                color: '#ccc',
+                mb: 5,
+                maxWidth: '750px',
+                mx: 'auto',
+              }}
+            >
+              Immediate response across Canmore and the Bow Valley. From routine
+              checks to urgent incidents, our team is always ready to act.
+            </Typography>
+
+            <Grid container spacing={2} justifyContent="center">
+              {[
+                'False Alarm Response',
+                'Property Patrols',
+                'Noise Complaints',
+                'Emergency Response',
+                'Construction Security',
+                'Camera Monitoring',
+              ].map((item, i) => (
+                <Grid item xs={12} sm={6} md={4} key={i}>
+                  <Box
+                    sx={{
+                      border: '1px solid rgba(255,255,255,0.1)',
+                      borderRadius: 2,
+                      py: 1.5,
+                      px: 2,
+                      color: '#eee',
+                      fontSize: '0.9rem',
+                      backgroundColor: 'rgba(255,255,255,0.05)',
+                    }}
+                  >
+                    {item}
+                  </Box>
+                </Grid>
+              ))}
+            </Grid>
+
+            <Typography
+              sx={{
+                mt: 5,
+                color: '#ff4d4d',
+                fontWeight: 600,
+                fontSize: '1.1rem',
+              }}
+            >
+              📞 (403) 953-1998
+            </Typography>
+          </Box>
+        </Box>
       </Container>
     </Box>
   );
