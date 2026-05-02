@@ -6,19 +6,19 @@ import TestimonialsSection from "@/components/TestimonialsSection";
 import ServicesShowcase from "@/components/serviceShowcase";
 
 const fadeInUp = {
-  hidden: { opacity: 0, y: 40 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+  hidden: { opacity: 0, y: 50 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.7 } },
 };
 
 const BanffSecurity = () => {
   return (
     <>
-      {/* ✅ Hero Section */}
+      {/* 🔥 HERO (same height maintained) */}
       <Box
         sx={{
           position: "relative",
-           minHeight: { xs: "100svh", md: "100vh" },
-          backgroundImage: "url(/images/banff.jpg)", // Replace with actual Banff image if available
+          minHeight: { xs: "100svh", md: "100vh" },
+          backgroundImage: "url(/images/banff.jpg)",
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundAttachment: { xs: "scroll", md: "fixed" },
@@ -26,135 +26,125 @@ const BanffSecurity = () => {
           alignItems: "center",
           justifyContent: "center",
           textAlign: "center",
-          px: 2,
-          zIndex: 1,
         }}
       >
+        {/* overlay */}
         <Box
           sx={{
             position: "absolute",
-            top: 0,
-            left: 0,
-            width: "100%",
-            height: "100%",
-            background: "linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.6))",
-            zIndex: 2,
+            inset: 0,
+            background:
+              "linear-gradient(to bottom, rgba(0,0,0,0.75), rgba(0,0,0,0.65))",
           }}
         />
+
+        {/* content */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.9, y: 30 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
-          style={{ zIndex: 3 }}
+          style={{ zIndex: 2 }}
         >
           <Typography
             variant="h2"
             sx={{
               color: "#fff",
-              fontWeight: 800,
-              fontSize: { xs: "2rem", md: "4rem" },
-              letterSpacing: "2px",
+              fontWeight: 900,
+              fontSize: { xs: "2.2rem", md: "4.3rem" },
+              letterSpacing: "3px",
               textTransform: "uppercase",
-              textShadow: "4px 4px 12px rgba(0,0,0,0.8)",
               mb: 2,
-              fontFamily: "'Bebas Neue', 'Poppins', sans-serif",
             }}
           >
             Banff Security Services
           </Typography>
+
           <Typography
-            variant="h6"
             sx={{
-              color: "#eee",
-              maxWidth: "700px",
+              color: "#ddd",
+              maxWidth: "650px",
               mx: "auto",
-              fontWeight: 300,
               fontSize: { xs: "1rem", md: "1.2rem" },
-              textShadow: "1px 1px 6px rgba(0,0,0,0.6)",
-              fontFamily: "'Poppins', sans-serif",
             }}
           >
-            Trusted by Businesses & Resorts in the Canadian Rockies
+            Trusted by businesses, resorts, and events across the Canadian Rockies.
           </Typography>
         </motion.div>
       </Box>
 
-      {/* ✅ Intro Section */}
+      {/* 🔹 INTRO */}
       <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-        <Box sx={{ background: "#fff", py: 10, px: { xs: 3, md: 12 }, textAlign: "center" }}>
-          <Typography variant="h4" fontWeight={700} mb={2} fontFamily="'Poppins', sans-serif" color="#111">
-            Trusted Security Services in the Heart of Banff
+        <Box sx={{ py: 12, px: { xs: 3, md: 10 }, textAlign: "center" }}>
+          <Typography
+            variant="h4"
+            sx={{
+              fontWeight: 800,
+              mb: 3,
+              color: "#111",
+            }}
+          >
+            Trusted Security in the Heart of Banff
           </Typography>
-          <Typography sx={{ color: "#444", maxWidth: "900px", mx: "auto", fontSize: "1.1rem" }}>
-            Shield Security proudly serves the Banff community with industry-leading security solutions tailored to one of
-            Canada’s busiest and most scenic destinations. Whether it’s a luxury hotel, a bustling retail strip, or a
-            high-profile event, our team delivers unmatched protection with professionalism and local insight.
+
+          <Typography
+            sx={{
+              color: "#555",
+              maxWidth: "800px",
+              mx: "auto",
+              fontSize: "1.1rem",
+              lineHeight: 1.8,
+            }}
+          >
+            Shield Security delivers high-performance protection in one of Canada’s most demanding environments.
+            From luxury hotels to high-traffic tourist zones, our team ensures safety, professionalism,
+            and rapid response at all times.
           </Typography>
         </Box>
       </motion.div>
 
-{/* ✅ Trusted Brands */}
-      
-
-      {/* ✅ Why We’re the Best in Banff (OurMission-style layout) */}
+      {/* 🔥 PREMIUM SPLIT SECTION */}
       <Grid
         container
-        spacing={0}
-        alignItems="stretch"
         sx={{
-          width: "100%",
-          m: 0,
-          background: "linear-gradient(90deg, #0f1114, #1c1f25)",
-          color: "#f1f1f1",
-          boxShadow: "0 10px 40px rgba(0, 0, 0, 0.3)",
+          background: "#0f172a",
+          color: "#fff",
         }}
       >
-        <Grid
-          item
-          xs={12}
-          md={6}
-          sx={{ position: "relative", height: { xs: "400px", md: "600px" } }}
-        >
+        {/* IMAGE */}
+        <Grid item xs={12} md={6}>
           <Box
-            component="img"
-            src="/images/2.jpg"
-            alt="Banff Coverage"
             sx={{
-              position: "absolute",
-              width: "100%",
-              height: "100%",
-              objectFit: "cover",
+              height: { xs: "350px", md: "600px" },
+              backgroundImage: "url(/images/2.jpg)",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
             }}
           />
         </Grid>
 
+        {/* CONTENT */}
         <Grid
           item
           xs={12}
           md={6}
           sx={{
             display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            px: { xs: 3, md: 6 },
-            py: { xs: 6, md: 8 },
-            backgroundColor: "#3a506b",
+            alignItems: "center",
+            px: { xs: 3, md: 8 },
+            py: { xs: 6, md: 0 },
           }}
         >
           <motion.div
-            initial={{ opacity: 0, x: 40 }}
+            initial={{ opacity: 0, x: 60 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.7 }}
             viewport={{ once: true }}
           >
             <Typography
               variant="h4"
               sx={{
-                fontWeight: "bold",
+                fontWeight: 800,
                 mb: 3,
-                fontSize: { xs: "2rem", md: "2.5rem" },
-                color: "#fff",
-                fontFamily: "'Poppins', sans-serif",
               }}
             >
               Why We’re the Best in Banff
@@ -162,32 +152,28 @@ const BanffSecurity = () => {
 
             <Typography
               sx={{
+                color: "#cbd5e1",
+                lineHeight: 1.9,
                 fontSize: "1.1rem",
-                lineHeight: 1.8,
-                mb: 4,
-                color: "#cfcfcf",
-                fontFamily: "'Poppins', sans-serif",
               }}
             >
-              At Shield Security, we combine deep local knowledge with national-level expertise. Our team is trained
-              specifically for the demands of Banff’s tourism-heavy environment, ensuring swift response, impeccable
-              professionalism, and tailored security plans for every resort, business, or event.
+              We combine local expertise with advanced security strategies. Our guards are trained specifically
+              for Banff’s tourism-driven environment, ensuring proactive protection, fast response times,
+              and a professional presence that builds trust.
             </Typography>
           </motion.div>
         </Grid>
       </Grid>
 
-      {/* ✅ Testimonials + Services */}
+      {/* 🔹 SERVICES + TESTIMONIALS */}
       <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
-        <ServicesShowcase currentService="Banff" />
-        <TestimonialsSection />
-        
+        <Box sx={{ py: 10 }}>
+          <ServicesShowcase currentService="Banff" />
+          <TestimonialsSection />
+        </Box>
       </motion.div>
-      
 
-    
-
-      {/* ✅ Request a Quote */}
+      {/* 🔹 CTA */}
       <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
         <RequestQuote />
       </motion.div>

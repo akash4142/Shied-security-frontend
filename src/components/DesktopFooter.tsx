@@ -215,8 +215,8 @@ const Footer = () => {
                 </Typography>
                 <Typography variant="body2" sx={{ color: "#ccc", mb: 1 }}>
     📧{" "}
-    <a href="mailto:shieldsecure82@gmail.com" style={{ color: "#ccc", textDecoration: "none" }}>
-      shieldsecure82@gmail.com
+    <a href="mailto:info@shieldsecureservices.ca" style={{ color: "#ccc", textDecoration: "none" }}>
+      info@shieldsecureservices.ca
     </a>
   </Typography>
                 <Typography variant="body2" sx={{ color: "#bbb", mt: 1, textAlign: { xs: "center", md: "left" } }}>
